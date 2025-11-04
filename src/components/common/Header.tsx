@@ -1,13 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white shadow-sm mx-15 rounded-2xl">
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+    <header className="fixed w-full z-20 top-5 px-4">
+      <nav
+        className={`max-w-7xl mx-auto px-6 rounded-2xl shadow-md py-4 transition-all duration-300 ${
+          isScrolled ? "bg-white/50 backdrop-blur-md" : "bg-white"
+        }`}
+      >
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
