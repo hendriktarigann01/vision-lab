@@ -37,9 +37,9 @@ const SectionProcess = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-[#FAFAFA]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        <h2 className="text-3xl md:text-4xl text-center mb-4 text-gray-900">
           Maintenance Process
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -52,15 +52,15 @@ const SectionProcess = () => {
           {processes.map((process, idx) => (
             <Card
               key={idx}
-              className="p-6 hover:shadow-lg transition-shadow border-none"
+              className="bg-transparent gap-2 border-none shadow-none"
             >
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 font-bold text-lg mb-4">
+              <div className="ml-3 w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-lg">
                 {process.num}
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+              <h3 className="px-3 border-l-2 border-orange-500 font-semibold text-gray-900 text-lg">
                 {process.title}
               </h3>
-              <p className="text-gray-600 text-sm">{process.desc}</p>
+              <p className="px-3 text-gray-600 text-sm">{process.desc}</p>
             </Card>
           ))}
         </div>

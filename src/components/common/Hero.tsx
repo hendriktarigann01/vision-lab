@@ -4,8 +4,11 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen z-10 overflow-hidden pt-24">
-      <div className="absolute right-0 top-0 w-11/12 h-11/12 opacity-40 pointer-events-none z-0">
+    <section
+      id="home"
+      className="relative min-h-screen z-10 overflow-hidden pt-24 bg-[#FAFAFA]"
+    >
+      <div className="absolute right-0 top-0 w-11/12 h-11/12 pointer-events-none z-0">
         <Image
           src="/lableaks_top.png"
           alt="Lab Leaks Top"
@@ -17,7 +20,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-5xl md:text-6xl text-gray-900 leading-tight">
               KEEP YOUR SCREEN{" "}
               <span className="text-orange-500">PERFECT, ANYTIME.</span>
             </h1>

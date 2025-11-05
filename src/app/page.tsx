@@ -14,14 +14,14 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      <Hero />
-      <SectionAboutUs />
-      <SectionService />
+      <Hero /> {/* anchor home */}
+      <SectionAboutUs /> {/* anchor about-us */}
+      <SectionService /> {/* anchor service */}
       <SectionPartner />
       <SectionProcess />
       <SectionPrice />
       <SectionFAQ />
-      <SectionCTA />
+      <SectionCTA /> {/* anchor contact-us */}
       <Footer />
     </main>
   );

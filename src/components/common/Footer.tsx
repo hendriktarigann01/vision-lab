@@ -4,136 +4,140 @@ import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-12 px-6 relative overflow-hidden">
-      {/* 🖼️ Decorative pattern footer - Layer paling belakang di pojok kanan bawah */}
-      <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-40 pointer-events-none z-0">
+    <footer className="bg-[#FAFAFA] py-12 px-6 relative">
+      {/* Decorative pattern footer - Layer paling belakang di pojok kanan bawah */}
+      <div className="absolute right-0 bottom-0 w-11/12 h-11/12 pointer-events-none z-0">
         <Image
           src="/lableaks_bottom.png"
           alt="Lab Leaks Bottom"
           fill
-          className="object-contain"
+          className="object-contain object-bottom-right"
         />
       </div>
       {/* Akhir decorative pattern */}
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-        {/* Konten grid utama footer, diberi z-10 agar di atas gambar dekoratif */}
-
-        {/* Company Info */}
-        <div className="col-span-1 md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 border-2 border-white rounded-full"></div>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        {/* Column 1: Company Info & Copyright */}
+        <div className="flex flex-col">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/vision-lab-logo.png"
+                alt="VisionLab Logo"
+                width={200}
+                height={40}
+                className="object-contain"
+              />
             </div>
-            <div>
-              <h3 className="text-xl font-bold">
-                Vision<span className="text-orange-500">LAB</span>
-              </h3>
-              <p className="text-xs text-gray-600">
-                Bringing Clarity Back to Your Screen
-              </p>
-              <p className="text-xs text-gray-500">by MJ Solution Indonesia</p>
+
+            <p className="text-gray-600 mb-6">
+              Professional LED & LCD repair, maintenance, and calibration
+              services.
+            </p>
+
+            {/* Address */}
+            <div className="flex gap-3 mb-4">
+              <div className="text-orange-500 mt-1">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </div>
+              <div className="text-gray-600 text-sm">
+                <p>The Mansion Bougenville Kemayoran</p>
+                <p>Tower Fontana Zona I Lantai 50</p>
+                <p>Kemayoran Jakarta Utara</p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex gap-3 items-center mb-10">
+              <div className="text-orange-500">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+              </div>
+              <p className="text-gray-600 text-sm">(+62) 811-1122-492</p>
             </div>
           </div>
 
-          <p className="text-gray-600 mb-6">
-            Professional LED & LCD repair, maintenance, and calibration
-            services.
-          </p>
+          {/* Copyright */}
+          <p className="text-gray-500 text-sm">© VisionLAB 2025</p>
+        </div>
 
-          {/* Address */}
-          <div className="flex gap-3 mb-4">
-            <div className="text-orange-500 mt-1">
-              <svg
-                width="20"
-                height="20"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-              </svg>
-            </div>
-            <div className="text-gray-600 text-sm">
-              <p>The Mansion Bougenville Kemayoran</p>
-              <p>Tower Fontana Zona I Lantai 50</p>
-              <p>Kemayoran Jakarta Utara</p>
-            </div>
+        {/* Column 2: Pages & Services */}
+        <div className="flex gap-2">
+          {/* Pages */}
+          <div className="w-28">
+            <h4 className="font-semibold text-gray-800 mb-4">Pages</h4>
+            <ul className="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#home" className="hover:text-orange-500 transition">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-orange-500 transition">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-orange-500 transition"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-orange-500 transition">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Phone */}
-          <div className="flex gap-3 items-center">
-            <div className="text-orange-500">
-              <svg
-                width="20"
-                height="20"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-              </svg>
-            </div>
-            <p className="text-gray-600 text-sm">(+62) 811-1122-492</p>
+          {/* Services */}
+          <div className="w-36">
+            <h4 className="font-semibold text-gray-800 mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#service" className="hover:text-orange-500 transition">
+                  General Check-Up
+                </a>
+              </li>
+              <li>
+                <a href="#service" className="hover:text-orange-500 transition">
+                  Complete Service
+                </a>
+              </li>
+              <li>
+                <a href="#service" className="hover:text-orange-500 transition">
+                  Routine Cleaning
+                </a>
+              </li>
+              <li>
+                <a href="#service" className="hover:text-orange-500 transition">
+                  Long-term Contract
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Pages */}
+        {/* Column 3: Social Media */}
         <div>
-          <h4 className="font-semibold text-gray-800 mb-4">Pages</h4>
-          <ul className="space-y-2 text-gray-600 text-sm">
-            <li>
-              <a href="#home" className="hover:text-orange-500 transition">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="hover:text-orange-500 transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="hover:text-orange-500 transition">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="hover:text-orange-500 transition">
-                About Us
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h4 className="font-semibold text-gray-800 mb-4">Services</h4>
-          <ul className="space-y-2 text-gray-600 text-sm">
-            <li>
-              <a href="#service" className="hover:text-orange-500 transition">
-                General Check-Up
-              </a>
-            </li>
-            <li>
-              <a href="#service" className="hover:text-orange-500 transition">
-                Complete Service
-              </a>
-            </li>
-            <li>
-              <a href="#service" className="hover:text-orange-500 transition">
-                Routine Cleaning
-              </a>
-            </li>
-            <li>
-              <a href="#service" className="hover:text-orange-500 transition">
-                Long-term Contract for Distributor
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Social Media - Full Width */}
-        <div className="col-span-1 md:col-span-4 mt-8">
           <h4 className="font-semibold text-gray-800 mb-4">Social Media</h4>
-          <div className="flex gap-4">
+          <div className="flex gap-5">
             <a
               href="#instagram"
               className="text-orange-500 hover:text-orange-600 transition"
@@ -175,12 +179,6 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-200 relative z-10">
-        {/* Diberi z-10 agar di atas gambar dekoratif */}
-        <p className="text-center text-gray-500 text-sm">© VisionLAB 2025</p>
       </div>
     </footer>
   );

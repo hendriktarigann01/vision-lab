@@ -34,7 +34,10 @@ const SectionAboutUs = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section
+      id="about-us"
+      className="py-16 px-4 bg-[#FAFAFA] flex items-center justify-center"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl text-center mb-12 text-gray-900">
           Data that Proves Our Commitment to Quality

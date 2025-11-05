@@ -11,11 +11,25 @@ const SectionFAQ = () => {
   const faqs = [
     {
       q: "Can VisionLab handle all brands of LED and LCD screens?",
-      a: "Yes, we can handle various brands and models of screens from various manufacturers. Our team of technicians is equipped with calibration tools and replacement modules that are compatible with well-known brands in the Indonesian and global markets.",
+      a: (
+        <>
+          <span className="text-orange-500">Yes,</span> we can handle various
+          brands and models of screens from various manufacturers. Our team of
+          technicians is equipped with calibration tools and replacement modules
+          that are compatible with well-known brands in the Indonesian and
+          global markets.
+        </>
+      ),
     },
     {
       q: "Does VisionLab provide pickup and delivery services?",
-      a: "Yes, we provide pickup and delivery services for your convenience. Please contact our team for more details about service coverage.",
+      a: (
+        <>
+          <span className="text-orange-500">Yes,</span> we provide pickup and
+          delivery services for your convenience. Please contact our team for
+          more details about service coverage.
+        </>
+      ),
     },
     {
       q: "Where is VisionLab located and what areas does it serve?",
@@ -23,17 +37,23 @@ const SectionFAQ = () => {
     },
     {
       q: "Is there a warranty after repair?",
-      a: "Yes, all our repairs come with a warranty period. The warranty duration depends on the type of service and components replaced.",
+      a: (
+        <>
+          <span className="text-orange-500">Yes,</span> all our repairs come
+          with a warranty period. The warranty duration depends on the type of
+          service and components replaced.
+        </>
+      ),
     },
   ];
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+    <section className="py-16 px-4 bg-[#FAFAFA]">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl text-center mb-4 text-gray-900">
           FAQ
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
           We understand that every screen has different needs. That&apos;s why
           VisionLab has compiled a list of frequently asked questions so you can
           get complete clarity about our services, processes, costs, and
@@ -44,19 +64,19 @@ const SectionFAQ = () => {
           type="single"
           collapsible
           defaultValue="item-0"
-          className="space-y-4"
+          className="space-y-6"
         >
           {faqs.map((faq, idx) => (
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="bg-white rounded-lg border-none shadow-sm overflow-hidden"
+              className="bg-white rounded-lg border-none overflow-hidden"
             >
-              <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left font-semibold text-gray-900 hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-gray-600 hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-4 text-gray-600">
-                {faq.a}
+              <AccordionContent className="px-6 bg-[#FAFAFA] text-gray-600">
+                <p className="w-1/2">{faq.a}</p>
               </AccordionContent>
             </AccordionItem>
           ))}
