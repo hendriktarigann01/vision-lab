@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 type PackageKey = "cleaning" | "maintenance" | "complete";
 

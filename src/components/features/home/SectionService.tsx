@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, MoveDown, MoveUp, Plus } from "lucide-react";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const SectionService = () => {
   const [activeIndex, setActiveIndex] = useState(0);
