@@ -5,7 +5,7 @@ import Image from "next/image";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#FAFAFA] py-12 px-6 relative">
-      {/* Decorative pattern footer - Layer paling belakang di pojok kanan bawah */}
+      {/* Decorative */}
       <div className="absolute right-0 bottom-0 w-11/12 h-11/12 pointer-events-none z-0">
         <Image
           src="/lableaks_bottom.png"
@@ -14,8 +14,7 @@ const Footer: React.FC = () => {
           className="object-contain object-bottom-right"
         />
       </div>
-      {/* Akhir decorative pattern */}
-
+      {/* Content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
         {/* Column 1: Company Info & Copyright */}
         <div className="flex flex-col">
@@ -37,7 +36,7 @@ const Footer: React.FC = () => {
 
             {/* Address */}
             <div className="flex gap-3 mb-4">
-              <div className="text-orange-500 mt-1">
+              <div className="text-orange-500 mt-1 flex-shrink-0">
                 <svg
                   width="20"
                   height="20"
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
 
             {/* Phone */}
             <div className="flex gap-3 items-center mb-10">
-              <div className="text-orange-500">
+              <div className="text-orange-500 flex-shrink-0">
                 <svg
                   width="20"
                   height="20"
@@ -75,9 +74,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 2: Pages & Services */}
-        <div className="flex gap-2">
+        <div className="flex gap-12 justify-center">
           {/* Pages */}
-          <div className="w-28">
+          <div>
             <h4 className="font-semibold text-gray-800 mb-4">Pages</h4>
             <ul className="space-y-2 text-gray-600 text-sm">
               <li>
@@ -107,7 +106,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div className="w-36">
+          <div>
             <h4 className="font-semibold text-gray-800 mb-4">Services</h4>
             <ul className="space-y-2 text-gray-600 text-sm">
               <li>
@@ -135,7 +134,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 3: Social Media */}
-        <div>
+        <div className="md:pl-8">
           <h4 className="font-semibold text-gray-800 mb-4">Social Media</h4>
           <div className="flex gap-5">
             <a

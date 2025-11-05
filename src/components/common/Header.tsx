@@ -62,9 +62,10 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <nav
-        className={`max-w-7xl mx-auto px-6 rounded-2xl shadow-md py-4 transition-all duration-300 ${
+        className={`max-w-7xl mx-auto px-6 rounded-2xl py-4 transition-all duration-300 ${
           isScrolled ? "bg-white/50 backdrop-blur-md" : "bg-white"
         }`}
+        style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}

@@ -64,7 +64,7 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "cleaning" ? "secondary" : "ghost"}
               onClick={() => setActivePackage("cleaning")}
-              className={`rounded-full transition-all ${
+              className={`rounded-full cursor-pointer transition-all ${
                 activePackage === "cleaning"
                   ? "bg-orange-500 text-white hover:bg-orange-600"
                   : "text-gray-600"
@@ -75,7 +75,7 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "maintenance" ? "default" : "ghost"}
               onClick={() => setActivePackage("maintenance")}
-              className={`rounded-full transition-all ${
+              className={`rounded-full cursor-pointer transition-all ${
                 activePackage === "maintenance"
                   ? "bg-orange-500 text-white hover:bg-orange-600"
                   : "text-gray-600"
@@ -86,7 +86,7 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "complete" ? "secondary" : "ghost"}
               onClick={() => setActivePackage("complete")}
-              className={`rounded-full transition-all ${
+              className={`rounded-full cursor-pointer transition-all ${
                 activePackage === "complete"
                   ? "bg-orange-500 text-white hover:bg-orange-600"
                   : "text-gray-600"
