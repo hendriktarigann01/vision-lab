@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 
@@ -10,8 +9,10 @@ const SectionCTA = () => {
       id="contact-us"
       className="bg-[#FAFAFA] py-16  px-4 flex items-center justify-center"
     >
-      <div className="relative max-w-7xl bg-[#AFAFAF33]/20 px-8 py-12 mx-auto flex flex-col md:flex-row items-center gap-8 overflow-visible rounded-4xl"
-        style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}>
+      <div
+        className="relative max-w-7xl bg-[#AFAFAF33]/20 px-8 py-12 mx-auto flex flex-col md:flex-row items-center gap-8 overflow-visible rounded-4xl"
+        style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
+      >
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl text-gray-900 mb-4">
             Need Screen Repair
