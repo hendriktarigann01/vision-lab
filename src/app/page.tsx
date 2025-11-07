@@ -12,7 +12,7 @@ import SectionCTA from "@/components/features/home/SectionCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full overflow-x-hidden">
       <Header />
       <Hero /> {/* anchor home */}
       <SectionAboutUs /> {/* anchor about-us */}

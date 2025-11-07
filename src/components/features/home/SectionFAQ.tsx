@@ -48,12 +48,13 @@ const SectionFAQ = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-[#FAFAFA]">
+    <section className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl text-center mb-4 text-gray-900">
+        {/* Title */}
+        <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
           FAQ
         </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
           We understand that every screen has different needs. That&apos;s why
           VisionLab has compiled a list of frequently asked questions so you can
           get complete clarity about our services, processes, costs, and
@@ -72,11 +73,11 @@ const SectionFAQ = () => {
               value={`item-${idx}`}
               className="bg-white rounded-lg border-none overflow-hidden"
             >
-              <AccordionTrigger className="px-6 py-4 text-left text-gray-600 hover:no-underline">
+              <AccordionTrigger className="text-sm md:text-base px-6 py-4 text-left text-gray-600 hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="px-6 bg-[#FAFAFA] text-gray-600">
-                <p className="w-1/2">{faq.a}</p>
+              <AccordionContent className="text-sm md:text-base px-6 bg-[#FAFAFA] text-gray-600">
+                <p className="md:w-1/2">{faq.a}</p>
               </AccordionContent>
             </AccordionItem>
           ))}

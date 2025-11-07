@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card } from "@/components/ui/Card";
+import { Card } from "@/components/ui/card";
 
 const SectionProcess = () => {
   const processes = [
@@ -37,30 +37,33 @@ const SectionProcess = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-[#FAFAFA]">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl text-center mb-4 text-gray-900">
+    <section className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
+      <div className="mx-auto max-w-7xl py-0 md:py-10">
+        {/* Title */}
+        <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
           Maintenance Process
         </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
           <span className="text-orange-500 font-semibold">VisionLab</span>{" "}
           follows a systematic process to ensure every LED & LCD screen gets the
           best care — from inspection to final testing, handled by professional
           technicians for lasting performance.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-7 md:gap-8">
           {processes.map((process, idx) => (
             <Card
               key={idx}
-              className="bg-transparent gap-2 border-none shadow-none"
+              className="bg-transparent py-0 gap-2 border-none shadow-none"
             >
-              <div className="ml-3 w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-lg">
+              <div className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-md md:text-lg">
                 {process.num}
               </div>
-              <h3 className="px-3 border-l-2 border-orange-500 font-semibold text-gray-900 text-lg">
+              <h3 className="px-3 border-l-2 border-orange-500 text-gray-900 text-sm md:text-base">
                 {process.title}
               </h3>
-              <p className="px-3 text-gray-600 text-sm">{process.desc}</p>
+              <p className="px-3 text-gray-600 text-xs md:text-sm">
+                {process.desc}
+              </p>
             </Card>
           ))}
         </div>

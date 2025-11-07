@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import LanguageSelector from "@/components/features/LanguageSelector";
+import { Menu } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,15 +47,13 @@ const Header: React.FC = () => {
         top: offsetPosition,
         behavior: "smooth",
       });
-
-      // Close mobile menu after click
       setIsMenuOpen(false);
     }
   };
 
   return (
     <motion.header
-      className="fixed w-full z-20 top-5 px-4"
+      className="fixed w-full z-20 top-2 md:top-5 px-0 md:px-4"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-150%" },
@@ -62,10 +62,12 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <nav
-        className={`max-w-7xl mx-auto px-6 rounded-2xl py-4 transition-all duration-300 ${
-          isScrolled ? "bg-white/50 backdrop-blur-md" : "bg-white"
-        }`}
-        style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
+        className={`max-w-7xl mx-auto px-6 rounded-2xl py-4 transition-all duration-300 
+                  ${
+                    isScrolled
+                      ? "bg-white/50 backdrop-blur-md md:shadow-[0_4px_50px_rgba(175,175,175,0.2)]"
+                      : "bg-none md:bg-white md:shadow-[0_4px_50px_rgba(175,175,175,0.2)]"
+                  }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -111,42 +113,21 @@ const Header: React.FC = () => {
             >
               Contact Us
             </a>
+            {/* <LanguageSelector /> */}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 rounded-lg bg-orange-500 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <Menu className="w-6 h-6 text-white" />
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-200">
+          <div className="md:hidden mt-4 py-4">
             <div className="flex flex-col gap-2">
               <a
                 href="#home"

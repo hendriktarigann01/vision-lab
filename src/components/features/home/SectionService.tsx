@@ -1,12 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, MoveDown, MoveUp, Plus } from "lucide-react";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const SectionService = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   const services = [
     {
@@ -45,18 +48,121 @@ const SectionService = () => {
     setActiveIndex((prev) => (prev < services.length - 1 ? prev + 1 : 0));
   };
 
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0); // Reset touch end
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      // Swipe left - next
+      if (activeIndex < services.length - 1) {
+        setActiveIndex(activeIndex + 1);
+      }
+    }
+
+    if (isRightSwipe) {
+      // Swipe right - previous
+      if (activeIndex > 0) {
+        setActiveIndex(activeIndex - 1);
+      }
+    }
+  };
+
   return (
-    <section id="service" className="py-16 px-4 bg-[#FAFAFA]">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="flex w-xl items-start text-left justify-start text-3xl md:text-4xl text-gray-900 mb-12">
+    <section id="service" className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="w-full md:w-2/5 text-lg md:text-4xl text-center md:text-left mb-6 md:mb-12 text-gray-900">
           Complete services for all repair and maintenance needs
         </h2>
       </div>
+
+      {/* Mobile View */}
+      <div className="md:hidden">
+        {/* Tabs */}
+        <div
+          className="flex gap-2 mb-6 overflow-x-auto pb-2"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
+          {services.map((service, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveIndex(idx)}
+              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-light transition-colors ${
+                activeIndex === idx
+                  ? "bg-orange-500 text-white"
+                  : "text-gray-600"
+              }`}
+            >
+              {service.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Active Service Content */}
+        <div className="rounded-2xl mb-6">
+          <p className="text-gray-600 text-sm mb-4">
+            <span className="text-gray-900 font-medium">
+              {services[activeIndex].title},
+            </span>{" "}
+            {services[activeIndex].desc}
+          </p>
+        </div>
+
+        {/* Image with Swipe Functionality */}
+        <div
+          ref={imageRef}
+          className="relative w-full h-64 rounded-2xl overflow-hidden bg-gray-200 touch-pan-y"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          <Image
+            src={services[activeIndex].img}
+            alt={services[activeIndex].title}
+            width={350}
+            height={350}
+            className="object-cover w-full h-full transition-transform duration-300"
+            draggable={false}
+          />
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center gap-2 mt-4">
+          {services.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveIndex(idx)}
+              className={`h-2 rounded-full transition-all ${
+                activeIndex === idx ? "bg-orange-500 w-8" : "bg-gray-300 w-2"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop View - Content */}
       <div
-        className="max-w-6xl mx-auto bg-[#AFAFAF33]/20 p-10 rounded-2xl"
+        className="hidden md:block max-w-7xl mx-auto bg-gray-100/50 p-10 rounded-2xl"
         style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
       >
-        <div className="grid md:grid-cols-2 gap-20 mt-8">
+        <div className="grid md:grid-cols-2 gap-24 mt-8">
           {/* Arrow Buttons and Services */}
           <div className="flex gap-4 h-full items-center">
             {/* Arrow Buttons */}
@@ -93,7 +199,7 @@ const SectionService = () => {
                   <div
                     key={idx}
                     onClick={() => handleServiceClick(idx)}
-                    className="mb-4 p-4 bg-[#AFAFAF33]/20 rounded-lg cursor-pointer"
+                    className="mb-4 p-4 bg-gray-100/50 rounded-lg cursor-pointer"
                     style={{
                       boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)",
                     }}
@@ -131,11 +237,11 @@ const SectionService = () => {
           </div>
 
           {/* Right Column - Image Grid */}
-          <div className="grid grid-cols-2 gap-1">
-            <div className="flex flex-col gap-1">
+          <div className="grid grid-cols-2 gap-5">
+            <div className="flex flex-col gap-5">
               {/* Top Left */}
               <Card
-                className={`relative border-none w-48 h-80 rounded-lg overflow-hidden transition-all ${
+                className={`relative border-none w-full h-80 rounded-lg overflow-hidden transition-all ${
                   activeIndex !== 0 ? "grayscale opacity-40" : ""
                 }`}
               >
@@ -149,7 +255,7 @@ const SectionService = () => {
 
               {/* Bottom Left */}
               <Card
-                className={`relative border-none w-48 h-36 rounded-lg overflow-hidden transition-all ${
+                className={`relative border-none w-full h-36 rounded-lg overflow-hidden transition-all ${
                   activeIndex !== 1 ? "grayscale opacity-40" : ""
                 }`}
               >
@@ -162,10 +268,10 @@ const SectionService = () => {
               </Card>
             </div>
 
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-5">
               {/* Top Right */}
               <Card
-                className={`relative border-none w-48 h-36 rounded-lg overflow-hidden transition-all ${
+                className={`relative border-none w-full h-36 rounded-lg overflow-hidden transition-all ${
                   activeIndex !== 3 ? "grayscale opacity-40" : ""
                 }`}
               >
@@ -179,7 +285,7 @@ const SectionService = () => {
 
               {/* Bottom Right */}
               <Card
-                className={`relative border-none w-48 h-80 rounded-lg overflow-hidden transition-all ${
+                className={`relative border-none w-full h-80 rounded-lg overflow-hidden transition-all ${
                   activeIndex !== 2 ? "grayscale opacity-40" : ""
                 }`}
               >
