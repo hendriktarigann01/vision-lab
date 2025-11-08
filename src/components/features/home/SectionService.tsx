@@ -17,17 +17,17 @@ const SectionService = () => {
     {
       title: t("items.completeService.title"),
       desc: t("items.completeService.description"),
-      img: "/services/service-complete-service.png",
+      img: "/services/service-complete-service.webp",
     },
     {
       title: t("items.maintenance.title"),
       desc: t("items.maintenance.description"),
-      img: "/services/service-maintenance.png",
+      img: "/services/service-maintenance.webp",
     },
     {
       title: t("items.onSiteTraining.title"),
       desc: t("items.onSiteTraining.description"),
-      img: "/services/service-training.png",
+      img: "/services/service-training.webp",
     },
   ];
 
@@ -103,7 +103,7 @@ const SectionService = () => {
               onClick={() => setActiveIndex(idx)}
               className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-light transition-colors ${
                 activeIndex === idx
-                  ? "bg-orange-500 text-white"
+                  ? "bg-brand-200 text-white"
                   : "text-gray-600"
               }`}
             >
@@ -147,7 +147,7 @@ const SectionService = () => {
               key={idx}
               onClick={() => setActiveIndex(idx)}
               className={`h-2 rounded-full transition-all ${
-                activeIndex === idx ? "bg-orange-500 w-8" : "bg-gray-300 w-2"
+                activeIndex === idx ? "bg-brand-200 w-8" : "bg-gray-300 w-2"
               }`}
             />
           ))}
@@ -169,19 +169,19 @@ const SectionService = () => {
                 disabled={activeIndex === 0}
                 className={`w-10 h-10 rounded-full flex items-center cursor-pointer justify-center transition-colors ${
                   activeIndex === 0
-                    ? "bg-orange-500/30 cursor-not-allowed"
-                    : "bg-orange-500 hover:bg-orange-600"
+                    ? "bg-brand-50 cursor-not-allowed"
+                    : "bg-brand-200 hover:bg-brand-300"
                 }`}
               >
                 <MoveUp className="text-white" size={20} />
               </Button>
               <Button
                 onClick={handleNext}
-                disabled={activeIndex === 3}
+                disabled={activeIndex === 2}
                 className={`w-10 h-10 rounded-full flex items-center cursor-pointer justify-center transition-colors ${
                   activeIndex === 3
-                    ? "bg-orange-500/30 cursor-not-allowed"
-                    : "bg-orange-500 hover:bg-orange-600"
+                    ? "bg-brand-50 cursor-not-allowed"
+                    : "bg-brand-200 hover:bg-brand-300"
                 }`}
               >
                 <MoveDown className="text-white" size={20} />
@@ -203,7 +203,7 @@ const SectionService = () => {
                   >
                     <div className="flex items-start gap-3">
                       {!isActive && (
-                        <div className="w-6 h-6 text-orange-500 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110">
+                        <div className="w-6 h-6 text-brand-200 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110">
                           <Plus className="w-full h-full" />
                         </div>
                       )}
@@ -219,7 +219,7 @@ const SectionService = () => {
                             </p>
                             <Button
                               variant="ghost"
-                              className="w-40 bg-orange-500 hover:bg-orange-600 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
+                              className="w-40 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
                             >
                               {t("viewService")}{" "}
                               <ArrowRight className="w-4 h-4" />

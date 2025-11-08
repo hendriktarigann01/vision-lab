@@ -47,7 +47,7 @@ const SectionProcess = () => {
           {t("title")}
         </h2>
         <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
-          <span className="text-orange-500 font-semibold">VisionLab</span>{" "}
+          <span className="text-brand-200 font-semibold">VisionLab</span>{" "}
           {t("description")}
         </p>
         <div className="grid md:grid-cols-3 gap-7 md:gap-8">
@@ -56,10 +56,10 @@ const SectionProcess = () => {
               key={idx}
               className="bg-transparent py-0 gap-2 border-none shadow-none"
             >
-              <div className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-md md:text-lg">
+              <div className="ml-3 w-8 h-8 md:w-10 md:h-10 bg-brand-50 rounded-full flex items-center justify-center text-brand-200 text-md md:text-lg">
                 {process.num}
               </div>
-              <h3 className="px-3 border-l-2 border-orange-500 text-gray-900 text-sm md:text-base">
+              <h3 className="px-3 border-l-2 border-brand-200 text-gray-900 text-sm md:text-base">
                 {process.title}
               </h3>
               <p className="px-3 text-gray-600 text-xs md:text-sm">

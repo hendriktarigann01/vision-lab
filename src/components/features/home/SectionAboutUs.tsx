@@ -53,7 +53,7 @@ const SectionAboutUs = () => {
               className="p-0 md:p-6 gap-2 md:gap-4 bg-transparent w-fit border-none shadow-none"
             >
               <div className="px-2 md:px-3 w-12 md:w-20">{stat.icon}</div>
-              <div className="text-base md:text-4xl border-l-2 px-2 md:px-3 border-orange-500 font-normal text-gray-900">
+              <div className="text-base md:text-4xl border-l-3 px-2 md:px-3 border-brand-200 font-normal text-gray-900">
                 {stat.value}
               </div>
               <p className="text-xs md:text-base text-gray-600 px-2 md:px-3">

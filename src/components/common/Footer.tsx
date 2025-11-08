@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       {/* Decorative */}
       <div className="absolute right-0 bottom-0 w-[110%] h-[110%] pointer-events-none z-0">
         <Image
-          src="/lableaks_bottom.png"
+          src="/lableaks_bottom.webp"
           alt="Lab Leaks Bottom"
           fill
           className="object-contain object-bottom-right"
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/vision-lab-logo.png"
+                  src="/vision-lab-logo.webp"
                   alt="VisionLab Logo"
                   width={200}
                   height={40}
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
 
               {/* Address */}
               <div className="flex gap-3 mb-4">
-                <div className="text-orange-500 mt-1 shrink-0">
+                <div className="text-brand-200 mt-1 shrink-0">
                   <Image
                     src="/icons/icon-location.png"
                     alt="icon location"
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
 
               {/* Phone */}
               <div className="flex gap-3 items-center mb-8 md:mb-10">
-                <div className="text-orange-500 shrink-0">
+                <div className="text-brand-200 shrink-0">
                   <Image
                     src="/icons/icon-phone.png"
                     alt="icon phone"
@@ -79,19 +79,19 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-3 text-gray-600 text-xs">
                 <li>
-                  <a href="#home" className="hover:text-orange-500 transition">
+                  <a href="#home" className="hover:text-brand-200 transition">
                     {t("pages.home")}
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="hover:text-orange-500 transition">
+                  <a href="#about" className="hover:text-brand-200 transition">
                     {t("pages.aboutUs")}
                   </a>
                 </li>
                 <li>
                   <a
                     href="#services"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("pages.services")}
                   </a>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#contact"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("pages.contactUs")}
                   </a>
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.completeService")}
                   </a>
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.maintenance")}
                   </a>
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.onSiteTraining")}
                   </a>
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
               <div className="flex gap-3">
                 <a
                   href="https://www.instagram.com/visionlabid/?utm_source=ig_web_button_share_sheet"
-                  className="text-orange-500 hover:text-orange-600 transition"
+                  className="text-brand-200 hover:text-brand-300 transition"
                 >
                   <Image
                     src="/icons/icon-instagram.png"
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
                 </a>
                 <a
                   href="#linkedin"
-                  className="text-orange-500 hover:text-orange-600 transition"
+                  className="text-brand-200 hover:text-brand-300 transition"
                 >
                   <Image
                     src="/icons/icon-linkedin.png"
@@ -170,7 +170,7 @@ const Footer: React.FC = () => {
                 </a>
                 <a
                   href="#tiktok"
-                  className="text-orange-500 hover:text-orange-600 transition"
+                  className="text-brand-200 hover:text-brand-300 transition"
                 >
                   <Image
                     src="/icons/icon-tiktok.png"
@@ -192,19 +192,19 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-3 text-gray-600 text-sm">
                 <li>
-                  <a href="#home" className="hover:text-orange-500 transition">
+                  <a href="#home" className="hover:text-brand-200 transition">
                     {t("pages.home")}
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="hover:text-orange-500 transition">
+                  <a href="#about" className="hover:text-brand-200 transition">
                     {t("pages.aboutUs")}
                   </a>
                 </li>
                 <li>
                   <a
                     href="#services"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("pages.services")}
                   </a>
@@ -212,7 +212,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#contact"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("pages.contactUs")}
                   </a>
@@ -229,7 +229,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.generalCheckUp")}
                   </a>
@@ -237,7 +237,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.completeService")}
                   </a>
@@ -245,7 +245,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.routineCleaning")}
                   </a>
@@ -253,7 +253,7 @@ const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#service"
-                    className="hover:text-orange-500 transition"
+                    className="hover:text-brand-200 transition"
                   >
                     {t("services.longTermContract")}
                   </a>
@@ -270,7 +270,7 @@ const Footer: React.FC = () => {
             <div className="flex gap-5">
               <a
                 href="https://www.instagram.com/visionlabid/?utm_source=ig_web_button_share_sheet"
-                className="text-orange-500 hover:text-orange-600 transition"
+                className="text-brand-200 hover:text-brand-300 transition"
               >
                 <svg
                   width="32"
@@ -283,7 +283,7 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="#linkedin"
-                className="text-orange-500 hover:text-orange-600 transition"
+                className="text-brand-200 hover:text-brand-300 transition"
               >
                 <svg
                   width="32"
@@ -296,7 +296,7 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="#tiktok"
-                className="text-orange-500 hover:text-orange-600 transition"
+                className="text-brand-200 hover:text-brand-300 transition"
               >
                 <svg
                   width="32"

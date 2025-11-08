@@ -87,7 +87,7 @@ const LanguageSelector: React.FC = () => {
               key={lang}
               onClick={() => handleSelect(lang)}
               className={`cursor-pointer flex items-center gap-3 px-3 py-2 rounded-md transition-all ${
-                locale === lang ? "bg-orange-50 border-2 border-orange-200" : ""
+                locale === lang ? "bg-brand-50/20 border border-brand-200" : ""
               }`}
             >
               <div className="w-6 h-6 rounded-full flex items-center justify-center">

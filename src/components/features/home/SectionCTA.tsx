@@ -29,7 +29,7 @@ const SectionCTA = () => {
           <div className="flex justify-center md:justify-start">
             <Button
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold"
+              className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 cursor-pointer rounded-full font-semibold"
             >
               {t("button")}
             </Button>
@@ -40,7 +40,7 @@ const SectionCTA = () => {
         <div className="flex-1 flex justify-center relative overflow-visible mt-0">
           <div className="relative md:absolute md:-top-90 w-[300px] h-[300px] md:w-[550px] md:h-[550px]">
             <Image
-              src="/vl-human-girl.png"
+              src="/vl-human-girl.webp"
               alt="Lab Leaks Top"
               fill
               className="object-contain"

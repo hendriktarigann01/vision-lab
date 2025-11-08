@@ -61,7 +61,7 @@ const SectionPrice = () => {
         <div className="md:hidden w-full max-w-52 mb-8 flex justify-center mx-auto">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full py-6 px-6 rounded-full">
+              <Button className="bg-brand-200 hover:bg-brand-300 text-white w-full py-6 px-6 rounded-full">
                 <span>{getPackageName(activePackage)}</span>
                 <ChevronDown className="h-5 w-5 ml-2 shrink-0" />
               </Button>
@@ -74,7 +74,7 @@ const SectionPrice = () => {
                 onClick={() => setActivePackage("cleaning")}
                 className={`cursor-pointer py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-100 focus:bg-gray-100 ${
                   activePackage === "cleaning"
-                    ? "bg-orange-50 text-orange-600"
+                    ? "bg-brand-50/20 text-brand-200"
                     : ""
                 }`}
               >
@@ -84,7 +84,7 @@ const SectionPrice = () => {
                 onClick={() => setActivePackage("maintenance")}
                 className={`cursor-pointer py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-100 focus:bg-gray-100 ${
                   activePackage === "maintenance"
-                    ? "bg-orange-50 text-orange-600"
+                    ? "bg-brand-50/20 text-brand-200"
                     : ""
                 }`}
               >
@@ -94,7 +94,7 @@ const SectionPrice = () => {
                 onClick={() => setActivePackage("complete")}
                 className={`cursor-pointer py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-100 focus:bg-gray-100 ${
                   activePackage === "complete"
-                    ? "bg-orange-50 text-orange-600"
+                    ? "bg-brand-50/20 text-brand-200"
                     : ""
                 }`}
               >
@@ -121,9 +121,9 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "cleaning" ? "secondary" : "ghost"}
               onClick={() => setActivePackage("cleaning")}
-              className={`rounded-full cursor-pointer transition-all ${
+              className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "cleaning"
-                  ? "bg-orange-500 text-white hover:bg-orange-600"
+                  ? "bg-brand-200 text-white hover:bg-brand-300"
                   : "text-gray-600"
               }`}
             >
@@ -132,9 +132,9 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "maintenance" ? "default" : "ghost"}
               onClick={() => setActivePackage("maintenance")}
-              className={`rounded-full cursor-pointer transition-all ${
+              className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "maintenance"
-                  ? "bg-orange-500 text-white hover:bg-orange-600"
+                  ? "bg-brand-200 text-white hover:bg-brand-300"
                   : "text-gray-600"
               }`}
             >
@@ -143,9 +143,9 @@ const SectionPrice = () => {
             <Button
               variant={activePackage === "complete" ? "secondary" : "ghost"}
               onClick={() => setActivePackage("complete")}
-              className={`rounded-full cursor-pointer transition-all ${
+              className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "complete"
-                  ? "bg-orange-500 text-white hover:bg-orange-600"
+                  ? "bg-brand-200 text-white hover:bg-brand-300"
                   : "text-gray-600"
               }`}
             >
@@ -174,8 +174,8 @@ const SectionPrice = () => {
           >
             {packages[activePackage].map((item: string, idx: number) => (
               <div key={idx} className="flex items-center gap-3 w-full">
-                <div className="w-5 h-5 md:w-6 md:h-6 bg-orange-200 flex items-center justify-center rounded-full text-orange-500 shrink-0">
-                  <Check
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-brand-50 flex items-center justify-center rounded-full text-brand-200 shrink-0">
+                  <Check className="text-brand-200"
                     size={
                       typeof window !== "undefined" && window.innerWidth < 768
                         ? 12
@@ -195,7 +195,7 @@ const SectionPrice = () => {
           <div className="text-center">
             <Button
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold"
+              className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 rounded-full font-normal"
             >
               {t("getStarted")}
             </Button>

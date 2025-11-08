@@ -71,7 +71,7 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-2">
             <div className="relative">
               <Image
-                src="/vision-lab-logo.png"
+                src="/vision-lab-logo.webp"
                 alt="VisionLab Logo"
                 width={200}
                 height={40}
@@ -85,28 +85,28 @@ const Header: React.FC = () => {
             <a
               href="#home"
               onClick={(e) => handleScrollTo(e, "home")}
-              className="px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+              className="px-6 py-2 bg-brand-200 text-white rounded-full transition"
             >
               {t("home")}
             </a>
             <a
               href="#about-us"
               onClick={(e) => handleScrollTo(e, "about-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
+              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
             >
               {t("aboutUs")}
             </a>
             <a
               href="#service"
               onClick={(e) => handleScrollTo(e, "service")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
+              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
             >
               {t("services")}
             </a>
             <a
               href="#contact-us"
               onClick={(e) => handleScrollTo(e, "contact-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
+              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
             >
               {t("contactUs")}
             </a>
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg bg-orange-500 text-gray-700"
+            className="md:hidden p-2 rounded-lg bg-brand-200 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="w-6 h-6 text-white" />
@@ -140,7 +140,7 @@ const Header: React.FC = () => {
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <Image
-              src="/vision-lab-logo.png"
+              src="/vision-lab-logo.webp"
               alt="VisionLab Logo"
               width={150}
               height={30}
@@ -159,40 +159,40 @@ const Header: React.FC = () => {
               <a
                 href="#home"
                 onClick={(e) => handleScrollTo(e, "home")}
-                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
+                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
               >
                 <span className="text-lg">{t("home")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
               </a>
-              <div className="my-2 border-b border-dashed border-orange-200" />
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
               <a
                 href="#about-us"
                 onClick={(e) => handleScrollTo(e, "about-us")}
-                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
+                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
               >
                 <span className="text-lg">{t("aboutUs")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
               </a>
-              <div className="my-2 border-b border-dashed border-orange-200" />
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
               <a
                 href="#service"
                 onClick={(e) => handleScrollTo(e, "service")}
-                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
+                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
               >
                 <span className="text-lg">{t("services")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
               </a>
-              <div className="my-2 border-b border-dashed border-orange-200" />
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
               <a
                 href="#contact-us"
                 onClick={(e) => handleScrollTo(e, "contact-us")}
-                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
+                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
               >
                 <span className="text-lg">{t("contactUs")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
               </a>
 
               <div className="py-4">

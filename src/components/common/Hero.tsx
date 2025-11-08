@@ -13,10 +13,11 @@ const Hero: React.FC = () => {
     >
       <div className="absolute -right-40 top-0 w-[150%] h-[110%] md:w-full md:h-full pointer-events-none z-0">
         <Image
-          src="/lableaks_top.png"
+          src="/lableaks_top.webp"
           alt="Lab Leaks Top"
           fill
           className="object-contain object-top-right"
+          priority
         />
       </div>
       {/* Content */}
@@ -24,7 +25,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center w-full">
           {/* Left Content */}
           <div className="space-y-4 md:space-y-6">
-            <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-orange-500 leading-tight font-bold">
+            <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-brand-200 leading-tight font-bold">
               {t("title")}
               <br />
               <span>{t("titleSecond")}</span>
@@ -35,10 +36,10 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-              <button className="w-36 md:w-48 md:px-8 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+              <button className="w-36 md:w-48 cursor-pointer md:px-8 py-3 bg-brand-200 hover:bg-brand-300 text-white rounded-full">
                 {t("bookService")}
               </button>
-              <button className="w-36 md:w-48 md:px-8 py-3 border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-50 transition font-semibold">
+              <button className="w-36 md:w-48 cursor-pointer md:px-8 py-3 border-2 border-brand-200 hover:bg-brand-50/20 text-brand-200 rounded-full transition">
                 {t("exploreService")}
               </button>
             </div>
@@ -48,10 +49,11 @@ const Hero: React.FC = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-[550px] aspect-square">
               <Image
-                src="/vl-human-boy.png"
+                src="/vl-human-boy.webp"
                 alt="Technician Illustration"
                 fill
                 className="object-contain"
+                priority
               />
             </div>
           </div>

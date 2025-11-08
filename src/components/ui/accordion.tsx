@@ -40,7 +40,7 @@ function AccordionTrigger({
         )}
         {...props}
       >
-        <div className="w-5 h-5 text-orange-500 flex items-center justify-center shrink-0 transition-transform duration-200">
+        <div className="w-5 h-5 text-brand-200 flex items-center justify-center shrink-0 transition-transform duration-200">
           <Plus className="w-full h-full group-data-[state=open]:hidden" />
           <X className="hidden w-full h-full group-data-[state=open]:block" />
         </div>

@@ -16,7 +16,7 @@ const SectionFAQ = () => {
       q: t("questions.brands.question"),
       a: (
         <>
-          <span className="text-orange-500">
+          <span className="text-brand-200">
             {t("questions.brands.answerPrefix")}
           </span>{" "}
           {t("questions.brands.answer")}
@@ -27,7 +27,7 @@ const SectionFAQ = () => {
       q: t("questions.pickupDelivery.question"),
       a: (
         <>
-          <span className="text-orange-500">
+          <span className="text-brand-200">
             {t("questions.pickupDelivery.answerPrefix")}
           </span>{" "}
           {t("questions.pickupDelivery.answer")}
@@ -42,7 +42,7 @@ const SectionFAQ = () => {
       q: t("questions.warranty.question"),
       a: (
         <>
-          <span className="text-orange-500">
+          <span className="text-brand-200">
             {t("questions.warranty.answerPrefix")}
           </span>{" "}
           {t("questions.warranty.answer")}
