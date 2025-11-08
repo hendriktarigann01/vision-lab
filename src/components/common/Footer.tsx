@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Footer: React.FC = () => {
+  const t = useTranslations("footer");
+
   return (
-    <footer className="bg-[#FAFAFA] py-12 px-6 relative">
+    <footer className="bg-[#FAFAFA] py-8 md:py-12 px-6 relative">
       {/* Decorative */}
       <div className="absolute right-0 bottom-0 w-[110%] h-[110%] pointer-events-none z-0">
         <Image
@@ -32,13 +35,12 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-gray-600 mb-6 text-sm md:text-base">
-                Professional LED & LCD repair, maintenance, and calibration
-                services.
+                {t("description")}
               </p>
 
               {/* Address */}
               <div className="flex gap-3 mb-4">
-                <div className="text-orange-500 mt-1 flex-shrink-0">
+                <div className="text-orange-500 mt-1 shrink-0">
                   <Image
                     src="/icons/icon-location.png"
                     alt="icon location"
@@ -47,15 +49,15 @@ const Footer: React.FC = () => {
                   />
                 </div>
                 <div className="text-gray-600 text-sm">
-                  <p>The Mansion Bougenville Kemayoran</p>
-                  <p>Tower Fontana Zona I Lantai 50</p>
-                  <p>Kemayoran Jakarta Utara</p>
+                  <p>{t("address.line1")}</p>
+                  <p>{t("address.line2")}</p>
+                  <p>{t("address.line3")}</p>
                 </div>
               </div>
 
               {/* Phone */}
               <div className="flex gap-3 items-center mb-8 md:mb-10">
-                <div className="text-orange-500 flex-shrink-0">
+                <div className="text-orange-500 shrink-0">
                   <Image
                     src="/icons/icon-phone.png"
                     alt="icon phone"
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
                     height={24}
                   />
                 </div>
-                <p className="text-gray-600 text-sm">(+62) 811-1122-492</p>
+                <p className="text-gray-600 text-sm">{t("phone")}</p>
               </div>
             </div>
           </div>
@@ -73,17 +75,17 @@ const Footer: React.FC = () => {
             {/* Pages */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-4 text-sm">
-                Pages
+                {t("pages.title")}
               </h4>
               <ul className="space-y-3 text-gray-600 text-xs">
                 <li>
                   <a href="#home" className="hover:text-orange-500 transition">
-                    Home
+                    {t("pages.home")}
                   </a>
                 </li>
                 <li>
                   <a href="#about" className="hover:text-orange-500 transition">
-                    About Us
+                    {t("pages.aboutUs")}
                   </a>
                 </li>
                 <li>
@@ -91,7 +93,7 @@ const Footer: React.FC = () => {
                     href="#services"
                     className="hover:text-orange-500 transition"
                   >
-                    Services
+                    {t("pages.services")}
                   </a>
                 </li>
                 <li>
@@ -99,7 +101,7 @@ const Footer: React.FC = () => {
                     href="#contact"
                     className="hover:text-orange-500 transition"
                   >
-                    About Us
+                    {t("pages.contactUs")}
                   </a>
                 </li>
               </ul>
@@ -108,7 +110,7 @@ const Footer: React.FC = () => {
             {/* Services */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-4 text-sm">
-                Services
+                {t("services.title")}
               </h4>
               <ul className="space-y-3 text-gray-600 text-xs">
                 <li>
@@ -116,7 +118,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    Complete Service
+                    {t("services.completeService")}
                   </a>
                 </li>
                 <li>
@@ -124,7 +126,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    Maintenance
+                    {t("services.maintenance")}
                   </a>
                 </li>
                 <li>
@@ -132,7 +134,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    On-Site Training
+                    {t("services.onSiteTraining")}
                   </a>
                 </li>
               </ul>
@@ -141,7 +143,7 @@ const Footer: React.FC = () => {
             {/* Social Media */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-4 text-sm">
-                Social Media
+                {t("socialMedia.title")}
               </h4>
               <div className="flex gap-3">
                 <a
@@ -185,16 +187,18 @@ const Footer: React.FC = () => {
           <div className="hidden md:flex gap-12 justify-center">
             {/* Pages */}
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">Pages</h4>
+              <h4 className="font-semibold text-gray-800 mb-4">
+                {t("pages.title")}
+              </h4>
               <ul className="space-y-3 text-gray-600 text-sm">
                 <li>
                   <a href="#home" className="hover:text-orange-500 transition">
-                    Home
+                    {t("pages.home")}
                   </a>
                 </li>
                 <li>
                   <a href="#about" className="hover:text-orange-500 transition">
-                    About Us
+                    {t("pages.aboutUs")}
                   </a>
                 </li>
                 <li>
@@ -202,7 +206,7 @@ const Footer: React.FC = () => {
                     href="#services"
                     className="hover:text-orange-500 transition"
                   >
-                    Services
+                    {t("pages.services")}
                   </a>
                 </li>
                 <li>
@@ -210,7 +214,7 @@ const Footer: React.FC = () => {
                     href="#contact"
                     className="hover:text-orange-500 transition"
                   >
-                    Contact Us
+                    {t("pages.contactUs")}
                   </a>
                 </li>
               </ul>
@@ -218,14 +222,16 @@ const Footer: React.FC = () => {
 
             {/* Services */}
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">Services</h4>
+              <h4 className="font-semibold text-gray-800 mb-4">
+                {t("services.title")}
+              </h4>
               <ul className="space-y-3 text-gray-600 text-sm">
                 <li>
                   <a
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    General Check-Up
+                    {t("services.generalCheckUp")}
                   </a>
                 </li>
                 <li>
@@ -233,7 +239,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    Complete Service
+                    {t("services.completeService")}
                   </a>
                 </li>
                 <li>
@@ -241,7 +247,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    Routine Cleaning
+                    {t("services.routineCleaning")}
                   </a>
                 </li>
                 <li>
@@ -249,7 +255,7 @@ const Footer: React.FC = () => {
                     href="#service"
                     className="hover:text-orange-500 transition"
                   >
-                    Long-term Contract
+                    {t("services.longTermContract")}
                   </a>
                 </li>
               </ul>
@@ -258,10 +264,12 @@ const Footer: React.FC = () => {
 
           {/* Desktop Layout - Column 3: Social Media */}
           <div className="hidden md:block md:pl-8">
-            <h4 className="font-semibold text-gray-800 mb-4">Social Media</h4>
+            <h4 className="font-semibold text-gray-800 mb-4">
+              {t("socialMedia.title")}
+            </h4>
             <div className="flex gap-5">
               <a
-                href="#instagram"
+                href="https://www.instagram.com/visionlabid/?utm_source=ig_web_button_share_sheet"
                 className="text-orange-500 hover:text-orange-600 transition"
               >
                 <svg
@@ -305,7 +313,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright - Mobile Center, Desktop Left */}
         <p className="text-gray-500 text-sm mt-8 text-center md:text-left">
-          © VisionLAB 2025
+          {t("copyright")}
         </p>
       </div>
     </footer>

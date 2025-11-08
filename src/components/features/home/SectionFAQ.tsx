@@ -6,42 +6,46 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslations } from "next-intl";
 
 const SectionFAQ = () => {
+  const t = useTranslations("faq");
+
   const faqs = [
     {
-      q: "Can VisionLab handle all brands of LED and LCD screens?",
+      q: t("questions.brands.question"),
       a: (
         <>
-          <span className="text-orange-500">Yes,</span> we can handle various
-          brands and models of screens from various manufacturers. Our team of
-          technicians is equipped with calibration tools and replacement modules
-          that are compatible with well-known brands in the Indonesian and
-          global markets.
+          <span className="text-orange-500">
+            {t("questions.brands.answerPrefix")}
+          </span>{" "}
+          {t("questions.brands.answer")}
         </>
       ),
     },
     {
-      q: "Does VisionLab provide pickup and delivery services?",
+      q: t("questions.pickupDelivery.question"),
       a: (
         <>
-          <span className="text-orange-500">Yes,</span> we provide pickup and
-          delivery services for your convenience. Please contact our team for
-          more details about service coverage.
+          <span className="text-orange-500">
+            {t("questions.pickupDelivery.answerPrefix")}
+          </span>{" "}
+          {t("questions.pickupDelivery.answer")}
         </>
       ),
     },
     {
-      q: "Where is VisionLab located and what areas does it serve?",
-      a: "VisionLab is based in Jakarta and serves more than 15 cities throughout Indonesia. We can reach your location for maintenance and repair services.",
+      q: t("questions.location.question"),
+      a: t("questions.location.answer"),
     },
     {
-      q: "Is there a warranty after repair?",
+      q: t("questions.warranty.question"),
       a: (
         <>
-          <span className="text-orange-500">Yes,</span> all our repairs come
-          with a warranty period. The warranty duration depends on the type of
-          service and components replaced.
+          <span className="text-orange-500">
+            {t("questions.warranty.answerPrefix")}
+          </span>{" "}
+          {t("questions.warranty.answer")}
         </>
       ),
     },
@@ -52,13 +56,10 @@ const SectionFAQ = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
-          FAQ
+          {t("title")}
         </h2>
         <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
-          We understand that every screen has different needs. That&apos;s why
-          VisionLab has compiled a list of frequently asked questions so you can
-          get complete clarity about our services, processes, costs, and
-          guarantees without having to ask twice.
+          {t("description")}
         </p>
 
         <Accordion

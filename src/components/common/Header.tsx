@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import LanguageSelector from "@/components/features/LanguageSelector";
-import { Menu } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Header: React.FC = () => {
+  const t = useTranslations("header");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -15,14 +17,11 @@ const Header: React.FC = () => {
     const previous = scrollY.getPrevious() ?? 0;
 
     if (latest > previous && latest > 150) {
-      // Scrolling down
       setIsVisible(false);
     } else {
-      // Scrolling up
       setIsVisible(true);
     }
 
-    // Update background blur state
     if (latest > 50) {
       setIsScrolled(true);
     } else {
@@ -30,7 +29,6 @@ const Header: React.FC = () => {
     }
   });
 
-  // Smooth scroll handler
   const handleScrollTo = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
@@ -38,7 +36,7 @@ const Header: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 100; // Offset untuk fixed header
+      const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
@@ -70,7 +68,6 @@ const Header: React.FC = () => {
                   }`}
       >
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="relative">
               <Image
@@ -88,32 +85,32 @@ const Header: React.FC = () => {
             <a
               href="#home"
               onClick={(e) => handleScrollTo(e, "home")}
-              className="px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition font-medium"
+              className="px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
             >
-              Home
+              {t("home")}
             </a>
             <a
               href="#about-us"
               onClick={(e) => handleScrollTo(e, "about-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
             >
-              About Us
+              {t("aboutUs")}
             </a>
             <a
               href="#service"
               onClick={(e) => handleScrollTo(e, "service")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
             >
-              Services
+              {t("services")}
             </a>
             <a
               href="#contact-us"
               onClick={(e) => handleScrollTo(e, "contact-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition"
             >
-              Contact Us
+              {t("contactUs")}
             </a>
-            {/* <LanguageSelector /> */}
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,43 +121,87 @@ const Header: React.FC = () => {
             <Menu className="w-6 h-6 text-white" />
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4">
-            <div className="flex flex-col gap-2">
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 transition-opacity duration-300 z-30"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed inset-y-0 left-0 w-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-40 ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-6 border-b border-gray-100">
+            <Image
+              src="/vision-lab-logo.png"
+              alt="VisionLab Logo"
+              width={150}
+              height={30}
+              className="object-contain"
+            />
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+          </div>
+
+          <nav className="flex-1 overflow-y-auto p-6">
+            <div className="space-y-2">
               <a
                 href="#home"
                 onClick={(e) => handleScrollTo(e, "home")}
-                className="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition font-medium text-center"
+                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
               >
-                Home
+                <span className="text-lg">{t("home")}</span>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
               </a>
+              <div className="my-2 border-b border-dashed border-orange-200" />
+
               <a
                 href="#about-us"
                 onClick={(e) => handleScrollTo(e, "about-us")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
+                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
               >
-                About Us
+                <span className="text-lg">{t("aboutUs")}</span>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
               </a>
+              <div className="my-2 border-b border-dashed border-orange-200" />
+
               <a
                 href="#service"
                 onClick={(e) => handleScrollTo(e, "service")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
+                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
               >
-                Services
+                <span className="text-lg">{t("services")}</span>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
               </a>
+              <div className="my-2 border-b border-dashed border-orange-200" />
+
               <a
                 href="#contact-us"
                 onClick={(e) => handleScrollTo(e, "contact-us")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
+                className="flex items-center justify-between p-4 text-gray-700 hover:bg-orange-50 rounded-xl transition-colors group"
               >
-                Contact Us
+                <span className="text-lg">{t("contactUs")}</span>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
               </a>
+
+              <div className="py-4">
+                <LanguageSelector />
+              </div>
             </div>
-          </div>
-        )}
-      </nav>
+          </nav>
+        </div>
+      </div>
     </motion.header>
   );
 };

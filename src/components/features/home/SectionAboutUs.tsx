@@ -2,15 +2,18 @@
 import Image from "next/image";
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 const SectionAboutUs = () => {
+  const t = useTranslations("aboutUs");
+
   const stats = [
     {
       icon: (
         <Image src="/icons/icon-repair.png" alt="icon" width={48} height={48} />
       ),
-      value: "2000+",
-      label: "SQM LED & LCD screens repaired",
+      value: t("stats.repaired.value"),
+      label: t("stats.repaired.label"),
     },
     {
       icon: (
@@ -21,15 +24,15 @@ const SectionAboutUs = () => {
           height={48}
         />
       ),
-      value: "95%",
-      label: "Customer satisfaction level",
+      value: t("stats.satisfaction.value"),
+      label: t("stats.satisfaction.label"),
     },
     {
       icon: (
         <Image src="/icons/icon-done.png" alt="icon" width={48} height={48} />
       ),
-      value: "150+",
-      label: "Projects Done",
+      value: t("stats.projects.value"),
+      label: t("stats.projects.label"),
     },
   ];
 
@@ -41,7 +44,7 @@ const SectionAboutUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
-          Data that Proves Our Commitment to Quality
+          {t("title")}
         </h2>
         <div className="grid grid-cols-3 gap-4 md:gap-8">
           {stats.map((stat, idx) => (

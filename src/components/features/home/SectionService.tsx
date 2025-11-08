@@ -1,11 +1,13 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { ArrowRight, MoveDown, MoveUp, Plus } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 const SectionService = () => {
+  const t = useTranslations("services");
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -13,24 +15,19 @@ const SectionService = () => {
 
   const services = [
     {
-      title: "General Check-up",
-      desc: "A thorough initial inspection to detect damage or potential issues in your LED screen before further repairs are made. The VisionLab team will perform a technical diagnosis using professional equipment to determine the most efficient and cost-effective treatment.",
-      img: "/services/service-check-up.png",
+      title: t("items.completeService.title"),
+      desc: t("items.completeService.description"),
+      img: "/services/service-complete-service.png",
     },
     {
-      title: "Completed Service",
-      desc: "Every repair is carried out to a high standard to ensure that visual performance is restored to its original maximum level.",
-      img: "/services/service-completed.png",
+      title: t("items.maintenance.title"),
+      desc: t("items.maintenance.description"),
+      img: "/services/service-maintenance.png",
     },
     {
-      title: "Routine Cleaning (Annually)",
-      desc: "Ensuring that every component works optimally through regular checks, system updates, and color calibration.",
-      img: "/services/service-routine-cleaning.png",
-    },
-    {
-      title: "Long-term Contract for Distributor",
-      desc: "Deep cleaning is performed annually to maintain display quality and extend screen life. We use safe methods and special cleaning materials to keep the screen clear, dust-free, and functioning perfectly without risk of damage.",
-      img: "/services/service-contract.png",
+      title: t("items.onSiteTraining.title"),
+      desc: t("items.onSiteTraining.description"),
+      img: "/services/service-training.png",
     },
   ];
 
@@ -86,7 +83,7 @@ const SectionService = () => {
     <section id="service" className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
       <div className="mx-auto max-w-7xl">
         <h2 className="w-full md:w-2/5 text-lg md:text-4xl text-center md:text-left mb-6 md:mb-12 text-gray-900">
-          Complete services for all repair and maintenance needs
+          {t("title")}
         </h2>
       </div>
 
@@ -162,7 +159,7 @@ const SectionService = () => {
         className="hidden md:block max-w-7xl mx-auto bg-gray-100/50 p-10 rounded-2xl"
         style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
       >
-        <div className="grid md:grid-cols-2 gap-24 mt-8">
+        <div className="grid md:grid-cols-2 mx-16 gap-24 mt-8">
           {/* Arrow Buttons and Services */}
           <div className="flex gap-4 h-full items-center">
             {/* Arrow Buttons */}
@@ -224,7 +221,8 @@ const SectionService = () => {
                               variant="ghost"
                               className="w-40 bg-orange-500 hover:bg-orange-600 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
                             >
-                              View Service <ArrowRight className="w-4 h-4" />
+                              {t("viewService")}{" "}
+                              <ArrowRight className="w-4 h-4" />
                             </Button>
                           </>
                         )}
@@ -236,7 +234,7 @@ const SectionService = () => {
             </div>
           </div>
 
-          {/* Right Column - Image Grid */}
+          {/* Image Grid */}
           <div className="grid grid-cols-2 gap-5">
             <div className="flex flex-col gap-5">
               {/* Top Left */}
@@ -271,29 +269,15 @@ const SectionService = () => {
             <div className="flex flex-col gap-5">
               {/* Top Right */}
               <Card
-                className={`relative border-none w-full h-36 rounded-lg overflow-hidden transition-all ${
-                  activeIndex !== 3 ? "grayscale opacity-40" : ""
-                }`}
-              >
-                <Image
-                  src={services[3].img}
-                  alt={services[3].title}
-                  className="object-cover w-full h-full"
-                  fill
-                />
-              </Card>
-
-              {/* Bottom Right */}
-              <Card
-                className={`relative border-none w-full h-80 rounded-lg overflow-hidden transition-all ${
+                className={`relative border-none w-full h-full rounded-lg overflow-hidden transition-all ${
                   activeIndex !== 2 ? "grayscale opacity-40" : ""
                 }`}
               >
                 <Image
                   src={services[2].img}
                   alt={services[2].title}
-                  fill
                   className="object-cover w-full h-full"
+                  fill
                 />
               </Card>
             </div>

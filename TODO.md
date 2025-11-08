@@ -1,0 +1,3 @@
+- [ ] Perbaiki link navigasi desktop di Header.tsx dengan menambahkan tag <a> yang hilang
+- [ ] Perbaiki link navigasi mobile di Header.tsx dengan menambahkan tag <a> yang hilang
+- [ ] Jalankan npm run dev untuk memeriksa apakah error sudah teratasi

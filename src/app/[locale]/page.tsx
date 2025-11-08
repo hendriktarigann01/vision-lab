@@ -10,7 +10,7 @@ import SectionPrice from "@/components/features/home/SectionPrice";
 import SectionFAQ from "@/components/features/home/SectionFAQ";
 import SectionCTA from "@/components/features/home/SectionCTA";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="min-h-screen w-full overflow-x-hidden">
       <Header />

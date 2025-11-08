@@ -1,12 +1,12 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import SectionCTA from "@/components/features/home/SectionCTA";
+import SectionAboutUs from "@/components/features/home/SectionAboutUs";
 
-export default function ContactUs() {
+export default async function AboutUs() {
   return (
     <main className="min-h-screen">
       <Header />
-      <SectionCTA />
+      <SectionAboutUs />
       <Footer />
     </main>
   );
