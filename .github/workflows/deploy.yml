@@ -39,7 +39,7 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: deploy/
-          server-dir: ./visionlab.mjsolution.co.id/
+          server-dir: ./
           exclude: |
             **/.git*
             **/.github*
