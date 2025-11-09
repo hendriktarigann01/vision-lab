@@ -1,7 +1,7 @@
 import Header from "@/components/common/Header";
-import Hero from "@/components/common/Hero";
 import Footer from "@/components/common/Footer";
 
+import Hero from "@/components/features/home/Hero";
 import SectionAboutUs from "@/components/features/home/SectionAboutUs";
 import SectionService from "@/components/features/home/SectionService";
 import SectionPartner from "@/components/features/home/SectionPartner";
