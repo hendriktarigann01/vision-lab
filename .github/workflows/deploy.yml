@@ -27,7 +27,7 @@ jobs:
       - name: Prepare deployment folder
         run: |
           mkdir deploy
-          cp -r .next package.json next.config.mjs server.js public deploy/
+          cp -r .next package.json server.js public deploy/
           echo "✅ Deployment folder prepared"
 
       - name: Deploy to Hostinger via FTP
