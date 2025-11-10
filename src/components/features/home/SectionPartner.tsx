@@ -21,7 +21,7 @@ const SectionPartner = () => {
   ];
 
   return (
-    <section className="py-10 md:py-16 px-8 md:px-6 bg-[#F5F5F5]">
+    <section className="py-16 md:py-24 px-8 md:px-6 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">

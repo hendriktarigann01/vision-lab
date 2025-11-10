@@ -9,9 +9,9 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative md:min-h-screen z-10 overflow-hidden pt-24 bg-[#FAFAFA] w-full"
+      className="relative flex items-center justify-center z-10 overflow-hidden pt-24 bg-[#FAFAFA] w-full"
     >
-      <div className="absolute -right-40 top-0 w-[150%] h-[110%] md:w-full md:h-full pointer-events-none z-0">
+      <div className="absolute -right-40 top-0 w-[150%] h-[110%] md:w-full md:h-screen pointer-events-none z-0">
         <Image
           src="/lableaks_top.webp"
           alt="Lab Leaks Top"

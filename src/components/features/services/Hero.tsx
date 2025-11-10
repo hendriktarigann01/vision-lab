@@ -1,4 +1,3 @@
-// Hero About Us
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -8,10 +7,10 @@ import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   // const t = useTranslations("hero");
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about-us");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({
+  const scrollToService = () => {
+    const serviceSection = document.getElementById("service");
+    if (serviceSection) {
+      serviceSection.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -38,23 +37,22 @@ const Hero: React.FC = () => {
           {/* Left Content */}
           <div className="space-y-4 md:space-y-6">
             <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
-              About Us
+              Services
             </p>
 
             <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-brand-200 leading-tight font-bold">
-              We Keep Every Screen Performing at Its Best
+              Complete LED & LCD Repair and Maintenance Services
             </h1>
 
             <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
-              At VisionLab, we combine precision, experience, and innovation to
-              deliver reliable LED & LCD repair and maintenance services. From
-              individual users to large-scale distributors we make sure every
-              display stays clear, bright, and long-lasting.
+              VisionLab provides repair, maintenance, and upgrade services for
+              LED & LCD screens for various needs — from initial inspections to
+              long-term contracts.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start pt-4">
               <motion.button
-                onClick={scrollToAbout}
+                onClick={scrollToService}
                 className="flex items-center justify-center h-auto md:h-14 gap-2 w-36 md:w-48 cursor-pointer md:px-8 py-3 bg-brand-200 text-white rounded-full"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -70,7 +68,7 @@ const Hero: React.FC = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-[550px] aspect-square">
               <Image
-                src="/humans/vl-human-boy-2.webp"
+                src="/humans/vl-human-boy-3.webp"
                 alt="Technician Illustration"
                 fill
                 className="object-contain"

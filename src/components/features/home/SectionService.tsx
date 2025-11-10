@@ -80,7 +80,7 @@ const SectionService = () => {
   };
 
   return (
-    <section id="service" className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
+    <section id="service" className="py-16 md:py-24 px-8 md:px-6 bg-[#FAFAFA]">
       <div className="mx-auto max-w-7xl">
         <h2 className="w-full md:w-2/5 text-lg md:text-4xl text-center md:text-left mb-6 md:mb-12 text-gray-900">
           {t("title")}

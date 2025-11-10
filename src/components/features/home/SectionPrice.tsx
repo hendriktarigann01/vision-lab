@@ -48,7 +48,7 @@ const SectionPrice = () => {
   };
 
   return (
-    <section className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA]">
+    <section className="py-16 md:py-24 px-8 md:px-6 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
           {t("title")}
@@ -175,7 +175,8 @@ const SectionPrice = () => {
             {packages[activePackage].map((item: string, idx: number) => (
               <div key={idx} className="flex items-center gap-3 w-full">
                 <div className="w-5 h-5 md:w-6 md:h-6 bg-brand-50 flex items-center justify-center rounded-full text-brand-200 shrink-0">
-                  <Check className="text-brand-200"
+                  <Check
+                    className="text-brand-200"
                     size={
                       typeof window !== "undefined" && window.innerWidth < 768
                         ? 12

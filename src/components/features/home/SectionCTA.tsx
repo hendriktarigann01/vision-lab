@@ -10,7 +10,7 @@ const SectionCTA = () => {
   return (
     <section
       id="contact-us"
-      className="bg-[#FAFAFA] py-10 md:py-16 px-8 md:px-6 flex items-center justify-center"
+      className="bg-[#FAFAFA] py-16 md:py-24 px-8 md:px-6 flex items-center justify-center"
     >
       <div
         className="relative max-w-7xl bg-[#AFAFAF33]/20 px-8 py-8 md:py-14 mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-8 rounded-4xl"

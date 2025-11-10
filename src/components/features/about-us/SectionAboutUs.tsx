@@ -45,7 +45,7 @@ const SectionAboutUs = () => {
           height={48}
         />
       ),
-      value: "99%",
+      value: "95%",
       label: "Customer satisfaction level",
     },
     {
@@ -60,7 +60,7 @@ const SectionAboutUs = () => {
   return (
     <section
       id="about-us"
-      className="py-10 md:py-16 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center"
+      className="py-16 md:py-24 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center"
     >
       <div className="max-w-7xl mx-auto">
         {/* Desktop Layout */}
