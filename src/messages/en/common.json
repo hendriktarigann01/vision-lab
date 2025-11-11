@@ -1,0 +1,100 @@
+{
+  "header": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "description": "Amid rising demand for digital displays, many screens fail from poor maintenance. VisionLab offers professional solutions to restore their clarity and performance.",
+    "address": {
+      "line1": "The Mansion Bougenville Kemayoran",
+      "line2": "Tower Fontana Zona I Lantai 50",
+      "line3": "Kemayoran Jakarta Utara"
+    },
+    "phone": "(+62) 811-1122-492",
+    "pages": {
+      "title": "Pages",
+      "home": "Home",
+      "aboutUs": "About Us",
+      "services": "Services",
+      "contactUs": "Contact Us"
+    },
+    "services": {
+      "title": "Services",
+      "generalCheckUp": "General Check-Up",
+      "completeService": "Complete Service",
+      "routineCleaning": "Routine Cleaning",
+      "longTermContract": "Long-term Contract",
+      "maintenance": "Maintenance",
+      "onSiteTraining": "On-Site Training"
+    },
+    "socialMedia": {
+      "title": "Social Media"
+    },
+    "copyright": "© VisionLAB 2025"
+  },
+  "aboutUs": {
+    "title": "Data that Proves Our Commitment to Quality",
+    "stats": {
+      "repaired": {
+        "value": "2000+",
+        "label": "SQM LED & LCD screens repaired"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Customer satisfaction level"
+      },
+      "projects": {
+        "value": "150+",
+        "label": "Projects Done"
+      }
+    }
+  },
+  "services": {
+    "title": "Complete services for all repair and maintenance needs",
+    "items": {
+      "completeService": {
+        "title": "Complete Service",
+        "description": "Comprehensive repair to restore your screen to optimal performance covering hardware checks, calibration, and system updates for long-term reliability."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Regular cleaning and maintenance to maintain appearance quality, prevent premature damage, and ensure LEDs and LCDs are always in top condition."
+      },
+      "onSiteTraining": {
+        "title": "On-Site Training",
+        "description": "Providing on-site training to help technicians, distributors, and users understand how to operate, maintain, and troubleshoot LED & LCD screens."
+      }
+    },
+    "viewService": "View Service"
+  },
+  "faq": {
+    "title": "FAQ",
+    "description": "We understand that every screen has different needs. That's why VisionLab has compiled a list of frequently asked questions so you can get complete clarity about our services, processes, costs, and guarantees without having to ask twice.",
+    "questions": {
+      "brands": {
+        "question": "Can VisionLab handle all brands of LED and LCD screens?",
+        "answer": "we can handle various brands and models of screens from various manufacturers. Our team of technicians is equipped with calibration tools and replacement modules that are compatible with well-known brands in the Indonesian and global markets.",
+        "answerPrefix": "Yes,"
+      },
+      "pickupDelivery": {
+        "question": "Does VisionLab provide pickup and delivery services?",
+        "answer": "we provide pickup and delivery services for your convenience. Please contact our team for more details about service coverage.",
+        "answerPrefix": "Yes,"
+      },
+      "location": {
+        "question": "Where is VisionLab located and what areas does it serve?",
+        "answer": "VisionLab is based in Jakarta and serves more than 15 cities throughout Indonesia. We can reach your location for maintenance and repair services."
+      },
+      "warranty": {
+        "question": "Is there a warranty after repair?",
+        "answer": "all our repairs come with a warranty period. The warranty duration depends on the type of service and components replaced.",
+        "answerPrefix": "Yes,"
+      }
+    }
+  },
+  "language": {
+    "select": "Select Language"
+  }
+}
