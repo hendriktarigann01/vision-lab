@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,8 +13,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { User, Mail, Phone, ArrowRight } from "lucide-react"
+import { User, Mail, Phone, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { Spinner } from "@/components/ui/spinner";
 
 interface ContactFormData {
   fullName: string;
@@ -24,6 +25,8 @@ interface ContactFormData {
 }
 
 const SectionContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<ContactFormData>({
     defaultValues: {
       fullName: "",
@@ -33,9 +36,36 @@ const SectionContactForm = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    // Handle form submission logic here
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbytyZwI4mbgnow1cRUAy-EWoLKIDjpq12l-l1TatB_PhqTVqny5kB9jaY9Qe9KrctpM/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fullName: data.fullName,
+            email: data.email,
+            phone: data.phone,
+            message: data.message,
+          }),
+        }
+      );
+
+      // Reset form setelah berhasil
+      form.reset();
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,7 +78,9 @@ const SectionContactForm = () => {
               <h2 className="text-xl md:text-3xl text-gray-900 mb-2 md:mb-4">
                 Let&apos;s Get In Touch
               </h2>
-              <p className="text-lg md:text-xl text-gray-600">Feel free to drop us a line below</p>
+              <p className="text-lg md:text-xl text-gray-600">
+                Feel free to drop us a line below
+              </p>
             </div>
 
             <Form {...form}>
@@ -70,6 +102,7 @@ const SectionContactForm = () => {
                             placeholder="Ex: David Casie"
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            disabled={isSubmitting}
                           />
                         </div>
                       </FormControl>
@@ -102,6 +135,7 @@ const SectionContactForm = () => {
                             placeholder="Ex: contact@gmail.com"
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            disabled={isSubmitting}
                           />
                         </div>
                       </FormControl>
@@ -128,6 +162,7 @@ const SectionContactForm = () => {
                             placeholder="Ex: 08976785"
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            disabled={isSubmitting}
                           />
                         </div>
                       </FormControl>
@@ -151,6 +186,7 @@ const SectionContactForm = () => {
                           placeholder="Tell us what we can help you"
                           {...field}
                           className="min-h-[120px] border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35] resize-none"
+                          disabled={isSubmitting}
                         />
                       </FormControl>
                       <FormMessage />
@@ -162,10 +198,20 @@ const SectionContactForm = () => {
                 <Button
                   onClick={form.handleSubmit(onSubmit)}
                   type="button"
-                  className="w-full h-12 cursor-pointer bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-medium rounded-full transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full h-12 cursor-pointer bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-medium rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  {isSubmitting ? (
+                    <>
+                      <Spinner variant="circle" size={16} className="mr-2" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </>
+                  )}
                 </Button>
               </div>
             </Form>

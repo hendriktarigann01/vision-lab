@@ -38,7 +38,7 @@ const SectionContactInfo = () => {
 
   return (
     <section
-      className="py-16 md:py-24 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center"
+      className="py-16 md:py-20 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-56">

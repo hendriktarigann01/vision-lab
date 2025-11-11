@@ -1,10 +1,21 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useTranslations } from "next-intl";
+import { MoveDown } from "lucide-react";
+import { motion } from "framer-motion";
+// import { useTranslations } from "next-intl";
 
 const Hero: React.FC = () => {
-  const t = useTranslations("hero");
+  // const t = useTranslations("hero");
+  const scrollToExplanation = () => {
+    const explanationSection = document.getElementById("section-explanation");
+    if (explanationSection) {
+      explanationSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <section
@@ -25,30 +36,30 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center w-full">
           {/* Left Content */}
           <div className="space-y-4 md:space-y-6">
+            <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
+              General Check-up
+            </p>
+
             <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-brand-200 leading-tight font-bold">
-              {t("title")}
-              <br />
-              <span>{t("titleSecond")}</span>
+              Know Your Screen’s Health
             </h1>
 
             <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
-              {t("description")}
+              Early detection of LED & LCD conditions before major damage
+              occurs.
             </p>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-              <a
-                href="https://wa.me/628111122492?text=Hello%20VisionLAB%2C%20I%27m%20interested%20in%20your%20services."
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="flex flex-wrap justify-center md:justify-start pt-4">
+              <motion.button
+                onClick={scrollToExplanation}
+                className="flex items-center justify-center h-auto md:h-14 gap-2 w-36 md:w-48 cursor-pointer md:px-8 py-3 bg-brand-200 text-white rounded-full"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <button className="w-36 md:w-48 h-auto md:h-14 cursor-pointer md:px-8 py-3 bg-brand-200 hover:bg-brand-300 text-white rounded-full">
-                  {t("bookService")}
-                </button>
-              </a>
-
-              <button className="w-36 md:w-48 h-auto md:h-14 cursor-pointer md:px-8 py-3 border-2 border-brand-200 hover:bg-brand-50/20 text-brand-200 rounded-full transition">
-                {t("exploreService")}
-              </button>
+                <span>Learn More</span>
+                <MoveDown className="w-4 h-4" />
+              </motion.button>
             </div>
           </div>
 
@@ -56,7 +67,7 @@ const Hero: React.FC = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-[550px] aspect-square">
               <Image
-                src="/vl-human-boy.webp"
+                src="/humans/vl-human-boy-4.webp"
                 alt="Technician Illustration"
                 fill
                 className="object-contain"

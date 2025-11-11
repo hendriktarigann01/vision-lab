@@ -1,13 +1,18 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, MoveDown, MoveUp, Plus } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const SectionService = () => {
   const t = useTranslations("services");
+  const params = useParams();
+  const locale = params.locale as string;
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -18,16 +23,19 @@ const SectionService = () => {
       title: t("items.completeService.title"),
       desc: t("items.completeService.description"),
       img: "/services/service-complete-service.webp",
+      slug: "complete-service",
     },
     {
       title: t("items.maintenance.title"),
       desc: t("items.maintenance.description"),
       img: "/services/service-maintenance.webp",
+      slug: "maintenance",
     },
     {
       title: t("items.onSiteTraining.title"),
       desc: t("items.onSiteTraining.description"),
       img: "/services/service-training.webp",
+      slug: "on-site-training",
     },
   ];
 
@@ -179,7 +187,7 @@ const SectionService = () => {
                 onClick={handleNext}
                 disabled={activeIndex === 2}
                 className={`w-10 h-10 rounded-full flex items-center cursor-pointer justify-center transition-colors ${
-                  activeIndex === 3
+                  activeIndex === 2
                     ? "bg-brand-50 cursor-not-allowed"
                     : "bg-brand-200 hover:bg-brand-300"
                 }`}
@@ -217,13 +225,16 @@ const SectionService = () => {
                             <p className="text-gray-600 text-sm mb-3">
                               {service.desc}
                             </p>
-                            <Button
-                              variant="ghost"
-                              className="w-40 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
-                            >
-                              {t("viewService")}{" "}
-                              <ArrowRight className="w-4 h-4" />
-                            </Button>
+                            {/* Button View dengan Link */}
+                            <Link href={`/${locale}/services/${service.slug}`}>
+                              <Button
+                                variant="ghost"
+                                className="w-40 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
+                              >
+                                {t("viewService")}{" "}
+                                <ArrowRight className="w-4 h-4" />
+                              </Button>
+                            </Link>
                           </>
                         )}
                       </div>

@@ -1,6 +1,7 @@
 // Hero Contact Us
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
@@ -8,6 +9,35 @@ import { ChevronRight } from "lucide-react";
 
 const Hero: React.FC = () => {
   // const t = useTranslations("hero");
+ const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+   e.preventDefault();
+
+   if (navigator.geolocation) {
+     navigator.geolocation.getCurrentPosition(
+       (position) => {
+         const { latitude, longitude } = position.coords;
+         const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=-6.2865656,107.0429841&destination_place_id=ChIJmfk0o_iPaS4R_fgNE7-v15M&travelmode=driving`;
+         window.open(mapsUrl, "_blank", "noopener,noreferrer");
+       },
+       () => {
+         // fallback if the user denies location permission
+         window.open(
+           "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
+           "_blank",
+           "noopener,noreferrer"
+         );
+       }
+     );
+   } else {
+     // fallback if the browser doesn't support geolocation
+     window.open(
+       "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
+       "_blank",
+       "noopener,noreferrer"
+     );
+   }
+ };
+
 
   return (
     <section
@@ -33,7 +63,7 @@ const Hero: React.FC = () => {
             Let&apos;s Connect with VisionLab
           </h1>
 
-          <p className="w-80 text-gray-600 text-sm md:text-sm">
+          <p className="w-80 mx-auto text-gray-600 text-sm md:text-sm">
             Our office is located in Jakarta, Indonesia. Reach out to our team
             for inquiries, collaborations, or technical assistance regarding LED
             and LCD services.
@@ -74,10 +104,16 @@ const Hero: React.FC = () => {
                   Celebration AA15/25, Grand Wisata, Bekasi, Jawa Barat
                 </p>
                 <div className="flex justify-center">
-                  <button className="bg-orange-500 hover:bg-orange-600 cursor-pointer text-white text-xs py-2 md:py-3 px-5 md:px-6 rounded-3xl flex items-center justify-center gap-2 transition-colors">
+                  <Link
+                    href="https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8"
+                    onClick={handleClick}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-orange-500 hover:bg-orange-600 cursor-pointer text-white text-xs py-3 px-6 rounded-3xl flex items-center justify-center gap-2 transition-colors"
+                  >
                     View Map
                     <ChevronRight width={16} height={16} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </CardContent>

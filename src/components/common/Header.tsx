@@ -1,10 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import LanguageSelector from "@/components/features/LanguageSelector";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import {
+  isActivePath,
+  getLocalizedHref,
+  getLinkClassName,
+} from "@/lib/navigationHelpers";
 
 const Header: React.FC = () => {
   const t = useTranslations("header");
@@ -12,6 +19,9 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const { scrollY } = useScroll();
+  const params = useParams();
+  const pathname = usePathname();
+  const locale = params.locale as string;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -28,26 +38,6 @@ const Header: React.FC = () => {
       setIsScrolled(false);
     }
   });
-
-  const handleScrollTo = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
-  ) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setIsMenuOpen(false);
-    }
-  };
 
   return (
     <motion.header
@@ -82,34 +72,46 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <a
-              href="#home"
-              onClick={(e) => handleScrollTo(e, "home")}
-              className="px-6 py-2 bg-brand-200 text-white rounded-full transition"
+            <Link
+              href={getLocalizedHref(locale, "/")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
               {t("home")}
-            </a>
-            <a
-              href="#about-us"
-              onClick={(e) => handleScrollTo(e, "about-us")}
-              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/about-us")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/about-us"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
               {t("aboutUs")}
-            </a>
-            <a
-              href="#service"
-              onClick={(e) => handleScrollTo(e, "service")}
-              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/services")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/services"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
               {t("services")}
-            </a>
-            <a
-              href="#contact-us"
-              onClick={(e) => handleScrollTo(e, "contact-us")}
-              className="px-6 py-2 text-gray-700 hover:text-brand-200 transition"
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/contact-us")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/contact-us"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
               {t("contactUs")}
-            </a>
+            </Link>
             <LanguageSelector />
           </div>
 
@@ -156,44 +158,84 @@ const Header: React.FC = () => {
 
           <nav className="flex-1 overflow-y-auto p-6">
             <div className="space-y-2">
-              <a
-                href="#home"
-                onClick={(e) => handleScrollTo(e, "home")}
-                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
+              <Link
+                href={getLocalizedHref(locale, "/")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
               >
                 <span className="text-lg">{t("home")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
-              </a>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
               <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
-              <a
-                href="#about-us"
-                onClick={(e) => handleScrollTo(e, "about-us")}
-                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
+              <Link
+                href={getLocalizedHref(locale, "/about-us")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/about-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
               >
                 <span className="text-lg">{t("aboutUs")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
-              </a>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/about-us"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
               <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
-              <a
-                href="#service"
-                onClick={(e) => handleScrollTo(e, "service")}
-                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
+              <Link
+                href={getLocalizedHref(locale, "/services")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/services"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
               >
                 <span className="text-lg">{t("services")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
-              </a>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/services"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
               <div className="my-2 border-b-2 border-dashed border-brand-50" />
 
-              <a
-                href="#contact-us"
-                onClick={(e) => handleScrollTo(e, "contact-us")}
-                className="flex items-center justify-between p-4 text-gray-700 rounded-xl transition-colors group"
+              <Link
+                href={getLocalizedHref(locale, "/contact-us")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/contact-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
               >
                 <span className="text-lg">{t("contactUs")}</span>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-200 transition-colors" />
-              </a>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/contact-us"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
 
               <div className="py-4">
                 <LanguageSelector />
