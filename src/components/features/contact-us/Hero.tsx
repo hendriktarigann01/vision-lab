@@ -1,3 +1,4 @@
+// Hero Contact-Us
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,7 +44,7 @@ const Hero: React.FC = () => {
       id="home"
       className="relative flex items-center justify-center z-10 overflow-hidden pt-24 bg-[#FAFAFA] w-full"
     >
-      <div className="absolute -right-40 top-0 w-[150%] h-[110%] md:w-full md:h-screen pointer-events-none z-0">
+      <div className="absolute -right-40 top-0 w-[150%] h-[600px] md:w-full md:h-[700px] pointer-events-none z-0">
         <Image
           src="/lableaks_top.webp"
           alt="Lab Leaks Top"
@@ -54,22 +55,22 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center px-10 md:px-6 pb-32 md:py-8 space-y-8">
+      <div className="max-w-7xl mx-auto flex flex-col items-center pb-32 md:pb-0 px-10 md:px-6 md:py-8">
         {/* Text content */}
-        <div className="space-y-4 m-0 max-w-3xl text-center">
+        <div className="space-y-5 m-0 max-w-3xl text-center">
           <p className="text-gray-600 text-sm md:text-sm">{t("label")}</p>
 
           <h1 className="text-xl md:text-2xl lg:text-3xl text-brand-200 leading-tight font-bold">
             {t("title")}
           </h1>
 
-          <p className="w-80 mx-auto text-gray-600 text-sm md:text-sm">
+          <p className="w-full max-w-3xl mx-auto text-gray-600 text-sm md:text-sm">
             {t("description")}
           </p>
         </div>
 
         {/* Image below with Card and Dot */}
-        <div className="relative w-xl h-40 md:w-5xl md:h-[400px] flex justify-center items-center">
+        <div className="relative w-full max-w-xl md:w-5xl md:max-w-7xl h-40 md:h-[450px] flex justify-center items-center">
           <Image
             src="/map-indo.webp"
             alt="Map Indonesia"
@@ -79,16 +80,16 @@ const Hero: React.FC = () => {
           />
 
           {/* Dot marker for Jakarta */}
-          <div className="absolute left-[33%] md:left-[27%] top-[66%] z-10">
+          <div className="absolute left-[27%] md:left-[27%] top-[65%] md:top-[66%] z-10">
             {/* Pulsing dot animation */}
             <div className="relative">
               <div className="absolute inset-0 bg-brand-50 rounded-full w-2 md:w-3 h-2 md:h-3 animate-ping opacity-75"></div>
-              <div className="relative bg-brand-200 rounded-full w-2 md:w-3 h-2 md:h-3 border-2 md:border-3 border-brand-100 shadow-lg"></div>
+              <div className="relative bg-brand-200 rounded-full w-2 md:w-3 h-2 md:h-3 border-2 md:border-3 border-brand-100"></div>
             </div>
           </div>
 
           {/* Card with location info */}
-          <Card className="absolute p-0 left-[18%] md:left-[16%] top-[75%] md:top-[25%] z-20 shadow-lg max-w-[180px] md:max-w-[240px]">
+          <Card className="absolute p-0 left-[5%] md:left-[16%] top-[75%] md:top-[30%] z-20 border-none shadow-none max-w-[180px] md:max-w-[240px]">
             <CardContent className="p-4 space-y-2">
               <div className="items-center space-y-3">
                 <Image

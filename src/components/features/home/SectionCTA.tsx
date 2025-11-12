@@ -27,12 +27,18 @@ const SectionCTA = () => {
             {t("description")}
           </p>
           <div className="flex justify-center md:justify-start">
-            <Button
-              size="lg"
-              className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 cursor-pointer rounded-full font-semibold"
+            <a
+              href="https://wa.me/628111122492?text=Hi VisionLAB, I would like to consult about LED/LCD screen repair or maintenance services. Please provide more information."
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("button")}
-            </Button>
+              <Button
+                size="lg"
+                className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 cursor-pointer rounded-full font-semibold"
+              >
+                {t("button")}
+              </Button>
+            </a>
           </div>
         </div>
 

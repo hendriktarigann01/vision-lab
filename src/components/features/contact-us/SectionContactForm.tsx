@@ -75,7 +75,7 @@ const SectionContactForm = () => {
       <div className="w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-0 items-stretch h-full md:p-20">
           {/* Right Side - Form - Order 1 on mobile, 2 on desktop */}
-          <Card className="p-5 md:px-12 rounded-none border-none shadow-none md:py-10 flex flex-col justify-center order-1 md:order-2">
+          <Card className="p-5 md:px-12 rounded-xl border-none shadow-none md:py-10 flex flex-col justify-center order-1 md:order-2">
             <div className="mb-6">
               <h2 className="text-xl md:text-3xl text-gray-900 mb-2 md:mb-4">
                 {t("title")}

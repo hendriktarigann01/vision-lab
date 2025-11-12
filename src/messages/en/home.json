@@ -2,7 +2,7 @@
   "home": {
   "process": {
     "title": "Maintenance Process",
-    "description": "follows a systematic process to ensure every LED & LCD screen gets the best care – from inspection to final testing, handled by professional technicians for lasting performance.",
+    "description": "follows a systematic process to ensure every LED & LCD screen gets the best care from inspection to final testing, handled by professional technicians for lasting performance.",
     "steps": {
       "stepOne": {
         "title": "Initial Inspection",
@@ -33,7 +33,7 @@
   "pricing": {
     "title": "Your Service Plan",
     "description": "Choose the maintenance plan that fits your needs. VisionLab offers flexible options for one-time repairs, monthly care, or annual service all handled by certified technicians to keep your LED & LCD screens in top condition.",
-    "price": "IDR 6.000.000",
+    "price": "IDR xxx.000",
     "perUnit": "/ Sqm / Month",
     "packages": {
       "cleaning": "Cleaning Package",

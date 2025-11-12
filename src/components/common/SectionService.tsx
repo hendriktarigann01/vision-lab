@@ -108,7 +108,7 @@ const SectionService = () => {
             <button
               key={idx}
               onClick={() => setActiveIndex(idx)}
-              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-light transition-colors ${
+              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-colors ${
                 activeIndex === idx
                   ? "bg-brand-200 text-white"
                   : "text-gray-600"
@@ -127,6 +127,16 @@ const SectionService = () => {
             </span>{" "}
             {services[activeIndex].desc}
           </p>
+
+          <Button
+            asChild
+            variant="ghost"
+            className="w-2/5 px-4 py-2 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm h-auto transition-all flex items-center gap-2"
+          >
+            <Link href={`/${locale}/services/${services[activeIndex].slug}`}>
+              {t("viewService")} <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
         </div>
 
         {/* Image with Swipe Functionality */}

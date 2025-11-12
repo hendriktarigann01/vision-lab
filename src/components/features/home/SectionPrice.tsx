@@ -117,13 +117,13 @@ const SectionPrice = () => {
           </div>
 
           {/* Package Selection Buttons Desktop */}
-          <div className="hidden md:flex bg-[#F5F5F5] w-[45%] p-3 rounded-3xl mx-auto justify-center gap-4 flex-wrap">
+          <div className="hidden md:flex bg-[#F5F5F5] w-auto p-3 rounded-3xl mx-auto justify-center gap-4 flex-wrap">
             <Button
               variant={activePackage === "cleaning" ? "secondary" : "ghost"}
               onClick={() => setActivePackage("cleaning")}
               className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "cleaning"
-                  ? "bg-brand-200 text-white hover:bg-brand-300"
+                  ? "bg-brand-200 text-white hover:bg-brand-200"
                   : "text-gray-600"
               }`}
             >
@@ -134,7 +134,7 @@ const SectionPrice = () => {
               onClick={() => setActivePackage("maintenance")}
               className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "maintenance"
-                  ? "bg-brand-200 text-white hover:bg-brand-300"
+                  ? "bg-brand-200 text-white hover:bg-brand-200"
                   : "text-gray-600"
               }`}
             >
@@ -145,7 +145,7 @@ const SectionPrice = () => {
               onClick={() => setActivePackage("complete")}
               className={`rounded-full font-normal cursor-pointer transition-all ${
                 activePackage === "complete"
-                  ? "bg-brand-200 text-white hover:bg-brand-300"
+                  ? "bg-brand-200 text-white hover:bg-brand-200"
                   : "text-gray-600"
               }`}
             >
@@ -194,12 +194,20 @@ const SectionPrice = () => {
 
           {/* CTA Button */}
           <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 rounded-full font-normal"
+            <a
+              href={`https://wa.me/628111122492?text=Hi VisionLAB, I would like to know more about your ${getPackageName(
+                activePackage
+              )}. When can we schedule a consultation?`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("getStarted")}
-            </Button>
+              <Button
+                size="lg"
+                className="bg-brand-200 hover:bg-brand-300 text-white px-8 py-3 rounded-full font-normal cursor-pointer"
+              >
+                {t("getStarted")}
+              </Button>
+            </a>
           </div>
         </Card>
       </div>
