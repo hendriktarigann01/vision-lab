@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 const SectionPartner = () => {
-  const t = useTranslations("partners");
+  const t = useTranslations("home.partners");
 
   const partners = [
     { name: "LINSN Technology", logo: "/logos/logo-linsn.png" },

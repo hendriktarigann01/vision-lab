@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 // Types
 interface ServicePoint {
@@ -94,100 +95,84 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
       </div>
 
       {/* Image */}
-      <div
-        className={`${
-          isImageLeft
-            ? "order-1 h-full"
-            : "order-2 h-full"
-        }`}
-      >
+      <div className={`${isImageLeft ? "order-1 h-full" : "order-2 h-full"}`}>
         <ServiceImage src={image} alt={imageAlt} />
       </div>
     </div>
   );
 };
 
-// Data
-const serviceSections: ServiceSectionData[] = [
-  {
-    title: "LED Module Diagnosis & Repair",
-    description:
-      "The General Check-up service begins with a thorough analysis of each LED module to identify visible and hidden damage. The main objective is to ensure that every pixel and power circuit is working stably before further repairs are carried out. The Inspection & Repair process includes:",
-    points: [
-      {
-        title: "Repairing power lines and connectors",
-        description:
-          "To ensure that the power supply to each module is working normally. Dead modules will be tested and replaced if necessary.",
-      },
-      {
-        title: "Display & Pixel Error Repair",
-        description:
-          "Display repair with color patterns to find dead pixels. Repairs are carried out by re-soldering or replacing the LED chip.",
-      },
-      {
-        title: "Signal & Data Connectivity Repair",
-        description:
-          "Signal stability and data cable repair, Modules with interference are repaired or replaced to restore stable display",
-      },
-    ],
-    image: "/services/detail/complete-service-1.webp",
-    imageAlt: "LED Module Diagnosis & Repair",
-    imagePosition: "right",
-  },
-  {
-    title: "Control System & Supporting Component Repairs",
-    description:
-      "After inspecting the module, VisionLAB proceeds to the stage of analyzing the control system and supporting electronic components that are tasked with sending and regulating image display. The process includes:",
-    points: [
-      {
-        title: "Technical Consultation & Control System Diagnosis",
-        description:
-          "VisionLAB team conducts a comprehensive system analysis ranging from video processors, sending cards, receiving cards, to control software.",
-      },
-      {
-        title: "Supply & Replacement of Supporting Components",
-        description:
-          "VisionLAB supplies and replaces important components such as power supplies, data cables, and control cards with original spare parts that have been tested to ensure stable system performance.",
-      },
-      {
-        title: "Signal & Data Connectivity Repair.",
-        description:
-          "Signal stability and data cable repair. Modules with interference are repaired or replaced to restore stable display.",
-      },
-    ],
-    image: "/services/detail/complete-service-2.webp",
-    imageAlt: "Control System & Supporting Component Repairs",
-    imagePosition: "left",
-  },
-  {
-    title: "Flexible On-Site & In-House Services",
-    description:
-      "VisionLAB understands that every project has different needs and operational schedules. Therefore, we provide two flexible service options to ensure quick repairs without disrupting your main activities.",
-    points: [
-      {
-        title: "On-Site Service",
-        description:
-          "Repairs are carried out directly at the screen installation location The process begins with Initial inspection on site, time and cost estimation, immediate repair by technicians, functional testing & handover of work results",
-      },
-      {
-        title: "In-House Service",
-        description:
-          "Handling is carried out at the VisionLAB Service Center with complete equipment for in-depth analysis. The unit was taken to the service center, where the components and power supply were checked separately, the color and cooling system were recalibrated, and performance was tested for 24 hours before being returned.",
-      },
-      {
-        title: "Signal & Data Connectivity Repair",
-        description:
-          "Signal stability and data cable repair, Modules with interference are repaired or replaced to restore stable display",
-      },
-    ],
-    image: "/services/detail/complete-service-3.webp",
-    imageAlt: "Flexible On-Site & In-House Services",
-    imagePosition: "right",
-  },
-];
-
 // Main Component
 const SectionExplanation: React.FC = () => {
+  const t = useTranslations("serviceDetails.completeService");
+
+  // Build service sections from translations
+  const serviceSections: ServiceSectionData[] = [
+    {
+      title: t("sections.0.title"),
+      description: t("sections.0.description"),
+      points: [
+        {
+          title: t("sections.0.points.0.title"),
+          description: t("sections.0.points.0.description"),
+        },
+        {
+          title: t("sections.0.points.1.title"),
+          description: t("sections.0.points.1.description"),
+        },
+        {
+          title: t("sections.0.points.2.title"),
+          description: t("sections.0.points.2.description"),
+        },
+      ],
+      image: t("sections.0.image"),
+      imageAlt: t("sections.0.imageAlt"),
+      imagePosition: t("sections.0.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.1.title"),
+      description: t("sections.1.description"),
+      points: [
+        {
+          title: t("sections.1.points.0.title"),
+          description: t("sections.1.points.0.description"),
+        },
+        {
+          title: t("sections.1.points.1.title"),
+          description: t("sections.1.points.1.description"),
+        },
+        {
+          title: t("sections.1.points.2.title"),
+          description: t("sections.1.points.2.description"),
+        },
+      ],
+      image: t("sections.1.image"),
+      imageAlt: t("sections.1.imageAlt"),
+      imagePosition: t("sections.1.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.2.title"),
+      description: t("sections.2.description"),
+      points: [
+        {
+          title: t("sections.2.points.0.title"),
+          description: t("sections.2.points.0.description"),
+        },
+        {
+          title: t("sections.2.points.1.title"),
+          description: t("sections.2.points.1.description"),
+        },
+        {
+          title: t("sections.2.points.2.title"),
+          description: t("sections.2.points.2.description"),
+        },
+      ],
+      image: t("sections.2.image"),
+      imageAlt: t("sections.2.imageAlt"),
+      imagePosition: t("sections.2.imagePosition") as "left" | "right",
+    },
+  ];
+
   return (
     <section
       id="section-explanation"

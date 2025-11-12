@@ -1,65 +1,67 @@
 {
-  "process": {
-    "title": "Proses Perawatan",
-    "description": "mengikuti proses sistematis untuk memastikan setiap layar LED & LCD mendapat perawatan terbaik – dari inspeksi hingga pengujian akhir, ditangani oleh teknisi profesional untuk performa yang tahan lama.",
-    "steps": {
-      "stepOne": {
-        "title": "Inspeksi Awal",
-        "description": "Inspeksi awal untuk menentukan kondisi umum layar dan menentukan kebutuhan perawatan."
-      },
-      "stepTwo": {
-        "title": "Pembersihan Debu & Permukaan",
-        "description": "Membersihkan bagian dalam modul dan konektor untuk menghilangkan debu dan gangguan sinyal."
-      },
-      "stepThree": {
-        "title": "Kalibrasi Warna & Kecerahan",
-        "description": "Menyesuaikan warna dan kecerahan untuk menjaga tampilan yang seimbang."
-      },
-      "stepFour": {
-        "title": "Pemeriksaan Listrik & Pendingin",
-        "description": "Memastikan bahwa sistem daya dan pendingin berfungsi dengan baik untuk mencegah panas berlebih."
-      },
-      "stepFive": {
-        "title": "Uji Performa & Laporan",
-        "description": "Melakukan pengujian fungsi menyeluruh dan memberikan laporan perawatan"
-      },
-      "stepSix": {
-        "title": "Kontrak Perawatan Berkala",
-        "description": "Program kontrak perawatan rutin (bulanan, triwulanan, dan tahunan) dengan jadwal teratur dan dukungan prioritas"
+  "home": {
+    "process": {
+      "title": "Proses Perawatan",
+      "description": "mengikuti proses sistematis untuk memastikan setiap layar LED & LCD mendapat perawatan terbaik – dari inspeksi hingga pengujian akhir, ditangani oleh teknisi profesional untuk performa yang tahan lama.",
+      "steps": {
+        "stepOne": {
+          "title": "Inspeksi Awal",
+          "description": "Inspeksi awal untuk menentukan kondisi umum layar dan menentukan kebutuhan perawatan."
+        },
+        "stepTwo": {
+          "title": "Pembersihan Debu & Permukaan",
+          "description": "Membersihkan bagian dalam modul dan konektor untuk menghilangkan debu dan gangguan sinyal."
+        },
+        "stepThree": {
+          "title": "Kalibrasi Warna & Kecerahan",
+          "description": "Menyesuaikan warna dan kecerahan untuk menjaga tampilan yang seimbang."
+        },
+        "stepFour": {
+          "title": "Pemeriksaan Listrik & Pendingin",
+          "description": "Memastikan bahwa sistem daya dan pendingin berfungsi dengan baik untuk mencegah panas berlebih."
+        },
+        "stepFive": {
+          "title": "Uji Performa & Laporan",
+          "description": "Melakukan pengujian fungsi menyeluruh dan memberikan laporan perawatan"
+        },
+        "stepSix": {
+          "title": "Kontrak Perawatan Berkala",
+          "description": "Program kontrak perawatan rutin (bulanan, triwulanan, dan tahunan) dengan jadwal teratur dan dukungan prioritas"
+        }
       }
+    },
+    "pricing": {
+      "title": "Paket Layanan Anda",
+      "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLab menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
+      "price": "IDR 6.000.000",
+      "perUnit": "/ Sqm / Bulan",
+      "packages": {
+        "cleaning": "Paket Pembersihan",
+        "maintenance": "Paket Perawatan",
+        "complete": "Paket Lengkap"
+      },
+      "features": {
+        "moduleCleaning": "Pembersihan Modul",
+        "frameCleaning": "Pembersihan Bingkai",
+        "internalCleaning": "Pembersihan Internal",
+        "generalCleaning": "Pembersihan Umum",
+        "moduleCheckup": "Pemeriksaan & Perawatan Modul",
+        "powerSupplyCheckup": "Pemeriksaan & Perawatan Power Supply",
+        "rcCheckup": "Pemeriksaan & Perawatan RC",
+        "processorCheckup": "Pemeriksaan & Perawatan Prosesor",
+        "cablingCheckup": "Pemeriksaan & Perawatan Kabel"
+      },
+      "getStarted": "Mulai Sekarang"
+    },
+    "partners": {
+      "title": "Mitra Kami",
+      "description": "VisionLab memiliki pengalaman menangani berbagai merek LED dan LCD terkenal dengan layanan perbaikan yang presisi, aman, dan sesuai dengan standar pabrikan."
+    },
+    "cta": {
+      "title": "Butuh Perbaikan Layar",
+      "titleSecond": "atau Bantuan Perawatan?",
+      "description": "Diskusikan kebutuhan Anda dengan tim VisionLab. Kami siap membantu Anda menemukan solusi terbaik untuk perbaikan, perawatan, atau peningkatan performa layar LED & LCD Anda.",
+      "button": "Konsultasi Sekarang"
     }
-  },
-  "pricing": {
-    "title": "Paket Layanan Anda",
-    "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLab menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
-    "price": "IDR 6.000.000",
-    "perUnit": "/ Sqm / Bulan",
-    "packages": {
-      "cleaning": "Paket Pembersihan",
-      "maintenance": "Paket Perawatan",
-      "complete": "Paket Lengkap"
-    },
-    "features": {
-      "moduleCleaning": "Pembersihan Modul",
-      "frameCleaning": "Pembersihan Bingkai",
-      "internalCleaning": "Pembersihan Internal",
-      "generalCleaning": "Pembersihan Umum",
-      "moduleCheckup": "Pemeriksaan & Perawatan Modul",
-      "powerSupplyCheckup": "Pemeriksaan & Perawatan Power Supply",
-      "rcCheckup": "Pemeriksaan & Perawatan RC",
-      "processorCheckup": "Pemeriksaan & Perawatan Prosesor",
-      "cablingCheckup": "Pemeriksaan & Perawatan Kabel"
-    },
-    "getStarted": "Mulai Sekarang"
-  },
-  "partners": {
-    "title": "Mitra Kami",
-    "description": "VisionLab memiliki pengalaman menangani berbagai merek LED dan LCD terkenal dengan layanan perbaikan yang presisi, aman, dan sesuai dengan standar pabrikan."
-  },
-  "cta": {
-    "title": "Butuh Perbaikan Layar",
-    "titleSecond": "atau Bantuan Perawatan?",
-    "description": "Diskusikan kebutuhan Anda dengan tim VisionLab. Kami siap membantu Anda menemukan solusi terbaik untuk perbaikan, perawatan, atau peningkatan performa layar LED & LCD Anda.",
-    "button": "Konsultasi Sekarang"
   }
 }

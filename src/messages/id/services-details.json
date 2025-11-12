@@ -1,0 +1,213 @@
+{
+  "serviceDetails": {
+    "completeService": {
+      "sections": [
+        {
+          "title": "Diagnosis & Perbaikan Modul LED",
+          "description": "Layanan Pemeriksaan Umum dimulai dengan analisis menyeluruh pada setiap modul LED untuk mengidentifikasi kerusakan yang terlihat dan tersembunyi. Tujuan utamanya adalah memastikan setiap piksel dan sirkuit daya berfungsi stabil sebelum perbaikan lebih lanjut dilakukan. Proses Inspeksi & Perbaikan meliputi:",
+          "points": [
+            {
+              "title": "Perbaikan jalur daya dan konektor",
+              "description": "Untuk memastikan pasokan daya ke setiap modul berfungsi normal. Modul mati akan diuji dan diganti jika diperlukan."
+            },
+            {
+              "title": "Perbaikan Tampilan & Kesalahan Piksel",
+              "description": "Perbaikan tampilan dengan pola warna untuk menemukan piksel mati. Perbaikan dilakukan dengan menyolder ulang atau mengganti chip LED."
+            },
+            {
+              "title": "Perbaikan Sinyal & Konektivitas Data",
+              "description": "Perbaikan stabilitas sinyal dan kabel data, Modul dengan gangguan diperbaiki atau diganti untuk mengembalikan tampilan yang stabil"
+            }
+          ],
+          "image": "/services/detail/complete-service-1.webp",
+          "imageAlt": "Diagnosis & Perbaikan Modul LED",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Perbaikan Sistem Kontrol & Komponen Pendukung",
+          "description": "Setelah memeriksa modul, VisionLAB melanjutkan ke tahap analisis sistem kontrol dan komponen elektronik pendukung yang bertugas mengirim dan mengatur tampilan gambar. Prosesnya meliputi:",
+          "points": [
+            {
+              "title": "Konsultasi Teknis & Diagnosis Sistem Kontrol",
+              "description": "Tim VisionLAB melakukan analisis sistem komprehensif mulai dari prosesor video, kartu pengirim, kartu penerima, hingga perangkat lunak kontrol."
+            },
+            {
+              "title": "Pasokan & Penggantian Komponen Pendukung",
+              "description": "VisionLAB memasok dan mengganti komponen penting seperti catu daya, kabel data, dan kartu kontrol dengan suku cadang asli yang telah diuji untuk memastikan kinerja sistem yang stabil."
+            },
+            {
+              "title": "Perbaikan Sinyal & Konektivitas Data",
+              "description": "Perbaikan stabilitas sinyal dan kabel data. Modul dengan gangguan diperbaiki atau diganti untuk mengembalikan tampilan yang stabil."
+            }
+          ],
+          "image": "/services/detail/complete-service-2.webp",
+          "imageAlt": "Perbaikan Sistem Kontrol & Komponen Pendukung",
+          "imagePosition": "left"
+        },
+        {
+          "title": "Layanan On-Site & In-House yang Fleksibel",
+          "description": "VisionLAB memahami bahwa setiap proyek memiliki kebutuhan dan jadwal operasional yang berbeda. Oleh karena itu, kami menyediakan dua pilihan layanan fleksibel untuk memastikan perbaikan cepat tanpa mengganggu aktivitas utama Anda.",
+          "points": [
+            {
+              "title": "Layanan On-Site",
+              "description": "Perbaikan dilakukan langsung di lokasi pemasangan layar. Prosesnya dimulai dengan Inspeksi awal di lokasi, estimasi waktu dan biaya, perbaikan segera oleh teknisi, pengujian fungsional & penyerahan hasil kerja"
+            },
+            {
+              "title": "Layanan In-House",
+              "description": "Penanganan dilakukan di Pusat Layanan VisionLAB dengan peralatan lengkap untuk analisis mendalam. Unit dibawa ke pusat layanan, di mana komponen dan catu daya diperiksa secara terpisah, sistem warna dan pendingin dikalibrasi ulang, dan kinerja diuji selama 24 jam sebelum dikembalikan."
+            },
+            {
+              "title": "Perbaikan Sinyal & Konektivitas Data",
+              "description": "Perbaikan stabilitas sinyal dan kabel data, Modul dengan gangguan diperbaiki atau diganti untuk mengembalikan tampilan yang stabil"
+            }
+          ],
+          "image": "/services/detail/complete-service-3.webp",
+          "imageAlt": "Layanan On-Site & In-House yang Fleksibel",
+          "imagePosition": "right"
+        }
+      ]
+    },
+    "maintenance": {
+      "sections": [
+        {
+          "title": "Pembersihan (Indoor/Outdoor)",
+          "description": "VisionLAB memastikan setiap tampilan LED tetap bersih, cerah, dan berfungsi dengan sempurna melalui proses perawatan rutin yang menyeluruh. Dari permukaan hingga sistem pendingin. Proses ini meliputi:",
+          "points": [
+            {
+              "title": "Pembersihan Permukaan Layar",
+              "description": "Menggunakan kain mikrofiber dan cairan pembersih non-korosif untuk menjaga kejernihan dan mencegah kerusakan pada modul LED."
+            },
+            {
+              "title": "Perawatan Modul & Frame Internal",
+              "description": "Menghilangkan debu dan kotoran yang menumpuk di antara panel dan struktur frame untuk menjaga sistem tetap stabil dan efisien."
+            },
+            {
+              "title": "Dokumentasi Kondisi Awal & Area Pembersihan",
+              "description": "Setiap temuan dicatat dalam laporan awal disertai foto layar sebelum dan sesudah pembersihan sebagai bukti hasil perawatan yang transparan dan terukur."
+            }
+          ],
+          "image": "/services/detail/maintenance-1.webp",
+          "imageAlt": "Pembersihan (Indoor/Outdoor)",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Kalibrasi Warna & Kecerahan",
+          "description": "VisionLAB mengembalikan akurasi warna dan kecerahan pada tampilan LED melalui proses kalibrasi yang komprehensif. Dari analisis awal hingga validasi akhir, setiap langkah memastikan tampilan LED Anda konsisten, cerah, dan memenuhi standar visual profesional.",
+          "points": [
+            {
+              "title": "Analisis kondisi awal layar",
+              "description": "Identifikasi ketidakseimbangan visual seperti warna pudar, area terlalu terang, atau perbedaan kecerahan antar panel."
+            },
+            {
+              "title": "Penyesuaian Warna & Kecerahan Antar Panel",
+              "description": "Mencocokkan reproduksi warna dan luminansi di seluruh area tampilan untuk hasil visual yang seragam dan alami."
+            },
+            {
+              "title": "Validasi Akurasi & Konsistensi Tampilan",
+              "description": "Melakukan pemeriksaan akhir untuk memastikan tingkat kecerahan dan warna tetap stabil di berbagai jenis konten"
+            }
+          ],
+          "image": "/services/detail/maintenance-2.webp",
+          "imageAlt": "Kalibrasi Warna & Kecerahan",
+          "imagePosition": "left"
+        },
+        {
+          "title": "Pemeriksaan Sistem Listrik & Pendingin",
+          "description": "Pemeriksaan sistem listrik, catu daya, dan pendingin dilakukan untuk memastikan arus stabil dan suhu optimal guna mencegah panas berlebih, gangguan daya, atau kegagalan prematur.",
+          "points": [
+            {
+              "title": "Pemeriksaan Catu Daya",
+              "description": "Memastikan setiap modul LED menerima daya stabil sesuai spesifikasi untuk mencegah gangguan daya dan kegagalan prematur."
+            },
+            {
+              "title": "Sirkulasi Udara yang Dioptimalkan",
+              "description": "Memastikan udara mengalir lancar di seluruh kabinet LED untuk distribusi panas yang merata."
+            },
+            {
+              "title": "Verifikasi Sistem Pendingin Aktif",
+              "description": "Memastikan kipas dan sistem pendingin berfungsi dengan baik untuk mencegah panas berlebih dan menjaga umur komponen."
+            }
+          ],
+          "image": "/services/detail/maintenance-3.webp",
+          "imageAlt": "Pemeriksaan Sistem Listrik & Pendingin",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Update Prosesor & Firmware",
+          "description": "Pembaruan sistem memastikan tampilan LED & LCD berjalan lancar, tetap responsif, dan tetap kompatibel dengan konfigurasi terbaru meningkatkan kualitas gambar dan mencegah masalah sinkronisasi.",
+          "points": [
+            {
+              "title": "Pembaruan Firmware & Perangkat Lunak Sistem",
+              "description": "Melakukan pembaruan firmware pada prosesor LED, kartu penerima, dan kartu pengirim untuk menjaga kompatibilitas, kinerja tampilan, dan stabilitas sistem jangka panjang."
+            },
+            {
+              "title": "Kalibrasi Pemetaan & Konfigurasi Tampilan",
+              "description": "Menyesuaikan ulang tata letak panel, refresh rate, sinkronisator, dan parameter warna untuk memastikan tampilan seragam, tanpa kedip, dan tanpa pergeseran gambar."
+            },
+            {
+              "title": "Sinkronisasi Perangkat & Pengujian Stabilitas",
+              "description": "Melakukan pengujian kinerja setelah pembaruan untuk memastikan semua modul LED, prosesor, dan pemutar media berjalan lancar tanpa gangguan sinyal atau keterlambatan."
+            }
+          ],
+          "image": "/services/detail/maintenance-4.webp",
+          "imageAlt": "Update Prosesor & Firmware",
+          "imagePosition": "left"
+        }
+      ]
+    },
+    "onSiteTraining": {
+      "sections": [
+        {
+          "title": "Pelatihan Operasional LED",
+          "description": "Pelatihan ini bertujuan membekali peserta dengan keterampilan untuk mengoperasikan sistem LED Display dengan benar dan efisien, baik untuk penggunaan sehari-hari maupun kebutuhan acara.",
+          "points": [
+            {
+              "title": "Pengenalan Sistem Kontrol LED",
+              "description": "Struktur perangkat (prosesor, kartu pengirim & penerima, pemutar media, perangkat lunak kontrol)."
+            },
+            {
+              "title": "Pengaturan Tampilan & Konten",
+              "description": "Cara mengubah tata letak, mengatur resolusi, dan memutar konten dalam format yang sesuai."
+            },
+            {
+              "title": "Manajemen Mode Operasional",
+              "description": "Menyesuaikan kecerahan, mode siang/malam, dan pengaturan respons layar."
+            },
+            {
+              "title": "Pemecahan Masalah Dasar",
+              "description": "Langkah awal ketika layar tidak menampilkan, berkedip, atau tidak sinkron."
+            }
+          ],
+          "image": "/services/detail/on-site-training-1.webp",
+          "imageAlt": "Pelatihan Operasional LED",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Pelatihan Perawatan LED",
+          "description": "Pelatihan ini berfokus pada perawatan rutin dan pencegahan kerusakan untuk memperpanjang umur layar dan menjaga kualitas visual yang optimal.",
+          "points": [
+            {
+              "title": "Pemeriksaan Rutin & Inspeksi Kondisi Layar",
+              "description": "Cara mendeteksi debu, kesalahan piksel, kelembaban, dan tanda-tanda awal kerusakan."
+            },
+            {
+              "title": "Teknik Pembersihan yang Aman",
+              "description": "Pelajari metode yang tepat dan alat yang direkomendasikan untuk membersihkan layar LED dan LCD tanpa menyebabkan goresan, noda, atau kerusakan internal."
+            },
+            {
+              "title": "Perawatan Sistem Pendingin & Catu Daya",
+              "description": "Cara memastikan ventilasi yang tepat dan menjaga tegangan daya yang stabil untuk mencegah panas berlebih dan kegagalan komponen."
+            },
+            {
+              "title": "Pemecahan Masalah Kecil",
+              "description": "Menangani kesalahan umum dan menerapkan solusi cepat dan mandiri untuk mengembalikan fungsi sebelum layanan profesional diperlukan."
+            }
+          ],
+          "image": "/services/detail/on-site-training-2.webp",
+          "imageAlt": "Pelatihan Perawatan LED",
+          "imagePosition": "left"
+        }
+      ]
+    }
+  }
+}

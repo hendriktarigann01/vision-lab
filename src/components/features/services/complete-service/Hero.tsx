@@ -3,10 +3,11 @@ import Image from "next/image";
 import React from "react";
 import { MoveDown } from "lucide-react";
 import { motion } from "framer-motion";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const Hero: React.FC = () => {
-  // const t = useTranslations("hero");
+  const t = useTranslations("heroes.completeService");
+
   const scrollToExplanation = () => {
     const explanationSection = document.getElementById("section-explanation");
     if (explanationSection) {
@@ -31,22 +32,22 @@ const Hero: React.FC = () => {
           priority
         />
       </div>
+
       {/* Content */}
       <div className="max-w-7xl mx-auto w-full px-10 md:px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center w-full">
           {/* Left Content */}
           <div className="space-y-4 md:space-y-6">
             <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
-              General Check-up
+              {t("label")}
             </p>
 
             <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-brand-200 leading-tight font-bold">
-              Know Your Screen’s Health
+              {t("title")}
             </h1>
 
             <p className="text-gray-600 text-center md:text-left text-base md:text-lg">
-              Early detection of LED & LCD conditions before major damage
-              occurs.
+              {t("description")}
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start pt-4">
@@ -57,7 +58,7 @@ const Hero: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <span>Learn More</span>
+                <span>{t("button")}</span>
                 <MoveDown className="w-4 h-4" />
               </motion.button>
             </div>

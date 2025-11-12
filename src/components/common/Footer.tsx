@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { getLocalizedHref } from "@/lib/navigationHelpers";
 
@@ -11,7 +11,6 @@ const Footer: React.FC = () => {
   const params = useParams();
   const locale = params.locale as string;
 
-  // Navigation links configuration
   const pageLinks = [
     { href: "/", label: t("pages.home") },
     { href: "/about-us", label: t("pages.aboutUs") },
@@ -26,21 +25,6 @@ const Footer: React.FC = () => {
     },
     { href: "/services/maintenance", label: t("services.maintenance") },
     { href: "/services/on-site-training", label: t("services.onSiteTraining") },
-  ];
-
-  const desktopServiceLinks = [
-    {
-      href: "/services/complete-service",
-      label: t("services.completeService"),
-    },
-    {
-      href: "/services/maintenance",
-      label: t("services.maintenance"),
-    },
-    {
-      href: "/services/on-site-training",
-      label: t("services.onSiteTraining"),
-    },
   ];
 
   const socialLinks = [
@@ -72,7 +56,6 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#FAFAFA] py-8 md:py-12 px-6 relative">
-      {/* Decorative */}
       <div className="absolute right-0 bottom-0 w-[110%] h-[110%] pointer-events-none z-0">
         <Image
           src="/lableaks_bottom.webp"
@@ -82,7 +65,6 @@ const Footer: React.FC = () => {
         />
       </div>
 
-      {/* Content */}
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Column 1: Company Info */}
@@ -102,7 +84,6 @@ const Footer: React.FC = () => {
                 {t("description")}
               </p>
 
-              {/* Address */}
               <div className="flex gap-3 mb-4">
                 <div className="text-brand-200 mt-1 shrink-0">
                   <Image
@@ -119,7 +100,6 @@ const Footer: React.FC = () => {
                 </div>
               </div>
 
-              {/* Phone */}
               <div className="flex gap-3 items-center mb-0 md:mb-10">
                 <div className="text-brand-200 shrink-0">
                   <Image
@@ -134,9 +114,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2 & 3: Mobile Layout */}
+          {/* Mobile Layout */}
           <div className="md:hidden grid grid-cols-3 gap-6">
-            {/* Pages */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-6 text-sm">
                 {t("pages.title")}
@@ -155,7 +134,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Services */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-6 text-sm">
                 {t("services.title")}
@@ -174,7 +152,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Social Media */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-6 text-sm">
                 {t("socialMedia.title")}
@@ -200,9 +177,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Desktop Layout - Column 2: Pages & Services */}
+          {/* Desktop Layout */}
           <div className="hidden md:flex gap-12 justify-center">
-            {/* Pages */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-4">
                 {t("pages.title")}
@@ -221,13 +197,12 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Services */}
             <div>
               <h4 className="font-semibold text-gray-800 mb-4">
                 {t("services.title")}
               </h4>
               <ul className="space-y-5 text-gray-600 text-sm">
-                {desktopServiceLinks.map((link) => (
+                {serviceLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={getLocalizedHref(locale, link.href)}
@@ -241,7 +216,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Desktop Layout - Column 3: Social Media */}
           <div className="hidden md:block md:pl-8">
             <h4 className="font-semibold text-gray-800 mb-4">
               {t("socialMedia.title")}
@@ -269,7 +243,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <p className="text-gray-500 text-sm mt-8 text-center md:text-left">
           {t("copyright")}
         </p>

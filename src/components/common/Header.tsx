@@ -23,7 +23,6 @@ const Header: React.FC = () => {
   const pathname = usePathname();
   const locale = params.locale as string;
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";

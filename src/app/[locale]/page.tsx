@@ -1,13 +1,13 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import SectionFAQ from "@/components/common/SectionFAQ";
+import SectionService from "@/components/common/SectionService";
 
 import Hero from "@/components/features/home/Hero";
 import SectionAboutUs from "@/components/features/home/SectionAboutUs";
-import SectionService from "@/components/features/home/SectionService";
 import SectionPartner from "@/components/features/home/SectionPartner";
 import SectionProcess from "@/components/features/home/SectionProcess";
 import SectionPrice from "@/components/features/home/SectionPrice";
-import SectionFAQ from "@/components/features/home/SectionFAQ";
 import SectionCTA from "@/components/features/home/SectionCTA";
 
 export default async function Home() {

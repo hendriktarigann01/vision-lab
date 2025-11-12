@@ -34,23 +34,6 @@
     },
     "copyright": "© VisionLAB 2025"
   },
-  "aboutUs": {
-    "title": "Data yang Membuktikan Komitmen Kami terhadap Kualitas",
-    "stats": {
-      "repaired": {
-        "value": "2000+",
-        "label": "SQM layar LED & LCD yang diperbaiki"
-      },
-      "satisfaction": {
-        "value": "95%",
-        "label": "Tingkat kepuasan pelanggan"
-      },
-      "projects": {
-        "value": "150+",
-        "label": "Proyek Selesai"
-      }
-    }
-  },
   "services": {
     "title": "Layanan lengkap untuk semua kebutuhan perbaikan dan perawatan",
     "items": {

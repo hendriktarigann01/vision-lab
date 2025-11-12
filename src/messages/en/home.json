@@ -1,4 +1,5 @@
 {
+  "home": {
   "process": {
     "title": "Maintenance Process",
     "description": "follows a systematic process to ensure every LED & LCD screen gets the best care – from inspection to final testing, handled by professional technicians for lasting performance.",
@@ -62,4 +63,5 @@
     "description": "Discuss your needs with the VisionLab team. We are ready to help you find the best solution for repair, maintenance, or performance enhancement of your LED & LCD screens.",
     "button": "Consult Now"
   }
+}
 }

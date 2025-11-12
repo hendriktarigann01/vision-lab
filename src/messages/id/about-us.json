@@ -1,0 +1,30 @@
+{
+  "aboutUs": {
+    "title": "Tentang VisionLAB",
+    "description": "VisionLAB adalah pusat layanan multimedia di bawah MJ Solution Indonesia yang berfokus pada perbaikan, perawatan, dan servis layar LED & LCD. Dengan fokus pada kualitas layanan dan kepuasan pelanggan, VisionLAB bertujuan menjadi pemimpin di pasar perbaikan layar di Indonesia. Dengan tim teknisi ahli dan sistem layanan modern, VisionLAB berkomitmen memberikan layanan yang cepat, efisien, dan transparan di seluruh Indonesia.",
+    "visionMission": {
+      "vision": {
+        "title": "Visi",
+        "description": "Menjadi pusat layanan profesional dan terpercaya yang berfokus pada perbaikan, perawatan, dan pengembangan solusi layar multimedia di Indonesia."
+      },
+      "mission": {
+        "title": "Misi",
+        "description": "Memberikan Layanan Berkualitas Tinggi, Meningkatkan Kesadaran dan Keberlanjutan, Mengembangkan Inovasi dan Kemitraan Strategis"
+      }
+    },
+    "stats": {
+      "repaired": {
+        "value": "1200+",
+        "label": "Layar LED & LCD yang diperbaiki"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Tingkat kepuasan pelanggan"
+      },
+      "projects": {
+        "value": "150+",
+        "label": "Proyek Selesai"
+      }
+    }
+  }
+}

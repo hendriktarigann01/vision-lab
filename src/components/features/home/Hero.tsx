@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 const Hero: React.FC = () => {
-  const t = useTranslations("hero");
+  const t = useTranslations("heroes.home");
 
   return (
     <section
@@ -20,6 +20,7 @@ const Hero: React.FC = () => {
           priority
         />
       </div>
+
       {/* Content */}
       <div className="max-w-7xl mx-auto w-full px-10 md:px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center w-full">

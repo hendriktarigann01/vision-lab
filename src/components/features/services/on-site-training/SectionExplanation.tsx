@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 // Types
 interface ServicePoint {
@@ -101,72 +102,64 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
   );
 };
 
-// Data
-const serviceSections: ServiceSectionData[] = [
-  {
-    title: "LED Operation Training",
-    description:
-      "This training aims to equip participants with the skills to operate LED Display systems correctly and efficiently, both for daily use and event needs.",
-    points: [
-      {
-        title: "Introduction to LED Control Systems",
-        description:
-          "Device structure (processor, sending & receiving card, media player, control software).",
-      },
-      {
-        title: "Display & Content Settings",
-        description:
-          "How to change the layout, set the resolution, and play content in the appropriate format.",
-      },
-      {
-        title: "Operational Mode Management",
-        description:
-          "Adjusting brightness, day/night mode, and screen response settings.",
-      },
-      {
-        title: "Basic Troubleshooting",
-        description:
-          "Initial steps when the screen does not display, flickers, or is out of sync.",
-      },
-    ],
-    image: "/services/detail/on-site-training-1.webp",
-    imageAlt: "LED Operation Training",
-    imagePosition: "right",
-  },
-  {
-    title: "LED Maintenance Training",
-    description:
-      "This training focuses on routine maintenance and damage prevention to extend the screen's lifespan and maintain optimal visual quality.",
-    points: [
-      {
-        title: "Routine Checks & Screen Condition Inspections",
-        description:
-          "How to detect dust, pixel errors, moisture, and early signs of damage.",
-      },
-      {
-        title: "Safe Cleaning Techniques",
-        description:
-          "Learn proper methods and recommended tools for cleaning LED and LCD screens without causing scratches, stains, or internal damage.",
-      },
-      {
-        title: "Cooling System & Power Supply Maintenance",
-        description:
-          "How to ensure proper ventilation and maintain stable power voltage to prevent overheating and component failure.",
-      },
-      {
-        title: "Minor Troubleshooting",
-        description:
-          "Handling common errors and applying quick, independent solutions to restore functionality before professional service is needed.",
-      },
-    ],
-    image: "/services/detail/on-site-training-2.webp",
-    imageAlt: "LED Maintenance Training",
-    imagePosition: "left",
-  },
-];
-
 // Main Component
 const SectionExplanation: React.FC = () => {
+  const t = useTranslations("serviceDetails.onSiteTraining");
+
+  // Build service sections from translations
+  const serviceSections: ServiceSectionData[] = [
+    {
+      title: t("sections.0.title"),
+      description: t("sections.0.description"),
+      points: [
+        {
+          title: t("sections.0.points.0.title"),
+          description: t("sections.0.points.0.description"),
+        },
+        {
+          title: t("sections.0.points.1.title"),
+          description: t("sections.0.points.1.description"),
+        },
+        {
+          title: t("sections.0.points.2.title"),
+          description: t("sections.0.points.2.description"),
+        },
+        {
+          title: t("sections.0.points.3.title"),
+          description: t("sections.0.points.3.description"),
+        },
+      ],
+      image: t("sections.0.image"),
+      imageAlt: t("sections.0.imageAlt"),
+      imagePosition: t("sections.0.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.1.title"),
+      description: t("sections.1.description"),
+      points: [
+        {
+          title: t("sections.1.points.0.title"),
+          description: t("sections.1.points.0.description"),
+        },
+        {
+          title: t("sections.1.points.1.title"),
+          description: t("sections.1.points.1.description"),
+        },
+        {
+          title: t("sections.1.points.2.title"),
+          description: t("sections.1.points.2.description"),
+        },
+        {
+          title: t("sections.1.points.3.title"),
+          description: t("sections.1.points.3.description"),
+        },
+      ],
+      image: t("sections.1.image"),
+      imageAlt: t("sections.1.imageAlt"),
+      imagePosition: t("sections.1.imagePosition") as "left" | "right",
+    },
+  ];
+
   return (
     <section
       id="section-explanation"

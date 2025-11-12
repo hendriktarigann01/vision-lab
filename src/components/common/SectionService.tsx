@@ -10,13 +10,12 @@ import { useParams } from "next/navigation";
 
 const SectionService = () => {
   const t = useTranslations("services");
-  const params = useParams();
-  const locale = params.locale as string;
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const imageRef = useRef<HTMLDivElement>(null);
+  const params = useParams();
+  const locale = params.locale as string;
 
   const services = [
     {
@@ -187,7 +186,7 @@ const SectionService = () => {
                 onClick={handleNext}
                 disabled={activeIndex === 2}
                 className={`w-10 h-10 rounded-full flex items-center cursor-pointer justify-center transition-colors ${
-                  activeIndex === 2
+                  activeIndex === 3
                     ? "bg-brand-50 cursor-not-allowed"
                     : "bg-brand-200 hover:bg-brand-300"
                 }`}
@@ -225,7 +224,6 @@ const SectionService = () => {
                             <p className="text-gray-600 text-sm mb-3">
                               {service.desc}
                             </p>
-                            {/* Button View dengan Link */}
                             <Link href={`/${locale}/services/${service.slug}`}>
                               <Button
                                 variant="ghost"

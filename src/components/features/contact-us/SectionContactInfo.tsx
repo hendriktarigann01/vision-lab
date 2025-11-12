@@ -2,18 +2,18 @@
 import Image from "next/image";
 import React from "react";
 import { Card } from "@/components/ui/card";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const SectionContactInfo = () => {
-  //   const t = useTranslations("aboutUs");
+  const t = useTranslations("contact.info");
 
   const stats = [
     {
       icon: (
         <Image src="/icons/icon-phone.png" alt="icon" width={48} height={48} />
       ),
-      value: "Phone",
-      label: "(+62) 811-1122-492",
+      value: t("phone.title"),
+      label: t("phone.value"),
     },
     {
       icon: (
@@ -24,22 +24,20 @@ const SectionContactInfo = () => {
           height={48}
         />
       ),
-      value: "Headquarter",
-      label: "The Mansion Bougenville Tower Fontana Lantai 50 Jakarta Utara",
+      value: t("headquarter.title"),
+      label: t("headquarter.value"),
     },
     {
       icon: (
         <Image src="/icons/icon-mail.png" alt="icon" width={48} height={48} />
       ),
-      value: "Email",
-      label: "sales@mjsolution.co.id",
+      value: t("email.title"),
+      label: t("email.value"),
     },
   ];
 
   return (
-    <section
-      className="py-16 md:py-20 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center"
-    >
+    <section className="py-16 md:py-20 px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-56">
           {stats.map((stat, idx) => (

@@ -1,0 +1,49 @@
+{
+  "contact": {
+    "form": {
+      "title": "Mari Terhubung",
+      "subtitle": "Silakan tinggalkan pesan Anda di bawah ini",
+      "fields": {
+        "fullName": {
+          "label": "Nama Lengkap",
+          "placeholder": "Contoh: David Casie",
+          "required": "Nama lengkap wajib diisi"
+        },
+        "email": {
+          "label": "Alamat Email",
+          "placeholder": "Contoh: contact@gmail.com",
+          "required": "Email wajib diisi",
+          "invalid": "Alamat email tidak valid"
+        },
+        "phone": {
+          "label": "Nomor Telepon",
+          "placeholder": "Contoh: 08976785",
+          "required": "Nomor telepon wajib diisi"
+        },
+        "message": {
+          "label": "Pesan",
+          "placeholder": "Beritahu kami apa yang bisa kami bantu",
+          "required": "Pesan wajib diisi"
+        }
+      },
+      "submitButton": "Kirim Pesan",
+      "submitting": "Mengirim...",
+      "successMessage": "Pesan berhasil dikirim!",
+      "errorMessage": "Gagal mengirim pesan. Silakan coba lagi."
+    },
+    "info": {
+      "phone": {
+        "title": "Telepon",
+        "value": "(+62) 811-1122-492"
+      },
+      "headquarter": {
+        "title": "Kantor Pusat",
+        "value": "The Mansion Bougenville Tower Fontana Lantai 50 Jakarta Utara"
+      },
+      "email": {
+        "title": "Email",
+        "value": "sales@mjsolution.co.id"
+      }
+    }
+  }
+}

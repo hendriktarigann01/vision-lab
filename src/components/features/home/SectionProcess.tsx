@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 const SectionProcess = () => {
-  const t = useTranslations("process");
+  const t = useTranslations("home.process");
 
   const processes = [
     {

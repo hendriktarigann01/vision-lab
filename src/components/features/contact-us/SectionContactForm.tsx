@@ -16,6 +16,7 @@ import {
 import { User, Mail, Phone, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Spinner } from "@/components/ui/spinner";
+import { useTranslations } from "next-intl";
 
 interface ContactFormData {
   fullName: string;
@@ -25,6 +26,7 @@ interface ContactFormData {
 }
 
 const SectionContactForm = () => {
+  const t = useTranslations("contact.form");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormData>({
@@ -59,10 +61,10 @@ const SectionContactForm = () => {
 
       // Reset form setelah berhasil
       form.reset();
-      alert("Message sent successfully!");
+      alert(t("successMessage"));
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Failed to send message. Please try again.");
+      alert(t("errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -76,10 +78,10 @@ const SectionContactForm = () => {
           <Card className="p-5 md:px-12 rounded-none border-none shadow-none md:py-10 flex flex-col justify-center order-1 md:order-2">
             <div className="mb-6">
               <h2 className="text-xl md:text-3xl text-gray-900 mb-2 md:mb-4">
-                Let&apos;s Get In Touch
+                {t("title")}
               </h2>
               <p className="text-lg md:text-xl text-gray-600">
-                Feel free to drop us a line below
+                {t("subtitle")}
               </p>
             </div>
 
@@ -89,17 +91,17 @@ const SectionContactForm = () => {
                 <FormField
                   control={form.control}
                   name="fullName"
-                  rules={{ required: "Full name is required" }}
+                  rules={{ required: t("fields.fullName.required") }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-gray-700 font-medium">
-                        Full Name
+                        {t("fields.fullName.label")}
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
                           <Input
-                            placeholder="Ex: David Casie"
+                            placeholder={t("fields.fullName.placeholder")}
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
                             disabled={isSubmitting}
@@ -116,23 +118,23 @@ const SectionContactForm = () => {
                   control={form.control}
                   name="email"
                   rules={{
-                    required: "Email is required",
+                    required: t("fields.email.required"),
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
+                      message: t("fields.email.invalid"),
                     },
                   }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-gray-700 font-medium">
-                        Email Address
+                        {t("fields.email.label")}
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
                           <Input
                             type="email"
-                            placeholder="Ex: contact@gmail.com"
+                            placeholder={t("fields.email.placeholder")}
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
                             disabled={isSubmitting}
@@ -148,18 +150,18 @@ const SectionContactForm = () => {
                 <FormField
                   control={form.control}
                   name="phone"
-                  rules={{ required: "Phone number is required" }}
+                  rules={{ required: t("fields.phone.required") }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-gray-700 font-medium">
-                        Phone Number
+                        {t("fields.phone.label")}
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
                           <Input
                             type="tel"
-                            placeholder="Ex: 08976785"
+                            placeholder={t("fields.phone.placeholder")}
                             {...field}
                             className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
                             disabled={isSubmitting}
@@ -175,15 +177,15 @@ const SectionContactForm = () => {
                 <FormField
                   control={form.control}
                   name="message"
-                  rules={{ required: "Message is required" }}
+                  rules={{ required: t("fields.message.required") }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-gray-700 font-medium">
-                        Message
+                        {t("fields.message.label")}
                       </FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us what we can help you"
+                          placeholder={t("fields.message.placeholder")}
                           {...field}
                           className="min-h-[120px] border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35] resize-none"
                           disabled={isSubmitting}
@@ -204,11 +206,11 @@ const SectionContactForm = () => {
                   {isSubmitting ? (
                     <>
                       <Spinner variant="circle" size={16} className="mr-2" />
-                      Sending...
+                      {t("submitting")}
                     </>
                   ) : (
                     <>
-                      Send Message
+                      {t("submitButton")}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </>
                   )}

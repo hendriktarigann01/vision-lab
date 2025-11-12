@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 // Types
 interface ServicePoint {
@@ -94,125 +95,105 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
       </div>
 
       {/* Image */}
-      <div
-        className={`${
-          isImageLeft
-            ? "order-1 h-full"
-            : "order-2 h-full"
-        }`}
-      >
+      <div className={`${isImageLeft ? "order-1 h-full" : "order-2 h-full"}`}>
         <ServiceImage src={image} alt={imageAlt} />
       </div>
     </div>
   );
 };
 
-// Data
-const serviceSections: ServiceSectionData[] = [
-  {
-    title: "Cleaning (Indoor/Outdoor)",
-    description:
-      "VisionLAB ensures that every LED display remains clean, bright, and in perfect working order through a thorough routine maintenance process. From the surface to the cooling system. This process includes:",
-    points: [
-      {
-        title: "Screen Surface Cleaning",
-        description:
-          "Use a microfiber cloth and non-corrosive cleaning fluid to maintain clarity and prevent damage to the LED module.",
-      },
-      {
-        title: "Internal Module & Frame Maintenance",
-        description:
-          "Removing dust and dirt that accumulates between panels and frame structures to keep the system stable and efficient.",
-      },
-      {
-        title: "Documentation of Initial Conditions & Cleaning Areas",
-        description:
-          "Each finding is recorded in an initial report accompanied by photos of the screen before and after cleaning as evidence of transparent and measurable maintenance results.",
-      },
-    ],
-    image: "/services/detail/maintenance-1.webp",
-    imageAlt: "Cleaning (Indoor/Outdoor)",
-    imagePosition: "right",
-  },
-  {
-    title: "Color & Brightness Calibration",
-    description:
-      "VisionLAB restores color accuracy and brightness to LED displays through a comprehensive calibration process. From initial analysis to final validation, each step ensures that your LED display is consistent, bright, and meets professional visual standards.",
-    points: [
-      {
-        title: "Analyze the initial condition of the screen",
-        description:
-          "Identify visual imbalances such as faded colors, overly bright areas, or differences in brightness between panels.",
-      },
-      {
-        title: "Color & Brightness Adjustment Between Panels",
-        description:
-          "Matching color reproduction and luminance across the entire display area for uniform and natural visual results.",
-      },
-      {
-        title: "Accuracy & Display Consistency Validation",
-        description:
-          "Performing final checks to ensure brightness and color levels remain stable across different types of content",
-      },
-    ],
-    image: "/services/detail/maintenance-2.webp",
-    imageAlt: "Color & Brightness Calibration",
-    imagePosition: "left",
-  },
-  {
-    title: "Electrical & Cooling System Check",
-    description:
-      "Electrical system, power supply, and cooling checks are performed to ensure stable current and optimal temperature to prevent overheating, power disruptions, or premature failure.",
-    points: [
-      {
-        title: "Power Supply Check",
-        description:
-          "Ensuring each LED module receives stable power according to specifications to prevent power interference and premature failure.",
-      },
-      {
-        title: "Optimized Air Circulation",
-        description:
-          "Ensuring air flows smoothly throughout the LED cabinet for even heat distribution.",
-      },
-      {
-        title: "Verify Active Cooling System",
-        description:
-          "Ensure fans and cooling system are functioning properly to prevent overheating and maintain component life.",
-      },
-    ],
-    image: "/services/detail/maintenance-3.webp",
-    imageAlt: "Electrical & Cooling System Check",
-    imagePosition: "right",
-  },
-  {
-    title: "Update Processor & Firmware",
-    description:
-      "System updates ensure LED & LCD displays run smoothly, stay responsive, and remain compatible with the latest configurations improving image quality and preventing sync issues.",
-    points: [
-      {
-        title: "System Firmware & Software Updates",
-        description:
-          "Performing firmware updates on LED processors, receiving cards, and sending cards to maintain compatibility, display performance, and long-term system stability.",
-      },
-      {
-        title: "Mapping Calibration & Display Configuration",
-        description:
-          "Readjusting the panel layout, refresh rate, synchronizer, and color parameters to ensure a uniform display, no flickering, and no image shifting.",
-      },
-      {
-        title: "Device Synchronization & Stability Testing",
-        description:
-          "Performing performance tests after updates to ensure all LED modules, processors, and media players run smoothly without signal interference or delay.",
-      },
-    ],
-    image: "/services/detail/maintenance-4.webp",
-    imageAlt: "Update Processor & Firmware",
-    imagePosition: "left",
-  },
-];
-
 // Main Component
 const SectionExplanation: React.FC = () => {
+  const t = useTranslations("serviceDetails.maintenance");
+
+  // Build service sections from translations
+  const serviceSections: ServiceSectionData[] = [
+    {
+      title: t("sections.0.title"),
+      description: t("sections.0.description"),
+      points: [
+        {
+          title: t("sections.0.points.0.title"),
+          description: t("sections.0.points.0.description"),
+        },
+        {
+          title: t("sections.0.points.1.title"),
+          description: t("sections.0.points.1.description"),
+        },
+        {
+          title: t("sections.0.points.2.title"),
+          description: t("sections.0.points.2.description"),
+        },
+      ],
+      image: t("sections.0.image"),
+      imageAlt: t("sections.0.imageAlt"),
+      imagePosition: t("sections.0.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.1.title"),
+      description: t("sections.1.description"),
+      points: [
+        {
+          title: t("sections.1.points.0.title"),
+          description: t("sections.1.points.0.description"),
+        },
+        {
+          title: t("sections.1.points.1.title"),
+          description: t("sections.1.points.1.description"),
+        },
+        {
+          title: t("sections.1.points.2.title"),
+          description: t("sections.1.points.2.description"),
+        },
+      ],
+      image: t("sections.1.image"),
+      imageAlt: t("sections.1.imageAlt"),
+      imagePosition: t("sections.1.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.2.title"),
+      description: t("sections.2.description"),
+      points: [
+        {
+          title: t("sections.2.points.0.title"),
+          description: t("sections.2.points.0.description"),
+        },
+        {
+          title: t("sections.2.points.1.title"),
+          description: t("sections.2.points.1.description"),
+        },
+        {
+          title: t("sections.2.points.2.title"),
+          description: t("sections.2.points.2.description"),
+        },
+      ],
+      image: t("sections.2.image"),
+      imageAlt: t("sections.2.imageAlt"),
+      imagePosition: t("sections.2.imagePosition") as "left" | "right",
+    },
+    {
+      title: t("sections.3.title"),
+      description: t("sections.3.description"),
+      points: [
+        {
+          title: t("sections.3.points.0.title"),
+          description: t("sections.3.points.0.description"),
+        },
+        {
+          title: t("sections.3.points.1.title"),
+          description: t("sections.3.points.1.description"),
+        },
+        {
+          title: t("sections.3.points.2.title"),
+          description: t("sections.3.points.2.description"),
+        },
+      ],
+      image: t("sections.3.image"),
+      imageAlt: t("sections.3.imageAlt"),
+      imagePosition: t("sections.3.imagePosition") as "left" | "right",
+    },
+  ];
+
   return (
     <section
       id="section-explanation"

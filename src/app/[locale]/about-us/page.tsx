@@ -1,9 +1,9 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import SectionService from "@/components/common/SectionService";
 
 import Hero from "@/components/features/about-us/Hero";
 import SectionAboutUs from "@/components/features/about-us/SectionAboutUs";
-import SectionService from "@/components/features/about-us/SectionService";
 import SectionWhyUs from "@/components/features/about-us/SectionWhyUs";
 
 export default async function AboutUs() {

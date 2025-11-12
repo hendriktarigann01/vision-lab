@@ -2,16 +2,18 @@
 import Image from "next/image";
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 const SectionAboutUs = () => {
+  const t = useTranslations("aboutUs");
+
   const visionMission = [
     {
       icon: (
         <Image src="/icons/icon-vision.png" alt="icon" width={48} height={48} />
       ),
-      title: "Vision",
-      description:
-        "To be a professional and trusted service center focused on repair, maintenance, and development of multimedia screen solutions in Indonesia.",
+      title: t("visionMission.vision.title"),
+      description: t("visionMission.vision.description"),
     },
     {
       icon: (
@@ -22,9 +24,8 @@ const SectionAboutUs = () => {
           height={48}
         />
       ),
-      title: "Mission",
-      description:
-        "Providing High-Quality Services, Raising Awareness and Sustainability, Developing Innovation and Strategic Partnerships",
+      title: t("visionMission.mission.title"),
+      description: t("visionMission.mission.description"),
     },
   ];
 
@@ -33,8 +34,8 @@ const SectionAboutUs = () => {
       icon: (
         <Image src="/icons/icon-repair.png" alt="icon" width={48} height={48} />
       ),
-      value: "1200+",
-      label: "LED & LCD screens repaired",
+      value: t("stats.repaired.value"),
+      label: t("stats.repaired.label"),
     },
     {
       icon: (
@@ -45,15 +46,15 @@ const SectionAboutUs = () => {
           height={48}
         />
       ),
-      value: "95%",
-      label: "Customer satisfaction level",
+      value: t("stats.satisfaction.value"),
+      label: t("stats.satisfaction.label"),
     },
     {
       icon: (
         <Image src="/icons/icon-done.png" alt="icon" width={48} height={48} />
       ),
-      value: "150+",
-      label: "Projects Done",
+      value: t("stats.projects.value"),
+      label: t("stats.projects.label"),
     },
   ];
 
@@ -68,20 +69,14 @@ const SectionAboutUs = () => {
           {/* Left */}
           <div>
             {/* Title */}
-            <h2 className="text-4xl mb-12 text-gray-900">About VisionLAB</h2>
+            <h2 className="text-4xl mb-12 text-gray-900">{t("title")}</h2>
           </div>
 
           {/* Right - Description and Vision/Mission */}
           <div>
             {/* Description */}
             <p className="text-base text-gray-700 leading-relaxed mb-8">
-              VisionLAB is a multimedia service center under MJ Solution
-              Indonesia that focuses on repair, maintenance, and servicing of
-              LED & LCD screens. With a focus on service quality and customer
-              satisfaction, VisionLAB aims to become the leader in the screen
-              repair market in Indonesia. With a team of expert technicians and
-              a modern service system, VisionLAB is committed to providing fast,
-              efficient, and transparent services throughout Indonesia.
+              {t("description")}
             </p>
 
             {/* Vision & Mission - 2 columns */}
@@ -89,7 +84,7 @@ const SectionAboutUs = () => {
               {visionMission.map((item, idx) => (
                 <div key={idx} className="flex flex-col">
                   <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-base font-normal text-gray-900 border-l-4 border-orange-500 pl-3 mb-3">
+                  <h3 className="text-base font-normal text-gray-900 border-l-4 border-brand-200 pl-3 mb-3">
                     {item.title}
                   </h3>
                   <p className="text-sm text-gray-700 leading-relaxed">
@@ -104,16 +99,10 @@ const SectionAboutUs = () => {
         {/* Mobile Layout */}
         <div className="md:hidden mb-8">
           {/* Title */}
-          <h2 className="text-lg mb-6 text-gray-900">About VisionLAB</h2>
+          <h2 className="text-lg mb-6 text-gray-900">{t("title")}</h2>
           {/* Description */}
           <p className="text-sm text-gray-700 leading-relaxed mb-6">
-            VisionLAB is a multimedia service center under MJ Solution Indonesia
-            that focuses on repair, maintenance, and servicing of LED & LCD
-            screens. With a focus on service quality and customer satisfaction,
-            VisionLAB aims to become the leader in the screen repair market in
-            Indonesia. With a team of expert technicians and a modern service
-            system, VisionLAB is committed to providing fast, efficient, and
-            transparent services throughout Indonesia.
+            {t("description")}
           </p>
 
           {/* Vision & Mission - stacked */}
@@ -121,7 +110,7 @@ const SectionAboutUs = () => {
             {visionMission.map((item, idx) => (
               <div key={idx} className="flex flex-col gap-2">
                 <div className="px-2 md:px-3 w-12 md:w-20">{item.icon}</div>
-                <h3 className="text-base font-normal text-gray-900 border-l-4 border-orange-500 px-2">
+                <h3 className="text-base font-normal text-gray-900 border-l-4 border-brand-200 px-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed px-2">

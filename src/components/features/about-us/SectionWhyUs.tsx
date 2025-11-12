@@ -68,7 +68,7 @@ const SectionWhyUs = () => {
     return (
       <div className="flex flex-col items-start">
         <div
-          className={`${sizeClasses} bg-brand-50 rounded-full flex items-center justify-center text-orange-600 font-medium`}
+          className={`${sizeClasses} bg-brand-50 rounded-full flex items-center justify-center text-brand-200 font-medium`}
         >
           {reason.number}
         </div>

@@ -1,43 +1,42 @@
-// Hero Contact Us
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const Hero: React.FC = () => {
-  // const t = useTranslations("hero");
- const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-   e.preventDefault();
+  const t = useTranslations("heroes.contactUs");
 
-   if (navigator.geolocation) {
-     navigator.geolocation.getCurrentPosition(
-       (position) => {
-         const { latitude, longitude } = position.coords;
-         const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=-6.2865656,107.0429841&destination_place_id=ChIJmfk0o_iPaS4R_fgNE7-v15M&travelmode=driving`;
-         window.open(mapsUrl, "_blank", "noopener,noreferrer");
-       },
-       () => {
-         // fallback if the user denies location permission
-         window.open(
-           "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
-           "_blank",
-           "noopener,noreferrer"
-         );
-       }
-     );
-   } else {
-     // fallback if the browser doesn't support geolocation
-     window.open(
-       "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
-       "_blank",
-       "noopener,noreferrer"
-     );
-   }
- };
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
 
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=-6.2865656,107.0429841&destination_place_id=ChIJmfk0o_iPaS4R_fgNE7-v15M&travelmode=driving`;
+          window.open(mapsUrl, "_blank", "noopener,noreferrer");
+        },
+        () => {
+          // fallback if the user denies location permission
+          window.open(
+            "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
+            "_blank",
+            "noopener,noreferrer"
+          );
+        }
+      );
+    } else {
+      // fallback if the browser doesn't support geolocation
+      window.open(
+        "https://maps.app.goo.gl/jEcdZf4KxK7v2MXw8",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
 
   return (
     <section
@@ -53,20 +52,19 @@ const Hero: React.FC = () => {
           priority
         />
       </div>
+
       {/* Content */}
       <div className="max-w-7xl mx-auto flex flex-col items-center px-10 md:px-6 pb-32 md:py-8 space-y-8">
         {/* Text content */}
         <div className="space-y-4 m-0 max-w-3xl text-center">
-          <p className="text-gray-600 text-sm md:text-sm">Contact Us</p>
+          <p className="text-gray-600 text-sm md:text-sm">{t("label")}</p>
 
           <h1 className="text-xl md:text-2xl lg:text-3xl text-brand-200 leading-tight font-bold">
-            Let&apos;s Connect with VisionLab
+            {t("title")}
           </h1>
 
           <p className="w-80 mx-auto text-gray-600 text-sm md:text-sm">
-            Our office is located in Jakarta, Indonesia. Reach out to our team
-            for inquiries, collaborations, or technical assistance regarding LED
-            and LCD services.
+            {t("description")}
           </p>
         </div>
 
@@ -101,7 +99,7 @@ const Hero: React.FC = () => {
                   className="w-24 md:w-32 flex-shrink-0 mx-auto"
                 />
                 <p className="text-xs text-gray-600 mt-1 text-center">
-                  Celebration AA15/25, Grand Wisata, Bekasi, Jawa Barat
+                  {t("mapAddress")}
                 </p>
                 <div className="flex justify-center">
                   <Link
@@ -109,9 +107,9 @@ const Hero: React.FC = () => {
                     onClick={handleClick}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-orange-500 hover:bg-orange-600 cursor-pointer text-white text-xs py-3 px-6 rounded-3xl flex items-center justify-center gap-2 transition-colors"
+                    className="bg-brand-200 hover:bg-brand-300 cursor-pointer text-white text-xs py-3 px-6 rounded-3xl flex items-center justify-center gap-2 transition-colors"
                   >
-                    View Map
+                    {t("viewMap")}
                     <ChevronRight width={16} height={16} />
                   </Link>
                 </div>

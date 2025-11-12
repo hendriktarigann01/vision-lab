@@ -1,0 +1,213 @@
+{
+  "serviceDetails": {
+    "completeService": {
+      "sections": [
+        {
+          "title": "LED Module Diagnosis & Repair",
+          "description": "The General Check-up service begins with a thorough analysis of each LED module to identify visible and hidden damage. The main objective is to ensure that every pixel and power circuit is working stably before further repairs are carried out. The Inspection & Repair process includes:",
+          "points": [
+            {
+              "title": "Repairing power lines and connectors",
+              "description": "To ensure that the power supply to each module is working normally. Dead modules will be tested and replaced if necessary."
+            },
+            {
+              "title": "Display & Pixel Error Repair",
+              "description": "Display repair with color patterns to find dead pixels. Repairs are carried out by re-soldering or replacing the LED chip."
+            },
+            {
+              "title": "Signal & Data Connectivity Repair",
+              "description": "Signal stability and data cable repair, Modules with interference are repaired or replaced to restore stable display"
+            }
+          ],
+          "image": "/services/detail/complete-service-1.webp",
+          "imageAlt": "LED Module Diagnosis & Repair",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Control System & Supporting Component Repairs",
+          "description": "After inspecting the module, VisionLAB proceeds to the stage of analyzing the control system and supporting electronic components that are tasked with sending and regulating image display. The process includes:",
+          "points": [
+            {
+              "title": "Technical Consultation & Control System Diagnosis",
+              "description": "VisionLAB team conducts a comprehensive system analysis ranging from video processors, sending cards, receiving cards, to control software."
+            },
+            {
+              "title": "Supply & Replacement of Supporting Components",
+              "description": "VisionLAB supplies and replaces important components such as power supplies, data cables, and control cards with original spare parts that have been tested to ensure stable system performance."
+            },
+            {
+              "title": "Signal & Data Connectivity Repair.",
+              "description": "Signal stability and data cable repair. Modules with interference are repaired or replaced to restore stable display."
+            }
+          ],
+          "image": "/services/detail/complete-service-2.webp",
+          "imageAlt": "Control System & Supporting Component Repairs",
+          "imagePosition": "left"
+        },
+        {
+          "title": "Flexible On-Site & In-House Services",
+          "description": "VisionLAB understands that every project has different needs and operational schedules. Therefore, we provide two flexible service options to ensure quick repairs without disrupting your main activities.",
+          "points": [
+            {
+              "title": "On-Site Service",
+              "description": "Repairs are carried out directly at the screen installation location The process begins with Initial inspection on site, time and cost estimation, immediate repair by technicians, functional testing & handover of work results"
+            },
+            {
+              "title": "In-House Service",
+              "description": "Handling is carried out at the VisionLAB Service Center with complete equipment for in-depth analysis. The unit was taken to the service center, where the components and power supply were checked separately, the color and cooling system were recalibrated, and performance was tested for 24 hours before being returned."
+            },
+            {
+              "title": "Signal & Data Connectivity Repair",
+              "description": "Signal stability and data cable repair, Modules with interference are repaired or replaced to restore stable display"
+            }
+          ],
+          "image": "/services/detail/complete-service-3.webp",
+          "imageAlt": "Flexible On-Site & In-House Services",
+          "imagePosition": "right"
+        }
+      ]
+    },
+    "maintenance": {
+      "sections": [
+        {
+          "title": "Cleaning (Indoor/Outdoor)",
+          "description": "VisionLAB ensures that every LED display remains clean, bright, and in perfect working order through a thorough routine maintenance process. From the surface to the cooling system. This process includes:",
+          "points": [
+            {
+              "title": "Screen Surface Cleaning",
+              "description": "Use a microfiber cloth and non-corrosive cleaning fluid to maintain clarity and prevent damage to the LED module."
+            },
+            {
+              "title": "Internal Module & Frame Maintenance",
+              "description": "Removing dust and dirt that accumulates between panels and frame structures to keep the system stable and efficient."
+            },
+            {
+              "title": "Documentation of Initial Conditions & Cleaning Areas",
+              "description": "Each finding is recorded in an initial report accompanied by photos of the screen before and after cleaning as evidence of transparent and measurable maintenance results."
+            }
+          ],
+          "image": "/services/detail/maintenance-1.webp",
+          "imageAlt": "Cleaning (Indoor/Outdoor)",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Color & Brightness Calibration",
+          "description": "VisionLAB restores color accuracy and brightness to LED displays through a comprehensive calibration process. From initial analysis to final validation, each step ensures that your LED display is consistent, bright, and meets professional visual standards.",
+          "points": [
+            {
+              "title": "Analyze the initial condition of the screen",
+              "description": "Identify visual imbalances such as faded colors, overly bright areas, or differences in brightness between panels."
+            },
+            {
+              "title": "Color & Brightness Adjustment Between Panels",
+              "description": "Matching color reproduction and luminance across the entire display area for uniform and natural visual results."
+            },
+            {
+              "title": "Accuracy & Display Consistency Validation",
+              "description": "Performing final checks to ensure brightness and color levels remain stable across different types of content"
+            }
+          ],
+          "image": "/services/detail/maintenance-2.webp",
+          "imageAlt": "Color & Brightness Calibration",
+          "imagePosition": "left"
+        },
+        {
+          "title": "Electrical & Cooling System Check",
+          "description": "Electrical system, power supply, and cooling checks are performed to ensure stable current and optimal temperature to prevent overheating, power disruptions, or premature failure.",
+          "points": [
+            {
+              "title": "Power Supply Check",
+              "description": "Ensuring each LED module receives stable power according to specifications to prevent power interference and premature failure."
+            },
+            {
+              "title": "Optimized Air Circulation",
+              "description": "Ensuring air flows smoothly throughout the LED cabinet for even heat distribution."
+            },
+            {
+              "title": "Verify Active Cooling System",
+              "description": "Ensure fans and cooling system are functioning properly to prevent overheating and maintain component life."
+            }
+          ],
+          "image": "/services/detail/maintenance-3.webp",
+          "imageAlt": "Electrical & Cooling System Check",
+          "imagePosition": "right"
+        },
+        {
+          "title": "Update Processor & Firmware",
+          "description": "System updates ensure LED & LCD displays run smoothly, stay responsive, and remain compatible with the latest configurations improving image quality and preventing sync issues.",
+          "points": [
+            {
+              "title": "System Firmware & Software Updates",
+              "description": "Performing firmware updates on LED processors, receiving cards, and sending cards to maintain compatibility, display performance, and long-term system stability."
+            },
+            {
+              "title": "Mapping Calibration & Display Configuration",
+              "description": "Readjusting the panel layout, refresh rate, synchronizer, and color parameters to ensure a uniform display, no flickering, and no image shifting."
+            },
+            {
+              "title": "Device Synchronization & Stability Testing",
+              "description": "Performing performance tests after updates to ensure all LED modules, processors, and media players run smoothly without signal interference or delay."
+            }
+          ],
+          "image": "/services/detail/maintenance-4.webp",
+          "imageAlt": "Update Processor & Firmware",
+          "imagePosition": "left"
+        }
+      ]
+    },
+    "onSiteTraining": {
+      "sections": [
+        {
+          "title": "LED Operation Training",
+          "description": "This training aims to equip participants with the skills to operate LED Display systems correctly and efficiently, both for daily use and event needs.",
+          "points": [
+            {
+              "title": "Introduction to LED Control Systems",
+              "description": "Device structure (processor, sending & receiving card, media player, control software)."
+            },
+            {
+              "title": "Display & Content Settings",
+              "description": "How to change the layout, set the resolution, and play content in the appropriate format."
+            },
+            {
+              "title": "Operational Mode Management",
+              "description": "Adjusting brightness, day/night mode, and screen response settings."
+            },
+            {
+              "title": "Basic Troubleshooting",
+              "description": "Initial steps when the screen does not display, flickers, or is out of sync."
+            }
+          ],
+          "image": "/services/detail/on-site-training-1.webp",
+          "imageAlt": "LED Operation Training",
+          "imagePosition": "right"
+        },
+        {
+          "title": "LED Maintenance Training",
+          "description": "This training focuses on routine maintenance and damage prevention to extend the screen's lifespan and maintain optimal visual quality.",
+          "points": [
+            {
+              "title": "Routine Checks & Screen Condition Inspections",
+              "description": "How to detect dust, pixel errors, moisture, and early signs of damage."
+            },
+            {
+              "title": "Safe Cleaning Techniques",
+              "description": "Learn proper methods and recommended tools for cleaning LED and LCD screens without causing scratches, stains, or internal damage."
+            },
+            {
+              "title": "Cooling System & Power Supply Maintenance",
+              "description": "How to ensure proper ventilation and maintain stable power voltage to prevent overheating and component failure."
+            },
+            {
+              "title": "Minor Troubleshooting",
+              "description": "Handling common errors and applying quick, independent solutions to restore functionality before professional service is needed."
+            }
+          ],
+          "image": "/services/detail/on-site-training-2.webp",
+          "imageAlt": "LED Maintenance Training",
+          "imagePosition": "left"
+        }
+      ]
+    }
+  }
+}

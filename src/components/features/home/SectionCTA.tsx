@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 const SectionCTA = () => {
-  const t = useTranslations("cta");
+  const t = useTranslations("home.cta");
 
   return (
     <section

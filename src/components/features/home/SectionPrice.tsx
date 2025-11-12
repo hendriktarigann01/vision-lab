@@ -7,7 +7,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger, 
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -15,7 +15,7 @@ import { useTranslations } from "next-intl";
 type PackageKey = "cleaning" | "maintenance" | "complete";
 
 const SectionPrice = () => {
-  const t = useTranslations("pricing");
+  const t = useTranslations("home.pricing");
   const [activePackage, setActivePackage] = useState<PackageKey>("maintenance");
 
   const packages: Record<PackageKey, string[]> = {
@@ -110,7 +110,7 @@ const SectionPrice = () => {
         >
           <div className="text-center space-y-5">
             <p className="rounded-lg md:rounded-md text-gray-600 p-5 w-56 bg-[#F5F5F5] mx-auto">
-              {t("packages.maintenance")}
+              {getPackageName(activePackage)}
             </p>
             <div className="text-4xl text-gray-900">{t("price")}</div>
             <p className="text-gray-600">{t("perUnit")}</p>
