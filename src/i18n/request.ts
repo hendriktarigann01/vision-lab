@@ -11,17 +11,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale;
   }
 
-  // Load all translation files and merge them
-  const messages = (
-    await Promise.all([
-      import(`@/messages/${locale}/common.json`),
-      import(`@/messages/${locale}/heroes.json`),
-      import(`@/messages/${locale}/home.json`),
-      import(`@/messages/${locale}/about-us.json`),
-      import(`@/messages/${locale}/contact.json`),
-      import(`@/messages/${locale}/services-details.json`),
-    ])
-  ).reduce((acc, module) => ({ ...acc, ...module.default }), {});
+  // HANYA load common translations (yang dipakai di semua halaman)
+  const messages = (await import(`@/messages/${locale}/common.json`)).default;
 
   return {
     locale,

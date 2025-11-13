@@ -104,7 +104,7 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
 
 // Main Component
 const SectionExplanation: React.FC = () => {
-  const t = useTranslations("serviceDetails.maintenance");
+const t = useTranslations();
 
   // Build service sections from translations
   const serviceSections: ServiceSectionData[] = [
