@@ -42,7 +42,7 @@ const SectionContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbytyZwI4mbgnow1cRUAy-EWoLKIDjpq12l-l1TatB_PhqTVqny5kB9jaY9Qe9KrctpM/exec",
         {
           method: "POST",
@@ -73,7 +73,7 @@ const SectionContactForm = () => {
   return (
     <section className="px-8 md:px-6 bg-[#FAFAFA] flex items-center justify-center">
       <div className="w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-0 items-stretch h-full md:p-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-0 items-stretch h-full md:h-3/4 md:p-20">
           {/* Right Side - Form - Order 1 on mobile, 2 on desktop */}
           <Card className="p-5 md:px-12 rounded-xl border-none shadow-none md:py-10 flex flex-col justify-center order-1 md:order-2">
             <div className="mb-6">
@@ -99,11 +99,11 @@ const SectionContactForm = () => {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
+                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-200 w-4 h-4 z-10" />
                           <Input
                             placeholder={t("fields.fullName.placeholder")}
                             {...field}
-                            className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            className="pl-10 h-12 border-gray-300 focus:border-brand-200 focus:ring-brand-200"
                             disabled={isSubmitting}
                           />
                         </div>
@@ -131,12 +131,12 @@ const SectionContactForm = () => {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
+                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-200 w-4 h-4 z-10" />
                           <Input
                             type="email"
                             placeholder={t("fields.email.placeholder")}
                             {...field}
-                            className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            className="pl-10 h-12 border-gray-300 focus:border-brand-200 focus:ring-brand-200"
                             disabled={isSubmitting}
                           />
                         </div>
@@ -158,12 +158,12 @@ const SectionContactForm = () => {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FF6B35] w-4 h-4 z-10" />
+                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-200 w-4 h-4 z-10" />
                           <Input
                             type="tel"
                             placeholder={t("fields.phone.placeholder")}
                             {...field}
-                            className="pl-10 h-12 border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35]"
+                            className="pl-10 h-12 border-gray-300 focus:border-brand-200 focus:ring-brand-200"
                             disabled={isSubmitting}
                           />
                         </div>
@@ -187,7 +187,7 @@ const SectionContactForm = () => {
                         <Textarea
                           placeholder={t("fields.message.placeholder")}
                           {...field}
-                          className="min-h-[120px] border-gray-300 focus:border-[#FF6B35] focus:ring-[#FF6B35] resize-none"
+                          className="min-h-[120px] border-gray-300 focus:border-brand-200 focus:ring-brand-200 resize-none"
                           disabled={isSubmitting}
                         />
                       </FormControl>
@@ -201,12 +201,12 @@ const SectionContactForm = () => {
                   onClick={form.handleSubmit(onSubmit)}
                   type="button"
                   disabled={isSubmitting}
-                  className="w-full h-12 cursor-pointer bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-medium rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full h-12 cursor-pointer bg-brand-200 hover:bg-[#E55A2B] text-white font-medium rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
-                      <Spinner variant="circle" size={16} className="mr-2" />
                       {t("submitting")}
+                      <Spinner variant="circle" size={16} className="mr-2" />
                     </>
                   ) : (
                     <>
@@ -222,6 +222,7 @@ const SectionContactForm = () => {
           {/* Left Side - Image - Order 2 on mobile, 1 on desktop */}
           <div className="relative flex items-center justify-center bg-white overflow-hidden order-2 md:order-1">
             <Image
+              loading="lazy"
               src="/humans/vl-human-girl-contact.webp"
               alt="Vision Lab Contact"
               width={400}
