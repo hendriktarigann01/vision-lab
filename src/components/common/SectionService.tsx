@@ -7,6 +7,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { contentVariants, defaultTransition } from "@/lib/animations";
 
 const SectionService = () => {
   const t = useTranslations("services");
@@ -56,7 +58,7 @@ const SectionService = () => {
   const minSwipeDistance = 50;
 
   const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(0); // Reset touch end
+    setTouchEnd(0);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
@@ -72,14 +74,12 @@ const SectionService = () => {
     const isRightSwipe = distance < -minSwipeDistance;
 
     if (isLeftSwipe) {
-      // Swipe left - next
       if (activeIndex < services.length - 1) {
         setActiveIndex(activeIndex + 1);
       }
     }
 
     if (isRightSwipe) {
-      // Swipe right - previous
       if (activeIndex > 0) {
         setActiveIndex(activeIndex - 1);
       }
@@ -197,7 +197,7 @@ const SectionService = () => {
                 onClick={handleNext}
                 disabled={activeIndex === 2}
                 className={`w-10 h-10 rounded-full flex items-center cursor-pointer justify-center transition-colors ${
-                  activeIndex === 3
+                  activeIndex === 2
                     ? "bg-brand-50 cursor-not-allowed"
                     : "bg-brand-200 hover:bg-brand-300"
                 }`}
@@ -221,7 +221,7 @@ const SectionService = () => {
                   >
                     <div className="flex items-start gap-3">
                       {!isActive && (
-                        <div className="w-6 h-6 text-brand-200 flex items-center justify-center shrink-0 transition-transform group-hover:scale-110">
+                        <div className="w-6 h-6 text-brand-200 flex items-center justify-center shrink-0">
                           <Plus className="w-full h-full" />
                         </div>
                       )}
@@ -230,22 +230,33 @@ const SectionService = () => {
                         <h3 className="font-semibold text-gray-900 mb-2">
                           {service.title}
                         </h3>
-                        {isActive && (
-                          <>
-                            <p className="text-gray-600 text-sm mb-3">
-                              {service.desc}
-                            </p>
-                            <Link href={`/${locale}/services/${service.slug}`}>
-                              <Button
-                                variant="ghost"
-                                className="w-40 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
+                        <AnimatePresence initial={false}>
+                          {isActive && (
+                            <motion.div
+                              key={`content-${idx}`}
+                              variants={contentVariants}
+                              initial="hidden"
+                              animate="visible"
+                              exit="hidden"
+                              transition={defaultTransition}
+                            >
+                              <p className="text-gray-600 text-sm mb-3">
+                                {service.desc}
+                              </p>
+                              <Link
+                                href={`/${locale}/services/${service.slug}`}
                               >
-                                {t("viewService")}{" "}
-                                <ArrowRight className="w-4 h-4" />
-                              </Button>
-                            </Link>
-                          </>
-                        )}
+                                <Button
+                                  variant="ghost"
+                                  className="w-40 bg-brand-200 hover:bg-brand-300 rounded-3xl text-white hover:text-white cursor-pointer font-normal text-sm py-3 h-auto transition-all flex items-center gap-2"
+                                >
+                                  {t("viewService")}{" "}
+                                  <ArrowRight className="w-4 h-4" />
+                                </Button>
+                              </Link>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     </div>
                   </div>
