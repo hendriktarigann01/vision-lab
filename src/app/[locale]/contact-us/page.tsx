@@ -6,6 +6,8 @@ import Hero from "@/components/features/contact-us/Hero";
 import SectionContactInfo from "@/components/features/contact-us/SectionContactInfo";
 import SectionContactForm from "@/components/features/contact-us/SectionContactForm";
 
+export const dynamic = "force-static";
+
 type PageProps = {
   params: Promise<{ locale: string }>;
 };

@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 const SectionCTA = () => {
@@ -27,7 +28,7 @@ const SectionCTA = () => {
             {t("description")}
           </p>
           <div className="flex justify-center md:justify-start">
-            <a
+            <Link
               href="https://wa.me/628111122492?text=Hi VisionLAB, I would like to consult about LED/LCD screen repair or maintenance services. Please provide more information."
               target="_blank"
               rel="noopener noreferrer"
@@ -38,7 +39,7 @@ const SectionCTA = () => {
               >
                 {t("button")}
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -46,6 +47,7 @@ const SectionCTA = () => {
         <div className="flex-1 flex justify-center relative overflow-visible mt-0">
           <div className="relative md:absolute md:-top-90 w-[300px] h-[300px] md:w-[550px] md:h-[550px]">
             <Image
+              loading="lazy"
               src="/vl-human-girl.webp"
               alt="Lab Leaks Top"
               fill

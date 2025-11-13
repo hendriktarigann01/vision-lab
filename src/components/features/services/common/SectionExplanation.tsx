@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 // Types
 interface ServicePoint {
@@ -57,7 +56,7 @@ const ServicePoint: React.FC<ServicePoint> = ({
 const ServiceImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => (
   <div className="h-full">
     <div className="relative w-full h-[400px] rounded-2xl overflow-hidden">
-      <Image src={src} alt={alt} fill className="object-cover" />
+      <Image loading="lazy" src={src} alt={alt} fill className="object-cover" />
     </div>
   </div>
 );
@@ -74,7 +73,6 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
 
   return (
     <div className="grid md:grid-cols-2 gap-8 md:gap-72 mb-16 md:mb-24 items-start">
-      {/* Text Content */}
       <div
         className={`${
           isImageLeft
@@ -94,7 +92,6 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
         </div>
       </div>
 
-      {/* Image */}
       <div className={`${isImageLeft ? "order-1 h-full" : "order-2 h-full"}`}>
         <ServiceImage src={image} alt={imageAlt} />
       </div>
@@ -102,76 +99,32 @@ const ServiceSection: React.FC<ServiceSectionData> = ({
   );
 };
 
-// Main Component
-const SectionExplanation: React.FC = () => {
-  const t = useTranslations("serviceDetails.completeService");
+// Main Component - Receive data as props
+interface SectionExplanationProps {
+  sections: Array<{
+    title: string;
+    description: string;
+    points: Array<{ title: string; description: string }>;
+    image: string;
+    imageAlt: string;
+    imagePosition: "left" | "right";
+  }>;
+}
 
-  // Build service sections from translations
-  const serviceSections: ServiceSectionData[] = [
-    {
-      title: t("sections.0.title"),
-      description: t("sections.0.description"),
-      points: [
-        {
-          title: t("sections.0.points.0.title"),
-          description: t("sections.0.points.0.description"),
-        },
-        {
-          title: t("sections.0.points.1.title"),
-          description: t("sections.0.points.1.description"),
-        },
-        {
-          title: t("sections.0.points.2.title"),
-          description: t("sections.0.points.2.description"),
-        },
-      ],
-      image: t("sections.0.image"),
-      imageAlt: t("sections.0.imageAlt"),
-      imagePosition: t("sections.0.imagePosition") as "left" | "right",
-    },
-    {
-      title: t("sections.1.title"),
-      description: t("sections.1.description"),
-      points: [
-        {
-          title: t("sections.1.points.0.title"),
-          description: t("sections.1.points.0.description"),
-        },
-        {
-          title: t("sections.1.points.1.title"),
-          description: t("sections.1.points.1.description"),
-        },
-        {
-          title: t("sections.1.points.2.title"),
-          description: t("sections.1.points.2.description"),
-        },
-      ],
-      image: t("sections.1.image"),
-      imageAlt: t("sections.1.imageAlt"),
-      imagePosition: t("sections.1.imagePosition") as "left" | "right",
-    },
-    {
-      title: t("sections.2.title"),
-      description: t("sections.2.description"),
-      points: [
-        {
-          title: t("sections.2.points.0.title"),
-          description: t("sections.2.points.0.description"),
-        },
-        {
-          title: t("sections.2.points.1.title"),
-          description: t("sections.2.points.1.description"),
-        },
-        {
-          title: t("sections.2.points.2.title"),
-          description: t("sections.2.points.2.description"),
-        },
-      ],
-      image: t("sections.2.image"),
-      imageAlt: t("sections.2.imageAlt"),
-      imagePosition: t("sections.2.imagePosition") as "left" | "right",
-    },
-  ];
+const SectionExplanation: React.FC<SectionExplanationProps> = ({
+  sections,
+}) => {
+  const serviceSections: ServiceSectionData[] = sections.map((section) => ({
+    title: section.title,
+    description: section.description,
+    points: section.points.map((point) => ({
+      title: point.title,
+      description: point.description,
+    })),
+    image: section.image,
+    imageAlt: section.imageAlt,
+    imagePosition: section.imagePosition,
+  }));
 
   return (
     <section

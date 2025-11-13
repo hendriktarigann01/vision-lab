@@ -44,6 +44,7 @@ const SectionPartner = () => {
             >
               <div className="relative w-full h-8 md:h-16">
                 <Image
+                  loading="lazy"
                   src={partner.logo}
                   alt={partner.name}
                   fill

@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
           {/* Column 1: Company Info */}
           <div className="flex flex-col">
             <div className="flex-1">
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
               </h4>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
-                  <a
+                  <Link
                     key={social.alt}
                     href={social.href}
                     className="text-brand-200 hover:text-brand-300 transition"
@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
                       width={20}
                       height={20}
                     />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -216,13 +216,13 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:pl-8">
+          <div className="hidden md:block md:pl-10">
             <h4 className="font-semibold text-gray-800 mb-4">
               {t("socialMedia.title")}
             </h4>
             <div className="flex gap-5">
               {socialLinks.map((social) => (
-                <a
+                <Link
                   key={social.alt}
                   href={social.href}
                   className="text-brand-200 hover:text-brand-300 transition"
@@ -237,7 +237,7 @@ const Footer: React.FC = () => {
                   >
                     {social.svg}
                   </svg>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

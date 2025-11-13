@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -194,7 +195,7 @@ const SectionPrice = () => {
 
           {/* CTA Button */}
           <div className="text-center">
-            <a
+            <Link
               href={`https://wa.me/628111122492?text=Hi VisionLAB, I would like to know more about your ${getPackageName(
                 activePackage
               )}. When can we schedule a consultation?`}
@@ -207,7 +208,7 @@ const SectionPrice = () => {
               >
                 {t("getStarted")}
               </Button>
-            </a>
+            </Link>
           </div>
         </Card>
       </div>

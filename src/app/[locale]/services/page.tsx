@@ -6,6 +6,8 @@ import SectionFAQ from "@/components/common/SectionFAQ";
 import SectionService from "@/components/common/SectionService";
 import Hero from "@/components/features/services/Hero";
 
+export const dynamic = "force-static";
+
 type PageProps = {
   params: Promise<{ locale: string }>;
 };

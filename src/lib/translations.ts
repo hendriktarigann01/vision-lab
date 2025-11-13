@@ -75,13 +75,17 @@ export async function getServicesTranslations(locale: string) {
  * (complete-service, maintenance, on-site-training)
  */
 export async function getServiceDetailsTranslations(locale: string) {
-  const [common, serviceDetails] = await Promise.all([
+  const [common, heroes, serviceDetails] = await Promise.all([
     import(`@/messages/${locale}/common.json`),
+    import(`@/messages/${locale}/heroes.json`),
     import(`@/messages/${locale}/services-details.json`),
   ]);
 
+  // services-details.json already has { serviceDetails: {...} } structure
+  // So we spread it directly without nesting
   return {
     ...common.default,
-    ...serviceDetails.default,
+    ...heroes.default,
+    serviceDetails: serviceDetails.default.serviceDetails, // Extract the actual data
   };
 }

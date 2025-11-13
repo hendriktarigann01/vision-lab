@@ -7,6 +7,8 @@ import Hero from "@/components/features/about-us/Hero";
 import SectionAboutUs from "@/components/features/about-us/SectionAboutUs";
 import SectionWhyUs from "@/components/features/about-us/SectionWhyUs";
 
+export const dynamic = "force-static";
+
 type PageProps = {
   params: Promise<{ locale: string }>;
 };

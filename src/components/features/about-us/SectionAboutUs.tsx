@@ -10,7 +10,13 @@ const SectionAboutUs = () => {
   const visionMission = [
     {
       icon: (
-        <Image src="/icons/icon-vision.png" alt="icon" width={48} height={48} />
+        <Image
+          loading="lazy"
+          src="/icons/icon-vision.png"
+          alt="icon"
+          width={48}
+          height={48}
+        />
       ),
       title: t("visionMission.vision.title"),
       description: t("visionMission.vision.description"),
@@ -18,6 +24,7 @@ const SectionAboutUs = () => {
     {
       icon: (
         <Image
+          loading="lazy"
           src="/icons/icon-mission.png"
           alt="icon"
           width={48}
@@ -32,7 +39,13 @@ const SectionAboutUs = () => {
   const stats = [
     {
       icon: (
-        <Image src="/icons/icon-repair.png" alt="icon" width={48} height={48} />
+        <Image
+          loading="lazy"
+          src="/icons/icon-repair.png"
+          alt="icon"
+          width={48}
+          height={48}
+        />
       ),
       value: t("stats.repaired.value"),
       label: t("stats.repaired.label"),
@@ -40,6 +53,7 @@ const SectionAboutUs = () => {
     {
       icon: (
         <Image
+          loading="lazy"
           src="/icons/icon-satisfy.png"
           alt="icon"
           width={48}
@@ -51,7 +65,13 @@ const SectionAboutUs = () => {
     },
     {
       icon: (
-        <Image src="/icons/icon-done.png" alt="icon" width={48} height={48} />
+        <Image
+          loading="lazy"
+          src="/icons/icon-done.png"
+          alt="icon"
+          width={48}
+          height={48}
+        />
       ),
       value: t("stats.projects.value"),
       label: t("stats.projects.label"),

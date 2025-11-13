@@ -12,6 +12,8 @@ import SectionProcess from "@/components/features/home/SectionProcess";
 import SectionPrice from "@/components/features/home/SectionPrice";
 import SectionCTA from "@/components/features/home/SectionCTA";
 
+export const dynamic = "force-static";
+
 type PageProps = {
   params: Promise<{ locale: string }>;
 };
@@ -19,21 +21,20 @@ type PageProps = {
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
 
-  // Load HANYA translations yang dibutuhkan untuk home page
   const messages = await getHomeTranslations(locale);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <main className="min-h-screen w-full overflow-x-hidden">
         <Header />
-        <Hero /> {/* anchor home */}
-        <SectionAboutUs /> {/* anchor about-us */}
-        <SectionService /> {/* anchor service */}
+        <Hero />
+        <SectionAboutUs />
+        <SectionService />
         <SectionPartner />
         <SectionProcess />
         <SectionPrice />
         <SectionFAQ />
-        <SectionCTA /> {/* anchor contact-us */}
+        <SectionCTA />
         <Footer />
       </main>
     </NextIntlClientProvider>
