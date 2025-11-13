@@ -10,7 +10,13 @@ const SectionContactInfo = () => {
   const stats = [
     {
       icon: (
-        <Image src="/icons/icon-phone.png" alt="icon" width={48} height={48} />
+        <Image
+          loading="lazy"
+          src="/icons/icon-phone.png"
+          alt="icon"
+          width={48}
+          height={48}
+        />
       ),
       value: t("phone.title"),
       label: t("phone.value"),
@@ -18,6 +24,7 @@ const SectionContactInfo = () => {
     {
       icon: (
         <Image
+          loading="lazy"
           src="/icons/icon-headquarter.png"
           alt="icon"
           width={48}
@@ -29,7 +36,13 @@ const SectionContactInfo = () => {
     },
     {
       icon: (
-        <Image src="/icons/icon-mail.png" alt="icon" width={48} height={48} />
+        <Image
+          loading="lazy"
+          src="/icons/icon-mail.png"
+          alt="icon"
+          width={48}
+          height={48}
+        />
       ),
       value: t("email.title"),
       label: t("email.value"),

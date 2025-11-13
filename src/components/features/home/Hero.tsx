@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-              <a
+              <Link
                 href="https://wa.me/628111122492?text=Hi%20VisionLAB%2C%20I%27m%20interested%20in%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                 <button className="w-36 md:w-48 h-auto md:h-14 cursor-pointer md:px-8 py-3 bg-brand-200 hover:bg-brand-300 text-white rounded-full">
                   {t("bookService")}
                 </button>
-              </a>
+              </Link>
               <Link href="/services">
                 <button className="w-36 md:w-48 h-auto md:h-14 cursor-pointer md:px-8 py-3 border-2 border-brand-200 hover:bg-brand-50/20 text-brand-200 rounded-full transition">
                   {t("exploreService")}

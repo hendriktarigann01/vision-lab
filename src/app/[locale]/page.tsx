@@ -1,3 +1,5 @@
+import { NextIntlClientProvider } from "next-intl";
+import { getHomeTranslations } from "@/lib/translations";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import SectionFAQ from "@/components/common/SectionFAQ";
@@ -10,19 +12,31 @@ import SectionProcess from "@/components/features/home/SectionProcess";
 import SectionPrice from "@/components/features/home/SectionPrice";
 import SectionCTA from "@/components/features/home/SectionCTA";
 
-export default async function Home() {
+export const dynamic = "force-static";
+
+type PageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function Home({ params }: PageProps) {
+  const { locale } = await params;
+
+  const messages = await getHomeTranslations(locale);
+
   return (
-    <main className="min-h-screen w-full overflow-x-hidden">
-      <Header />
-      <Hero /> {/* anchor home */}
-      <SectionAboutUs /> {/* anchor about-us */}
-      <SectionService /> {/* anchor service */}
-      <SectionPartner />
-      <SectionProcess />
-      <SectionPrice />
-      <SectionFAQ />
-      <SectionCTA /> {/* anchor contact-us */}
-      <Footer />
-    </main>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <main className="min-h-screen w-full overflow-x-hidden">
+        <Header />
+        <Hero />
+        <SectionAboutUs />
+        <SectionService />
+        <SectionPartner />
+        <SectionProcess />
+        <SectionPrice />
+        <SectionFAQ />
+        <SectionCTA />
+        <Footer />
+      </main>
+    </NextIntlClientProvider>
   );
 }

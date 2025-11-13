@@ -148,6 +148,7 @@ const SectionService = () => {
           onTouchEnd={onTouchEnd}
         >
           <Image
+            loading="lazy"
             src={services[activeIndex].img}
             alt={services[activeIndex].title}
             width={350}
@@ -263,6 +264,7 @@ const SectionService = () => {
                 }`}
               >
                 <Image
+                  loading="lazy"
                   src={services[0].img}
                   alt={services[0].title}
                   fill
@@ -277,6 +279,7 @@ const SectionService = () => {
                 }`}
               >
                 <Image
+                  loading="lazy"
                   src={services[1].img}
                   alt={services[1].title}
                   className="object-cover w-full h-full"
@@ -293,6 +296,7 @@ const SectionService = () => {
                 }`}
               >
                 <Image
+                  loading="lazy"
                   src={services[2].img}
                   alt={services[2].title}
                   className="object-cover w-full h-full"
