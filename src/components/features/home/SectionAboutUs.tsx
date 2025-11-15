@@ -59,19 +59,17 @@ const SectionAboutUs = () => {
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
           {t("title")}
         </h2>
-        <div className="grid grid-cols-3 gap-4 md:gap-8">
+        <div className="flex justify-center gap-4 md:gap-32">
           {stats.map((stat, idx) => (
             <Card
               key={idx}
               className="p-0 md:p-6 gap-2 md:gap-4 bg-transparent w-fit border-none shadow-none"
             >
-              <div className="px-2 md:px-3 w-12 md:w-20">{stat.icon}</div>
+              <div className="px-2 md:px-5 w-12 md:w-auto">{stat.icon}</div>
               <div className="text-base md:text-4xl border-l-3 px-2 md:px-3 border-brand-200 font-normal text-gray-900">
                 {stat.value}
               </div>
-              <p className="text-xs md:text-base text-gray-600 px-2 md:px-3">
-                {stat.label}
-              </p>
+              <p className="text-sm text-gray-600 px-2 md:px-4">{stat.label}</p>
             </Card>
           ))}
         </div>

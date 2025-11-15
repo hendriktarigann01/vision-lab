@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Card with location info */}
-          <Card className="absolute p-0 left-[5%] md:left-[16%] top-[75%] md:top-[30%] z-20 border-none shadow-none max-w-[180px] md:max-w-[240px]">
+          <Card className="absolute p-0 left-[5%] md:left-[16%] top-[75%] md:top-[30%] z-20 border-none shadow-none max-w-[180px] md:max-w-60">
             <CardContent className="p-4 space-y-2">
               <div className="items-center space-y-3">
                 <Image
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                   alt="Vision Lab Logo"
                   width={120}
                   height={50}
-                  className="w-24 md:w-32 flex-shrink-0 mx-auto"
+                  className="w-24 md:w-32 shrink-0 mx-auto"
                 />
                 <p className="text-xs text-gray-600 mt-1 text-center">
                   {t("mapAddress")}

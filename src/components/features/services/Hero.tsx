@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-wrap justify-center md:justify-start pt-4">
               <motion.button
                 onClick={scrollToService}
-                className="flex items-center justify-center h-auto md:h-14 gap-2 w-36 md:w-48 cursor-pointer md:px-8 py-3 bg-brand-200 text-white rounded-full"
+                className="flex items-center justify-center h-auto gap-2 w-auto cursor-pointer px-6 md:px-8 py-3 bg-brand-200 text-white rounded-full"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}

@@ -15,15 +15,40 @@
     "stats": {
       "repaired": {
         "value": "1200+",
-        "label": "LED & LCD screens repaired"
+        "label": "LED & LCD Screens Repaired"
       },
       "satisfaction": {
         "value": "95%",
-        "label": "Customer satisfaction level"
+        "label": "Customer Satisfaction Level"
       },
       "projects": {
         "value": "150+",
         "label": "Projects Done"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "reasons": {
+        "warranty": {
+          "number": "1",
+          "title": "Official Service Warranty",
+          "description": "Every service is covered by an official warranty to ensure quality and customer trust."
+        },
+        "technicians": {
+          "number": "2",
+          "title": "Certified Technicians",
+          "description": "Handled by professional technicians with verified certifications and proven expertise."
+        },
+        "response": {
+          "number": "3",
+          "title": "Fast & Flexible Response",
+          "description": "We provide quick assistance and adjust our service schedule to fit your needs."
+        },
+        "support": {
+          "number": "4",
+          "title": "Nationwide Support",
+          "description": "Our services are available across Indonesia, giving you reliable support wherever you are."
+        }
       }
     }
   }

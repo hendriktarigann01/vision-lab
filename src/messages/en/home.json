@@ -22,11 +22,11 @@
         },
         "stepFive": {
           "title": "Performance Test & Report",
-          "description": "Performing comprehensive functional tests and providing maintenance reports"
+          "description": "Performing comprehensive functional tests and providing maintenance reports."
         },
         "stepSix": {
           "title": "Long-term Maintenance Plan",
-          "description": "Regular maintenance contract program (monthly, quarterly, and yearly) with a regular schedule and priority support"
+          "description": "Regular maintenance contract program (monthly, quarterly, and yearly) with a regular schedule and priority support."
         }
       }
     },

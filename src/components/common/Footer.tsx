@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-gray-800 mb-4">
                 {t("pages.title")}
               </h4>
-              <ul className="space-y-3 text-gray-600 text-sm">
+              <ul className="space-y-5 text-gray-600 text-sm">
                 {pageLinks.map((link) => (
                   <li key={link.href}>
                     <Link

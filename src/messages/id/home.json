@@ -22,18 +22,18 @@
         },
         "stepFive": {
           "title": "Uji Performa & Laporan",
-          "description": "Melakukan pengujian fungsi menyeluruh dan memberikan laporan perawatan"
+          "description": "Melakukan pengujian fungsi menyeluruh dan memberikan laporan perawatan."
         },
         "stepSix": {
           "title": "Kontrak Perawatan Berkala",
-          "description": "Program kontrak perawatan rutin (bulanan, triwulanan, dan tahunan) dengan jadwal teratur dan dukungan prioritas"
+          "description": "Program kontrak perawatan rutin (bulanan, triwulanan, dan tahunan) dengan jadwal teratur dan dukungan prioritas."
         }
       }
     },
     "pricing": {
       "title": "Paket Layanan Anda",
       "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLab menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
-      "price": "IDR 6.000.000",
+      "price": "IDR xxx.000",
       "perUnit": "/ Sqm / Bulan",
       "packages": {
         "cleaning": "Paket Pembersihan",

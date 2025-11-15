@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 interface Reason {
   number: string;
@@ -15,6 +16,7 @@ interface ReasonCardProps {
 
 interface CenterCircleProps {
   isMobile?: boolean;
+  title: string;
 }
 
 interface DashedLinesProps {
@@ -22,33 +24,31 @@ interface DashedLinesProps {
 }
 
 const SectionWhyUs = () => {
+  const t = useTranslations("aboutUs.whyChooseUs");
+
   const reasons: Reason[] = [
     {
-      number: "1",
-      title: "Official Service Warranty",
-      description:
-        "Every service is covered by an official warranty to ensure quality and customer trust.",
+      number: t("reasons.warranty.number"),
+      title: t("reasons.warranty.title"),
+      description: t("reasons.warranty.description"),
       position: "top-left",
     },
     {
-      number: "2",
-      title: "Certified Technicians",
-      description:
-        "Handled by professional technicians with verified certifications and proven expertise.",
+      number: t("reasons.technicians.number"),
+      title: t("reasons.technicians.title"),
+      description: t("reasons.technicians.description"),
       position: "top-right",
     },
     {
-      number: "3",
-      title: "Fast & Flexible Response",
-      description:
-        "We provide quick assistance and adjust our service schedule to fit your needs.",
+      number: t("reasons.response.number"),
+      title: t("reasons.response.title"),
+      description: t("reasons.response.description"),
       position: "bottom-left",
     },
     {
-      number: "4",
-      title: "Nationwide Support",
-      description:
-        "Our services are available across Indonesia, giving you reliable support wherever you are.",
+      number: t("reasons.support.number"),
+      title: t("reasons.support.title"),
+      description: t("reasons.support.description"),
       position: "bottom-right",
     },
   ];
@@ -59,11 +59,9 @@ const SectionWhyUs = () => {
   }) => {
     const sizeClasses = isMobile ? "w-8 h-8 text-xs mb-3" : "w-10 h-10 mb-4";
     const titleClasses = isMobile
-      ? "text-xs border-l-2 pl-2 mb-2"
+      ? "text-sm border-l-2 pl-2 mb-2"
       : "text-xl border-l-4 pl-3 mb-3";
-    const descClasses = isMobile
-      ? "text-[10px] leading-normal"
-      : "text-base leading-relaxed";
+    const descClasses = isMobile ? "text-sm" : "text-base leading-relaxed";
 
     return (
       <div className="flex flex-col items-start">
@@ -82,7 +80,10 @@ const SectionWhyUs = () => {
     );
   };
 
-  const CenterCircle: React.FC<CenterCircleProps> = ({ isMobile = false }) => {
+  const CenterCircle: React.FC<CenterCircleProps> = ({
+    isMobile = false,
+    title,
+  }) => {
     const sizeClasses = isMobile ? "w-24 h-24" : "w-48 h-48";
     const textClasses = isMobile
       ? "text-xs font-normal px-0"
@@ -92,9 +93,7 @@ const SectionWhyUs = () => {
       <div
         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${sizeClasses} bg-brand-200 rounded-full flex items-center justify-center z-10`}
       >
-        <h2 className={`${textClasses} text-white text-center`}>
-          Why Choose Us
-        </h2>
+        <h2 className={`${textClasses} text-white text-center`}>{title}</h2>
       </div>
     );
   };
@@ -146,7 +145,7 @@ const SectionWhyUs = () => {
               <ReasonCard key={reason.number} reason={reason} />
             ))}
           </div>
-          <CenterCircle />
+          <CenterCircle title={t("title")} />
           <DashedLines />
         </div>
 
@@ -157,7 +156,7 @@ const SectionWhyUs = () => {
               <ReasonCard key={reason.number} reason={reason} isMobile />
             ))}
           </div>
-          <CenterCircle isMobile />
+          <CenterCircle isMobile title={t("title")} />
           <DashedLines isMobile />
         </div>
       </div>

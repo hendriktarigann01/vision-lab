@@ -95,7 +95,7 @@ const SectionAboutUs = () => {
           {/* Right - Description and Vision/Mission */}
           <div>
             {/* Description */}
-            <p className="text-base text-gray-700 leading-relaxed mb-8">
+            <p className="px-2 md:px-3 text-base text-gray-700 md:leading-relaxed mb-8">
               {t("description")}
             </p>
 
@@ -103,11 +103,11 @@ const SectionAboutUs = () => {
             <div className="grid grid-cols-2 gap-8">
               {visionMission.map((item, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-base font-normal text-gray-900 border-l-4 border-brand-200 pl-3 mb-3">
+                  <div className="px-2 md:px-4 mb-4">{item.icon}</div>
+                  <h3 className="px-2 md:px-3 text-base font-normal text-gray-900 border-l-4 border-brand-200 pl-3 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="px-2 md:px-4 text-base text-gray-700 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -121,7 +121,7 @@ const SectionAboutUs = () => {
           {/* Title */}
           <h2 className="text-lg mb-6 text-gray-900">{t("title")}</h2>
           {/* Description */}
-          <p className="text-sm text-gray-700 leading-relaxed mb-6">
+          <p className="text-sm text-gray-700 mb-6">
             {t("description")}
           </p>
 
@@ -130,10 +130,10 @@ const SectionAboutUs = () => {
             {visionMission.map((item, idx) => (
               <div key={idx} className="flex flex-col gap-2">
                 <div className="px-2 md:px-3 w-12 md:w-20">{item.icon}</div>
-                <h3 className="text-base font-normal text-gray-900 border-l-4 border-brand-200 px-2">
+                <h3 className="text-base font-normal text-gray-900 border-l-3 border-brand-200 px-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed px-2">
+                <p className="text-sm text-gray-700 px-2">
                   {item.description}
                 </p>
               </div>
@@ -142,19 +142,17 @@ const SectionAboutUs = () => {
         </div>
 
         {/* Stats - 3 columns for all screens */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8 w-auto md:max-w-5xl mx-auto">
+        <div className="flex justify-center gap-4 md:gap-32">
           {stats.map((stat, idx) => (
             <Card
               key={idx}
               className="p-0 md:p-6 gap-2 md:gap-4 bg-transparent w-fit border-none shadow-none"
             >
-              <div className="px-2 md:px-3 w-12 md:w-20">{stat.icon}</div>
+              <div className="px-2 md:px-5 w-12 md:w-auto">{stat.icon}</div>
               <div className="text-base md:text-4xl border-l-3 px-2 md:px-3 border-brand-200 font-normal text-gray-900">
                 {stat.value}
               </div>
-              <p className="text-xs md:text-base text-gray-600 px-2 md:px-3">
-                {stat.label}
-              </p>
+              <p className="text-sm text-gray-700 px-2 md:px-4">{stat.label}</p>
             </Card>
           ))}
         </div>
