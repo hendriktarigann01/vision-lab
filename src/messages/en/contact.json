@@ -1,0 +1,49 @@
+{
+  "contact": {
+    "form": {
+      "title": "Let's Get In Touch",
+      "subtitle": "Feel free to drop us a line below",
+      "fields": {
+        "fullName": {
+          "label": "Full Name",
+          "placeholder": "Ex: David Casie",
+          "required": "Full name is required"
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "Ex: contact@gmail.com",
+          "required": "Email is required",
+          "invalid": "Invalid email address"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Ex: 08976785",
+          "required": "Phone number is required"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell us what we can help you",
+          "required": "Message is required"
+        }
+      },
+      "submitButton": "Send Message",
+      "submitting": "Sending...",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again."
+    },
+    "info": {
+      "phone": {
+        "title": "Phone",
+        "value": "(+62) 811-1122-492"
+      },
+      "headquarter": {
+        "title": "Headquarter",
+        "value": "The Mansion Bougenville Tower Fontana Lantai 50 Jakarta Utara"
+      },
+      "email": {
+        "title": "Email",
+        "value": "sales@mjsolution.co.id"
+      }
+    }
+  }
+}

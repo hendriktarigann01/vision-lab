@@ -1,55 +1,55 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import LanguageSelector from "@/components/features/LanguageSelector";
-import { Menu } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import {
+  isActivePath,
+  getLocalizedHref,
+  getLinkClassName,
+} from "@/lib/navigationHelpers";
 
 const Header: React.FC = () => {
+  const t = useTranslations("header");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const { scrollY } = useScroll();
+  const params = useParams();
+  const pathname = usePathname();
+  const locale = params.locale as string;
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
 
     if (latest > previous && latest > 150) {
-      // Scrolling down
       setIsVisible(false);
     } else {
-      // Scrolling up
       setIsVisible(true);
     }
 
-    // Update background blur state
     if (latest > 50) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
   });
-
-  // Smooth scroll handler
-  const handleScrollTo = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
-  ) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 100; // Offset untuk fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setIsMenuOpen(false);
-    }
-  };
 
   return (
     <motion.header
@@ -70,11 +70,10 @@ const Header: React.FC = () => {
                   }`}
       >
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="relative">
               <Image
-                src="/vision-lab-logo.png"
+                src="/vision-lab-logo.webp"
                 alt="VisionLab Logo"
                 width={200}
                 height={40}
@@ -85,82 +84,178 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <a
-              href="#home"
-              onClick={(e) => handleScrollTo(e, "home")}
-              className="px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition font-medium"
+            <Link
+              href={getLocalizedHref(locale, "/")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
-              Home
-            </a>
-            <a
-              href="#about-us"
-              onClick={(e) => handleScrollTo(e, "about-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              {t("home")}
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/about-us")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/about-us"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
-              About Us
-            </a>
-            <a
-              href="#service"
-              onClick={(e) => handleScrollTo(e, "service")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              {t("aboutUs")}
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/services")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/services"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
-              Services
-            </a>
-            <a
-              href="#contact-us"
-              onClick={(e) => handleScrollTo(e, "contact-us")}
-              className="px-6 py-2 text-gray-700 hover:text-orange-500 transition font-medium"
+              {t("services")}
+            </Link>
+            <Link
+              href={getLocalizedHref(locale, "/contact-us")}
+              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                isActivePath(pathname, locale, "/contact-us"),
+                "bg-brand-200 text-white",
+                "text-gray-700 hover:text-brand-200"
+              )}`}
             >
-              Contact Us
-            </a>
-            {/* <LanguageSelector /> */}
+              {t("contactUs")}
+            </Link>
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg bg-orange-500 text-gray-700"
+            className="md:hidden p-2 rounded-lg bg-brand-200 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="w-6 h-6 text-white" />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4">
-            <div className="flex flex-col gap-2">
-              <a
-                href="#home"
-                onClick={(e) => handleScrollTo(e, "home")}
-                className="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition font-medium text-center"
-              >
-                Home
-              </a>
-              <a
-                href="#about-us"
-                onClick={(e) => handleScrollTo(e, "about-us")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
-              >
-                About Us
-              </a>
-              <a
-                href="#service"
-                onClick={(e) => handleScrollTo(e, "service")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
-              >
-                Services
-              </a>
-              <a
-                href="#contact-us"
-                onClick={(e) => handleScrollTo(e, "contact-us")}
-                className="px-4 py-2 text-gray-700 hover:text-orange-500 transition font-medium text-center"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 transition-opacity duration-300 z-30"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed inset-y-0 left-0 w-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-40 ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-6 border-b border-gray-100">
+            <Image
+              src="/vision-lab-logo.webp"
+              alt="VisionLab Logo"
+              width={150}
+              height={30}
+              className="object-contain"
+            />
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+          </div>
+
+          <nav className="flex-1 overflow-y-auto p-6">
+            <div className="space-y-2">
+              <Link
+                href={getLocalizedHref(locale, "/")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
+              >
+                <span className="text-lg">{t("home")}</span>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+
+              <Link
+                href={getLocalizedHref(locale, "/about-us")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/about-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
+              >
+                <span className="text-lg">{t("aboutUs")}</span>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/about-us"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+
+              <Link
+                href={getLocalizedHref(locale, "/services")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/services"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
+              >
+                <span className="text-lg">{t("services")}</span>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/services"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
+              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+
+              <Link
+                href={getLocalizedHref(locale, "/contact-us")}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                  isActivePath(pathname, locale, "/contact-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700"
+                )}`}
+              >
+                <span className="text-lg">{t("contactUs")}</span>
+                <ArrowRight
+                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+                    isActivePath(pathname, locale, "/contact-us"),
+                    "text-white",
+                    "text-gray-400 group-hover:text-brand-200"
+                  )}`}
+                />
+              </Link>
+
+              <div className="py-4">
+                <LanguageSelector />
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
     </motion.header>
   );
 };

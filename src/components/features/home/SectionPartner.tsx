@@ -2,8 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 const SectionPartner = () => {
+  const t = useTranslations("home.partners");
+
   const partners = [
     { name: "LINSN Technology", logo: "/logos/logo-linsn.png" },
     { name: "FABULUX LED", logo: "/logos/logo-fabulux.png" },
@@ -18,16 +21,14 @@ const SectionPartner = () => {
   ];
 
   return (
-    <section className="py-10 md:py-16 px-8 md:px-6 bg-[#F5F5F5]">
+    <section className="py-16 md:py-24 px-8 md:px-6 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
-          Our Partners
+          {t("title")}
         </h2>
         <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
-          VisionLab has experience handling various well-known LED and LCD
-          brands with repair services that are precise, safe, and comply with
-          manufacturer standards.
+          {t("description")}
         </p>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
           {partners.map((partner, idx) => (
@@ -43,6 +44,7 @@ const SectionPartner = () => {
             >
               <div className="relative w-full h-8 md:h-16">
                 <Image
+                  loading="lazy"
                   src={partner.logo}
                   alt={partner.name}
                   fill

@@ -1,0 +1,55 @@
+{
+  "aboutUs": {
+    "title": "Tentang VisionLAB",
+    "description": "VisionLAB adalah pusat layanan multimedia di bawah MJ Solution Indonesia yang berfokus pada perbaikan, perawatan, dan servis layar LED & LCD. Dengan fokus pada kualitas layanan dan kepuasan pelanggan, VisionLAB bertujuan menjadi pemimpin di pasar perbaikan layar di Indonesia. Dengan tim teknisi ahli dan sistem layanan modern, VisionLAB berkomitmen memberikan layanan yang cepat, efisien, dan transparan di seluruh Indonesia.",
+    "visionMission": {
+      "vision": {
+        "title": "Visi",
+        "description": "Menjadi pusat layanan profesional dan terpercaya yang berfokus pada perbaikan, perawatan, dan pengembangan solusi layar multimedia di Indonesia."
+      },
+      "mission": {
+        "title": "Misi",
+        "description": "Memberikan Layanan Berkualitas Tinggi, Meningkatkan Kesadaran dan Keberlanjutan, Mengembangkan Inovasi dan Kemitraan Strategis"
+      }
+    },
+    "stats": {
+      "repaired": {
+        "value": "1200+",
+        "label": "Layar LED & LCD Yang Diperbaiki"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Tingkat Kepuasan Pelanggan"
+      },
+      "projects": {
+        "value": "150+",
+        "label": "Proyek Selesai"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Kenapa Memilih Kami",
+      "reasons": {
+        "warranty": {
+          "number": "1",
+          "title": "Garansi Resmi Layanan",
+          "description": "Setiap layanan dilindungi oleh garansi resmi untuk memastikan kualitas dan kepercayaan pelanggan."
+        },
+        "technicians": {
+          "number": "2",
+          "title": "Teknisi Bersertifikat",
+          "description": "Ditangani oleh teknisi profesional dengan sertifikasi terverifikasi dan keahlian yang terbukti."
+        },
+        "response": {
+          "number": "3",
+          "title": "Respon Cepat & Fleksibel",
+          "description": "Kami menyediakan bantuan cepat dan menyesuaikan jadwal layanan sesuai kebutuhan Anda."
+        },
+        "support": {
+          "number": "4",
+          "title": "Dukungan Seluruh Indonesia",
+          "description": "Layanan kami tersedia di seluruh Indonesia, memberikan dukungan yang dapat diandalkan di mana pun Anda berada."
+        }
+      }
+    }
+  }
+}

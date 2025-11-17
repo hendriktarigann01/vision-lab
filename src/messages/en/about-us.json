@@ -1,0 +1,55 @@
+{
+  "aboutUs": {
+    "title": "About VisionLAB",
+    "description": "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens. With a focus on service quality and customer satisfaction, VisionLAB aims to become the leader in the screen repair market in Indonesia. With a team of expert technicians and a modern service system, VisionLAB is committed to providing fast, efficient, and transparent services throughout Indonesia.",
+    "visionMission": {
+      "vision": {
+        "title": "Vision",
+        "description": "To be a professional and trusted service center focused on repair, maintenance, and development of multimedia screen solutions in Indonesia."
+      },
+      "mission": {
+        "title": "Mission",
+        "description": "Providing High-Quality Services, Raising Awareness and Sustainability, Developing Innovation and Strategic Partnerships"
+      }
+    },
+    "stats": {
+      "repaired": {
+        "value": "1200+",
+        "label": "LED & LCD Screens Repaired"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Customer Satisfaction Level"
+      },
+      "projects": {
+        "value": "150+",
+        "label": "Projects Done"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "reasons": {
+        "warranty": {
+          "number": "1",
+          "title": "Official Service Warranty",
+          "description": "Every service is covered by an official warranty to ensure quality and customer trust."
+        },
+        "technicians": {
+          "number": "2",
+          "title": "Certified Technicians",
+          "description": "Handled by professional technicians with verified certifications and proven expertise."
+        },
+        "response": {
+          "number": "3",
+          "title": "Fast & Flexible Response",
+          "description": "We provide quick assistance and adjust our service schedule to fit your needs."
+        },
+        "support": {
+          "number": "4",
+          "title": "Nationwide Support",
+          "description": "Our services are available across Indonesia, giving you reliable support wherever you are."
+        }
+      }
+    }
+  }
+}

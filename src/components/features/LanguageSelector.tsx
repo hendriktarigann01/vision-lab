@@ -1,109 +1,109 @@
+"use client";
 import Image from "next/image";
-import React, { useState } from "react";
-
-interface Language {
-  code: string;
-  name: string;
-  flag: string;
-}
+import React, { useTransition, useEffect, useState } from "react";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { localeNames, localeFlags, type Locale } from "@/i18n/config";
+import { routing } from "@/i18n/routing";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const LanguageSelector: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
+  const [isPending, startTransition] = useTransition();
+  const [isOpen, setIsOpen] = useState(false);
+  const locale = useLocale() as Locale;
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const languages: Language[] = [
-    {
-      code: "en",
-      name: "English",
-      flag: "/icons/icon-united-kingdom.png",
-    },
-    {
-      code: "id",
-      name: "Indonesia",
-      flag: "/icons/icon-indonesia.png",
-    },
-  ];
-
-  const selectedLang = languages.find(
-    (lang) => lang.code === selectedLanguage
-  )!;
-
-  const handleSelect = (code: string): void => {
-    setSelectedLanguage(code);
+  const handleSelect = (newLocale: Locale): void => {
+    startTransition(() => {
+      router.replace(pathname, { locale: newLocale });
+    });
     setIsOpen(false);
   };
 
-  return (
-    <div className="relative inline-block w-48">
-      {/* Button Trigger */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between space-x-3 px-3 py-2"
-      >
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
-            <Image
-              src={selectedLang.flag}
-              alt={selectedLang.name}
-              className="w-full h-full object-cover"
-              width={32}
-              height={32}
-            />
-          </div>
-          <span className="font-medium text-gray-700 uppercase text-sm">
-            {selectedLang.code}
-          </span>
-        </div>
-        <svg
-          className={`w-4 h-4 text-gray-600 transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          fill="none"
-          strokeWidth="2"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+  useEffect(() => {
+    if (!isOpen) return;
 
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl overflow-hidden z-50">
-          {languages.map((lang, index) => (
-            <button
-              key={lang.code}
-              onClick={() => handleSelect(lang.code)}
-              className={`w-full flex items-center gap-3 px-4 py-4 transition-all ${
-                selectedLanguage === lang.code
-                  ? "bg-blue-50 border-2"
-                  : index === languages.length - 1
-                  ? "bg-orange-500 hover:bg-orange-600"
-                  : "hover:bg-gray-50"
-              }`}
-            >
-              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-sm">
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Only close when scrolling down
+      if (currentScrollY > lastScrollY) {
+        setIsOpen(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="w-24">
+      <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
+        <DropdownMenuTrigger asChild>
+          <button
+            className="flex items-center gap-2 px-3 py-2 w-full"
+            disabled={isPending}
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-full flex items-center justify-center bg-gray-100">
                 <Image
-                  src={lang.flag}
-                  alt={lang.name}
+                  src={localeFlags[locale]}
+                  alt={localeNames[locale]}
                   className="w-full h-full object-cover"
-                  width={48}
-                  height={48}
+                  width={32}
+                  height={32}
                 />
               </div>
-              <span
-                className={`font-semibold text-lg ${
-                  index === languages.length - 1
-                    ? "text-white"
-                    : "text-gray-800"
-                }`}
-              >
-                {lang.name}
-              </span>
-            </button>
+              <span className="text-gray-700 uppercase text-sm">{locale}</span>
+            </div>
+            <ChevronDown
+              className={`w-4 h-4 text-gray-600 transition-transform ${
+                isPending ? "opacity-50" : ""
+              }`}
+            />
+          </button>
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent
+          align="start"
+          className="w-36 bg-white rounded-xl space-y-2 p-2"
+        >
+          {routing.locales.map((lang) => (
+            <DropdownMenuItem
+              key={lang}
+              onClick={() => handleSelect(lang)}
+              className={`cursor-pointer flex items-center gap-3 px-3 py-2 rounded-md transition-all ${
+                locale === lang ? "bg-brand-50/20 border border-brand-200" : ""
+              }`}
+            >
+              <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                <Image
+                  src={localeFlags[lang]}
+                  alt={localeNames[lang]}
+                  className="w-full h-full"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <span className="text-xs">{localeNames[lang]}</span>
+            </DropdownMenuItem>
           ))}
-        </div>
-      )}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 };

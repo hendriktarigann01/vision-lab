@@ -1,0 +1,83 @@
+{
+  "header": {
+    "home": "Beranda",
+    "aboutUs": "Tentang Kami",
+    "services": "Layanan",
+    "contactUs": "Hubungi Kami"
+  },
+  "footer": {
+    "description": "Di tengah meningkatnya permintaan akan layar digital, banyak layar mengalami kerusakan akibat perawatan yang buruk. VisionLab menawarkan solusi profesional untuk mengembalikan kejernihan dan kinerjanya.",
+    "address": {
+      "line1": "The Mansion Bougenville Kemayoran",
+      "line2": "Tower Fontana Zona I Lantai 50",
+      "line3": "Kemayoran Jakarta Utara"
+    },
+    "phone": "(+62) 811-1122-492",
+    "pages": {
+      "title": "Halaman",
+      "home": "Beranda",
+      "aboutUs": "Tentang Kami",
+      "services": "Layanan",
+      "contactUs": "Hubungi Kami"
+    },
+    "services": {
+      "title": "Layanan",
+      "generalCheckUp": "Pemeriksaan Umum",
+      "completeService": "Layanan Lengkap",
+      "routineCleaning": "Pembersihan Rutin",
+      "longTermContract": "Kontrak Jangka Panjang",
+      "maintenance": "Perawatan",
+      "onSiteTraining": "Pelatihan di Lokasi"
+    },
+    "socialMedia": {
+      "title": "Media Sosial"
+    },
+    "copyright": "© VisionLAB 2025"
+  },
+  "services": {
+    "title": "Layanan lengkap untuk semua kebutuhan perbaikan dan perawatan",
+    "items": {
+      "completeService": {
+        "title": "Layanan Lengkap",
+        "description": "Perbaikan menyeluruh untuk mengembalikan layar Anda ke performa optimal mencakup pemeriksaan perangkat keras, kalibrasi, dan pembaruan sistem untuk keandalan jangka panjang."
+      },
+      "maintenance": {
+        "title": "Perawatan",
+        "description": "Pembersihan dan perawatan rutin untuk menjaga kualitas tampilan, mencegah kerusakan dini, dan memastikan LED dan LCD selalu dalam kondisi terbaik."
+      },
+      "onSiteTraining": {
+        "title": "Pelatihan di Lokasi",
+        "description": "Memberikan pelatihan di lokasi untuk membantu teknisi, distributor, dan pengguna memahami cara mengoperasikan, merawat, dan mengatasi masalah layar LED & LCD."
+      }
+    },
+    "viewService": "Lihat Layanan"
+  },
+  "faq": {
+    "title": "FAQ",
+    "description": "Kami memahami bahwa setiap layar memiliki kebutuhan yang berbeda. Itulah mengapa VisionLab telah menyusun daftar pertanyaan yang sering diajukan agar Anda bisa mendapatkan kejelasan lengkap tentang layanan, proses, biaya, dan jaminan kami tanpa harus bertanya dua kali.",
+    "questions": {
+      "brands": {
+        "question": "Apakah VisionLab dapat menangani semua merek layar LED dan LCD?",
+        "answer": "kami dapat menangani berbagai merek dan model layar dari berbagai produsen. Tim teknisi kami dilengkapi dengan alat kalibrasi dan modul pengganti yang kompatibel dengan merek-merek terkenal di pasar Indonesia dan global.",
+        "answerPrefix": "Ya,"
+      },
+      "pickupDelivery": {
+        "question": "Apakah VisionLab menyediakan layanan penjemputan dan pengiriman?",
+        "answer": "kami menyediakan layanan penjemputan dan pengiriman untuk kemudahan Anda. Silakan hubungi tim kami untuk detail lebih lanjut tentang cakupan layanan.",
+        "answerPrefix": "Ya,"
+      },
+      "location": {
+        "question": "Di mana lokasi VisionLab dan wilayah mana yang dilayani?",
+        "answer": "VisionLab berbasis di Jakarta dan melayani lebih dari 15 kota di seluruh Indonesia. Kami dapat menjangkau lokasi Anda untuk layanan perawatan dan perbaikan."
+      },
+      "warranty": {
+        "question": "Apakah ada garansi setelah perbaikan?",
+        "answer": "semua perbaikan kami dilengkapi dengan periode garansi. Durasi garansi tergantung pada jenis layanan dan komponen yang diganti.",
+        "answerPrefix": "Ya,"
+      }
+    }
+  },
+  "language": {
+    "select": "Pilih Bahasa"
+  }
+}

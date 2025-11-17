@@ -1,0 +1,67 @@
+{
+  "home": {
+    "process": {
+      "title": "Maintenance Process",
+      "description": "follows a systematic process to ensure every LED & LCD screen gets the best care from inspection to final testing, handled by professional technicians for lasting performance.",
+      "steps": {
+        "stepOne": {
+          "title": "Initial Inspection",
+          "description": "Initial inspection to determine the general condition of the screen and determine maintenance requirements."
+        },
+        "stepTwo": {
+          "title": "Dust & Surface Cleaning",
+          "description": "Clean the inside of the module and connectors to remove dust and signal interference."
+        },
+        "stepThree": {
+          "title": "Color & Brightness Calibration",
+          "description": "Adjust the color and brightness to maintain a balanced display."
+        },
+        "stepFour": {
+          "title": "Electrical & Cooling Check",
+          "description": "Ensure that the power and cooling systems are working properly to prevent overheating."
+        },
+        "stepFive": {
+          "title": "Performance Test & Report",
+          "description": "Performing comprehensive functional tests and providing maintenance reports."
+        },
+        "stepSix": {
+          "title": "Long-term Maintenance Plan",
+          "description": "Regular maintenance contract program (monthly, quarterly, and yearly) with a regular schedule and priority support."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Your Service Plan",
+      "description": "Choose the maintenance plan that fits your needs. VisionLab offers flexible options for one-time repairs, monthly care, or annual service all handled by certified technicians to keep your LED & LCD screens in top condition.",
+      "price": "IDR xxx.000",
+      "perUnit": "/ Sqm / Month",
+      "packages": {
+        "cleaning": "Cleaning Package",
+        "maintenance": "Maintenance Package",
+        "complete": "Complete Package"
+      },
+      "features": {
+        "moduleCleaning": "Module Cleaning",
+        "frameCleaning": "Frame Cleaning",
+        "internalCleaning": "Internal Cleaning",
+        "generalCleaning": "General Cleaning",
+        "moduleCheckup": "Module Check-up & Maintenance",
+        "powerSupplyCheckup": "Power Supply Check-up & Maintenance",
+        "rcCheckup": "RC Check-up & Maintenance",
+        "processorCheckup": "Processor Check-up & Maintenance",
+        "cablingCheckup": "Cabling Check-up & Maintenance"
+      },
+      "getStarted": "Get Started Now"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "description": "VisionLab has experience handling various well-known LED and LCD brands with repair services that are precise, safe, and comply with manufacturer standards."
+    },
+    "cta": {
+      "title": "Need Screen Repair",
+      "titleSecond": "or Maintenance Assistance?",
+      "description": "Discuss your needs with the VisionLab team. We are ready to help you find the best solution for repair, maintenance, or performance enhancement of your LED & LCD screens.",
+      "button": "Consult Now"
+    }
+  }
+}
