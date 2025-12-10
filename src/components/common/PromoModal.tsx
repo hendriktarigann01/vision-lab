@@ -60,7 +60,9 @@ const PromoModal: React.FC = () => {
                   <p className="text-4xl md:text-5xl font-semibold text-gray-700">
                     {t("discount")}
                   </p>
-                  <p className="text-gray-600 text-sm">{t("description")}</p>
+                  <p className="text-gray-600 text-xs md:text-sm">
+                    {t("description")}
+                  </p>
                 </div>
 
                 <div className="space-y-3">
@@ -73,7 +75,7 @@ const PromoModal: React.FC = () => {
                         <div className="w-5 h-5 rounded-full bg-[#43A047] flex items-center justify-center flex-shrink-0">
                           <Check className="w-3 h-3 text-white" />
                         </div>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-gray-700 text-xs md:text-sm">
                           {t("extraBenefits.pricing")}
                         </p>
                       </div>
@@ -87,10 +89,10 @@ const PromoModal: React.FC = () => {
                   </h3>
 
                   <div>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-xs md:text-sm">
                       {t("inspection.validity")}
                     </p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-xs md:text-sm">
                       {t("inspection.area")}
                     </p>
                   </div>
