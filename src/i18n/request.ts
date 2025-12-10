@@ -11,7 +11,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale;
   }
 
-  // HANYA load common translations (yang dipakai di semua halaman)
   const messages = (await import(`@/messages/${locale}/common.json`)).default;
 
   return {
