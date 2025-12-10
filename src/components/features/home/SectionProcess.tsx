@@ -47,7 +47,7 @@ const SectionProcess = () => {
           {t("title")}
         </h2>
         <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
-          <span className="text-brand-200 font-semibold">VisionLab</span>{" "}
+          <span className="text-brand-200 font-semibold">VisionLAB</span>{" "}
           {t("description")}
         </p>
         <div className="grid md:grid-cols-3 gap-7 md:gap-8">

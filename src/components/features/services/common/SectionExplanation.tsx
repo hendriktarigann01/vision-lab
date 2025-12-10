@@ -38,7 +38,7 @@ const ServicePoint: React.FC<ServicePoint> = ({
     <div>
       {variant === "default" ? (
         <h3 className="text-xs md:text-sm font-semibold text-gray-600 mb-2 leading-relaxed">
-          {title},{" "}
+          {title}{" "}
           <span className="text-xs md:text-sm font-normal text-gray-600">
             {description}
           </span>

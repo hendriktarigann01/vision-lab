@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               <div className="items-center space-y-3">
                 <Image
                   src="/vision-lab-logo.webp"
-                  alt="Vision Lab Logo"
+                  alt="VisionLAB Logo"
                   width={120}
                   height={50}
                   className="w-24 md:w-32 shrink-0 mx-auto"

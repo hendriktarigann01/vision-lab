@@ -18,6 +18,9 @@ const SectionPartner = () => {
     { name: "MJ SOLUTION INDONESIA", logo: "/logos/logo-mjs.png" },
     { name: "Absen", logo: "/logos/logo-absen.png" },
     { name: "LEYARD", logo: "/logos/logo-leyard.png" },
+    { name: "QSTECH", logo: "/logos/logo-qstech.png" },
+    { name: "Panasonic", logo: "/logos/logo-panasonic.png" },
+    { name: "Qiangli", logo: "/logos/logo-qiangli.png" },
   ];
 
   return (
@@ -30,17 +33,11 @@ const SectionPartner = () => {
         <p className="text-sm md:text-base text-center px-9 md:px-0 text-gray-600 mb-6 md:mb-12 max-w-3xl mx-auto">
           {t("description")}
         </p>
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:[&>*:nth-last-child(-n+3):nth-child(5n+1)]:col-start-2">
           {partners.map((partner, idx) => (
             <Card
               key={idx}
-              className={`bg-white rounded-md border-none p-4 md:p-6 flex items-center justify-center shadow-none h-16 md:min-h-[120px]
-                          ${
-                            idx === partners.length - 1
-                              ? "col-span-3 justify-self-center w-[calc(33.333%-20px)] md:col-span-1 md:justify-self-auto md:w-auto"
-                              : ""
-                          }
-                        `}
+              className="bg-white rounded-md border-none p-4 md:p-6 flex items-center justify-center shadow-none h-16 md:min-h-24"
             >
               <div className="relative w-full h-8 md:h-16">
                 <Image

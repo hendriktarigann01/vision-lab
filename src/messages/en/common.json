@@ -1,4 +1,21 @@
 {
+  "promo": {
+    "label": "NEW YEAR PROMO",
+    "discount": "50% OFF",
+    "description": "For VisionLAB digital signage management services.",
+    "extraBenefits": {
+      "title": "Extra Benefits for You",
+      "pricing": "LED Cleaning starting from IDR 99,000 per meter"
+    },
+    "inspection": {
+      "title": "Free LED Inspection",
+      "validity": "Valid for January - February 2026",
+      "area": "Jabodetabek Area Only"
+    },
+    "cta": "GET IT NOW!",
+    "close": "Close modal",
+    "whatsappMessage": "Hi VisionLAB, I would like to get the New Year Promotion. Please provide me with more information."
+  },
   "header": {
     "home": "Home",
     "aboutUs": "About Us",
@@ -6,7 +23,7 @@
     "contactUs": "Contact Us"
   },
   "footer": {
-    "description": "Amid rising demand for digital displays, many screens fail from poor maintenance. VisionLab offers professional solutions to restore their clarity and performance.",
+    "description": "Amid rising demand for digital displays, many screens fail from poor maintenance. VisionLAB offers professional solutions to restore their clarity and performance.",
     "address": {
       "line1": "The Mansion Bougenville Kemayoran",
       "line2": "Tower Fontana Zona I Lantai 50",
@@ -54,21 +71,21 @@
   },
   "faq": {
     "title": "FAQ",
-    "description": "We understand that every screen has different needs. That's why VisionLab has compiled a list of frequently asked questions so you can get complete clarity about our services, processes, costs, and guarantees without having to ask twice.",
+    "description": "We understand that every screen has different needs. That's why VisionLAB has compiled a list of frequently asked questions so you can get complete clarity about our services, processes, costs, and guarantees without having to ask twice.",
     "questions": {
       "brands": {
-        "question": "Can VisionLab handle all brands of LED and LCD screens?",
+        "question": "Can VisionLAB handle all brands of LED and LCD screens?",
         "answer": "we can handle various brands and models of screens from various manufacturers. Our team of technicians is equipped with calibration tools and replacement modules that are compatible with well-known brands in the Indonesian and global markets.",
         "answerPrefix": "Yes,"
       },
       "pickupDelivery": {
-        "question": "Does VisionLab provide pickup and delivery services?",
+        "question": "Does VisionLAB provide pickup and delivery services?",
         "answer": "we provide pickup and delivery services for your convenience. Please contact our team for more details about service coverage.",
         "answerPrefix": "Yes,"
       },
       "location": {
-        "question": "Where is VisionLab located and what areas does it serve?",
-        "answer": "VisionLab is based in Jakarta and serves more than 15 cities throughout Indonesia. We can reach your location for maintenance and repair services."
+        "question": "Where is VisionLAB located and what areas does it serve?",
+        "answer": "VisionLAB is based in Jakarta and serves more than 15 cities throughout Indonesia. We can reach your location for maintenance and repair services."
       },
       "warranty": {
         "question": "Is there a warranty after repair?",

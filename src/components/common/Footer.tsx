@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Image
                   src="/vision-lab-logo.webp"
-                  alt="VisionLab Logo"
+                  alt="VisionLAB Logo"
                   width={200}
                   height={40}
                   className="object-contain"

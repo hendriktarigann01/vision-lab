@@ -62,6 +62,7 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <nav
+        aria-label="Main navigation"
         className={`max-w-7xl mx-auto px-6 rounded-2xl py-4 transition-all duration-300 
                   ${
                     isScrolled
@@ -70,67 +71,86 @@ const Header: React.FC = () => {
                   }`}
       >
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="relative">
+            <Link
+              href={getLocalizedHref(locale, "/")}
+              className="cursor-pointer"
+              aria-label="VisionLAB Home"
+            >
               <Image
                 src="/vision-lab-logo.webp"
-                alt="VisionLab Logo"
+                alt="VisionLAB Logo"
                 width={200}
                 height={40}
                 className="object-contain"
+                priority
               />
-            </div>
+            </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
-            <Link
-              href={getLocalizedHref(locale, "/")}
-              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
-                isActivePath(pathname, locale, "/"),
-                "bg-brand-200 text-white",
-                "text-gray-700 hover:text-brand-200"
-              )}`}
-            >
-              {t("home")}
-            </Link>
-            <Link
-              href={getLocalizedHref(locale, "/about-us")}
-              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
-                isActivePath(pathname, locale, "/about-us"),
-                "bg-brand-200 text-white",
-                "text-gray-700 hover:text-brand-200"
-              )}`}
-            >
-              {t("aboutUs")}
-            </Link>
-            <Link
-              href={getLocalizedHref(locale, "/services")}
-              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
-                isActivePath(pathname, locale, "/services"),
-                "bg-brand-200 text-white",
-                "text-gray-700 hover:text-brand-200"
-              )}`}
-            >
-              {t("services")}
-            </Link>
-            <Link
-              href={getLocalizedHref(locale, "/contact-us")}
-              className={`px-6 py-2 rounded-full transition ${getLinkClassName(
-                isActivePath(pathname, locale, "/contact-us"),
-                "bg-brand-200 text-white",
-                "text-gray-700 hover:text-brand-200"
-              )}`}
-            >
-              {t("contactUs")}
-            </Link>
-            <LanguageSelector />
-          </div>
+          {/* Desktop Navigation - Using <ul> for semantic HTML */}
+          <ul className="hidden md:flex items-center gap-2 list-none">
+            <li>
+              <Link
+                href={getLocalizedHref(locale, "/")}
+                className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                  isActivePath(pathname, locale, "/"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700 hover:text-brand-200"
+                )}`}
+              >
+                {t("home")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={getLocalizedHref(locale, "/about-us")}
+                className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                  isActivePath(pathname, locale, "/about-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700 hover:text-brand-200"
+                )}`}
+              >
+                {t("aboutUs")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={getLocalizedHref(locale, "/services")}
+                className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                  isActivePath(pathname, locale, "/services"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700 hover:text-brand-200"
+                )}`}
+              >
+                {t("services")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={getLocalizedHref(locale, "/contact-us")}
+                className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                  isActivePath(pathname, locale, "/contact-us"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700 hover:text-brand-200"
+                )}`}
+              >
+                {t("contactUs")}
+              </Link>
+            </li>
+            <li>
+              <LanguageSelector />
+            </li>
+          </ul>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg bg-brand-200 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Open mobile menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <Menu className="w-6 h-6 text-white" />
           </button>
@@ -142,20 +162,24 @@ const Header: React.FC = () => {
         <div
           className="fixed inset-0 bg-black/20 transition-opacity duration-300 z-30"
           onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
         />
       )}
 
       {/* Mobile Menu Panel */}
-      <div
+      <aside
+        id="mobile-menu"
         className={`fixed inset-y-0 left-0 w-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-40 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
+        aria-label="Mobile navigation"
       >
         <div className="flex flex-col h-full">
+          {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <Image
               src="/vision-lab-logo.webp"
-              alt="VisionLab Logo"
+              alt="VisionLAB Logo"
               width={150}
               height={30}
               className="object-contain"
@@ -163,99 +187,128 @@ const Header: React.FC = () => {
             <button
               onClick={() => setIsMenuOpen(false)}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Close mobile menu"
             >
               <X className="w-6 h-6 text-gray-600" />
             </button>
           </div>
 
-          <nav className="flex-1 overflow-y-auto p-6">
-            <div className="space-y-2">
-              <Link
-                href={getLocalizedHref(locale, "/")}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
-                  isActivePath(pathname, locale, "/"),
-                  "bg-brand-200 text-white",
-                  "text-gray-700"
-                )}`}
-              >
-                <span className="text-lg">{t("home")}</span>
-                <ArrowRight
-                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+          {/* Mobile Menu Navigation */}
+          <nav
+            className="flex-1 overflow-y-auto p-6"
+            aria-label="Mobile menu navigation"
+          >
+            <ul className="space-y-2 list-none">
+              <li>
+                <Link
+                  href={getLocalizedHref(locale, "/")}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
                     isActivePath(pathname, locale, "/"),
-                    "text-white",
-                    "text-gray-400 group-hover:text-brand-200"
+                    "bg-brand-200 text-white",
+                    "text-gray-700"
                   )}`}
-                />
-              </Link>
-              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+                >
+                  <span className="text-lg">{t("home")}</span>
+                  <ArrowRight
+                    className={`w-5 h-5 transition-colors ${getLinkClassName(
+                      isActivePath(pathname, locale, "/"),
+                      "text-white",
+                      "text-gray-400 group-hover:text-brand-200"
+                    )}`}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
 
-              <Link
-                href={getLocalizedHref(locale, "/about-us")}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
-                  isActivePath(pathname, locale, "/about-us"),
-                  "bg-brand-200 text-white",
-                  "text-gray-700"
-                )}`}
-              >
-                <span className="text-lg">{t("aboutUs")}</span>
-                <ArrowRight
-                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+              <li
+                className="my-2 border-b-2 border-dashed border-brand-50"
+                aria-hidden="true"
+              />
+
+              <li>
+                <Link
+                  href={getLocalizedHref(locale, "/about-us")}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
                     isActivePath(pathname, locale, "/about-us"),
-                    "text-white",
-                    "text-gray-400 group-hover:text-brand-200"
+                    "bg-brand-200 text-white",
+                    "text-gray-700"
                   )}`}
-                />
-              </Link>
-              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+                >
+                  <span className="text-lg">{t("aboutUs")}</span>
+                  <ArrowRight
+                    className={`w-5 h-5 transition-colors ${getLinkClassName(
+                      isActivePath(pathname, locale, "/about-us"),
+                      "text-white",
+                      "text-gray-400 group-hover:text-brand-200"
+                    )}`}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
 
-              <Link
-                href={getLocalizedHref(locale, "/services")}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
-                  isActivePath(pathname, locale, "/services"),
-                  "bg-brand-200 text-white",
-                  "text-gray-700"
-                )}`}
-              >
-                <span className="text-lg">{t("services")}</span>
-                <ArrowRight
-                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+              <li
+                className="my-2 border-b-2 border-dashed border-brand-50"
+                aria-hidden="true"
+              />
+
+              <li>
+                <Link
+                  href={getLocalizedHref(locale, "/services")}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
                     isActivePath(pathname, locale, "/services"),
-                    "text-white",
-                    "text-gray-400 group-hover:text-brand-200"
+                    "bg-brand-200 text-white",
+                    "text-gray-700"
                   )}`}
-                />
-              </Link>
-              <div className="my-2 border-b-2 border-dashed border-brand-50" />
+                >
+                  <span className="text-lg">{t("services")}</span>
+                  <ArrowRight
+                    className={`w-5 h-5 transition-colors ${getLinkClassName(
+                      isActivePath(pathname, locale, "/services"),
+                      "text-white",
+                      "text-gray-400 group-hover:text-brand-200"
+                    )}`}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
 
-              <Link
-                href={getLocalizedHref(locale, "/contact-us")}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
-                  isActivePath(pathname, locale, "/contact-us"),
-                  "bg-brand-200 text-white",
-                  "text-gray-700"
-                )}`}
-              >
-                <span className="text-lg">{t("contactUs")}</span>
-                <ArrowRight
-                  className={`w-5 h-5 transition-colors ${getLinkClassName(
+              <li
+                className="my-2 border-b-2 border-dashed border-brand-50"
+                aria-hidden="true"
+              />
+
+              <li>
+                <Link
+                  href={getLocalizedHref(locale, "/contact-us")}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
                     isActivePath(pathname, locale, "/contact-us"),
-                    "text-white",
-                    "text-gray-400 group-hover:text-brand-200"
+                    "bg-brand-200 text-white",
+                    "text-gray-700"
                   )}`}
-                />
-              </Link>
+                >
+                  <span className="text-lg">{t("contactUs")}</span>
+                  <ArrowRight
+                    className={`w-5 h-5 transition-colors ${getLinkClassName(
+                      isActivePath(pathname, locale, "/contact-us"),
+                      "text-white",
+                      "text-gray-400 group-hover:text-brand-200"
+                    )}`}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
 
-              <div className="py-4">
+              <li className="py-4">
                 <LanguageSelector />
-              </div>
-            </div>
+              </li>
+            </ul>
           </nav>
         </div>
-      </div>
+      </aside>
     </motion.header>
   );
 };
