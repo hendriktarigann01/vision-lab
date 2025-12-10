@@ -1,9 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
+import type { Metadata } from "next";
 import { getServiceDetailsTranslations } from "@/lib/translations";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import Hero from "@/components/features/services/maintenance/Hero";
 import SectionExplanation from "@/components/features/services/common/SectionExplanation";
+
+export const metadata: Metadata = {
+  title: "VisionLAB by MJ Solution Indonesia",
+  description:
+    "Regular cleaning and maintenance to keep your LED & LCD screens in top condition preventing early damage and ensuring consistent visual quality.",
+};
 
 export const dynamic = "force-static";
 

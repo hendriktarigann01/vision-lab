@@ -32,7 +32,7 @@
     },
     "pricing": {
       "title": "Paket Layanan Anda",
-      "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLab menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
+      "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLAB menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
       "price": "IDR xxx.000",
       "perUnit": "/ Sqm / Bulan",
       "packages": {
@@ -55,12 +55,12 @@
     },
     "partners": {
       "title": "Mitra Kami",
-      "description": "VisionLab memiliki pengalaman menangani berbagai merek LED dan LCD terkenal dengan layanan perbaikan yang presisi, aman, dan sesuai dengan standar pabrikan."
+      "description": "VisionLAB memiliki pengalaman menangani berbagai merek LED dan LCD terkenal dengan layanan perbaikan yang presisi, aman, dan sesuai dengan standar pabrikan."
     },
     "cta": {
       "title": "Butuh Perbaikan Layar",
       "titleSecond": "atau Bantuan Perawatan?",
-      "description": "Diskusikan kebutuhan Anda dengan tim VisionLab. Kami siap membantu Anda menemukan solusi terbaik untuk perbaikan, perawatan, atau peningkatan performa layar LED & LCD Anda.",
+      "description": "Diskusikan kebutuhan Anda dengan tim VisionLAB. Kami siap membantu Anda menemukan solusi terbaik untuk perbaikan, perawatan, atau peningkatan performa layar LED & LCD Anda.",
       "button": "Konsultasi Sekarang"
     }
   }

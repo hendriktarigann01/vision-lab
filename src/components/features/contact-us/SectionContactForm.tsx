@@ -224,7 +224,7 @@ const SectionContactForm = () => {
             <Image
               loading="lazy"
               src="/humans/vl-human-girl-contact.webp"
-              alt="Vision Lab Contact"
+              alt="VisionLAB Contact"
               width={400}
               height={600}
               className="w-full h-full object-contain"

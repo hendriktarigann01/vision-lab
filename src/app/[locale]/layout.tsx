@@ -1,14 +1,7 @@
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "VisionLAB",
-  description:
-    "Professional LED & LCD repair, maintenance, and calibration services",
-};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -30,6 +23,26 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "VisionLAB by MJ Solution Indonesia",
+              url: "https://visionlab.mjsolution.co.id",
+              logo: "https://visionlab.mjsolution.co.id/vision-lab-logo.webp",
+              description:
+                "VisionLAB is a multimedia service center under MJ Solution Indonesia",
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Customer Service",
+              },
+            }),
+          }}
+        />
+
         {process.env.NODE_ENV === "production" && (
           <>
             {/* Google Tag Manager */}

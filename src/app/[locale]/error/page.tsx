@@ -27,7 +27,6 @@ export default function NotFound() {
                 alt="404 Image"
                 width={500}
                 height={300}
-                className="w-full md:h-full"
                 priority
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
