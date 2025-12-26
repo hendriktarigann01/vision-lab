@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import "./[locale]/globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: "VisionLAB by MJ Solution Indonesia",
-  },
+  title: "VisionLAB by MJ Solution Indonesia",
   description:
     "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens.",
   keywords: ["LED repair", "LCD repair", "multimedia service", "MJ Solution"],
-  authors: [{ name: "VisionLAB" }],
+  authors: [{ name: "MJ Solution Indonesia" }],
   openGraph: {
     title: "VisionLAB by MJ Solution Indonesia",
     description: "VisionLAB is a multimedia service center...",
