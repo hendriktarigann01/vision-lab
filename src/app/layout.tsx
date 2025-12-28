@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "VisionLAB by MJ Solution Indonesia",
   description:
     "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens.",
-  keywords: ["LED repair", "LCD repair", "multimedia service", "MJ Solution"],
+  keywords: ["LED repair", "LCD repair", "multimedia service", "VisionLAB"],
   authors: [{ name: "VisionLAB" }],
   openGraph: {
     title: "VisionLAB by MJ Solution Indonesia",
