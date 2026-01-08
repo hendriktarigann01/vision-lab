@@ -180,10 +180,10 @@ const Footer: React.FC = () => {
           {/* Desktop Layout */}
           <div className="hidden md:flex gap-12 justify-center">
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">
+              <h4 className="font-semibold text-sm md:text-base text-gray-800 mb-4">
                 {t("pages.title")}
               </h4>
-              <ul className="space-y-5 text-gray-600 text-sm">
+              <ul className="space-y-5 text-gray-600 text-sm md:text-base">
                 {pageLinks.map((link) => (
                   <li key={link.href}>
                     <Link
@@ -198,10 +198,10 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">
+              <h4 className="font-semibold text-sm md:text-base text-gray-800 mb-4">
                 {t("services.title")}
               </h4>
-              <ul className="space-y-5 text-gray-600 text-sm">
+              <ul className="space-y-5 text-gray-600 text-sm md:text-base">
                 {serviceLinks.map((link) => (
                   <li key={link.href}>
                     <Link

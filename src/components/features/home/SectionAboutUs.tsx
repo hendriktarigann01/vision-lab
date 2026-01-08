@@ -57,7 +57,7 @@ const SectionAboutUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-lg md:text-4xl text-center mb-6 md:mb-12 text-gray-900">
-          {t("title")}
+          {t("titleHome")}
         </h2>
         <div className="flex justify-center gap-4 md:gap-32">
           {stats.map((stat, idx) => (
