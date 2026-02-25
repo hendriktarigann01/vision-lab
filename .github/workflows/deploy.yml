@@ -26,9 +26,13 @@ jobs:
 
       - name: Prepare deployment folder
         run: |
-          mkdir deploy
+          mkdir -p deploy
           cp -r .next package.json server.js public deploy/
-          echo "✅ Deployment folder prepared"
+          rm -rf deploy/.next/cache
+          rm -f deploy/.next/trace
+          rm -f deploy/.next/trace-build
+          rm -rf deploy/.next/turbopack
+          echo "✅ Total files to deploy: $(find deploy -type f | wc -l)"
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -40,6 +44,11 @@ jobs:
           port: 21
           local-dir: deploy/
           server-dir: ./
+          timeout: 60000
           exclude: |
             **/.git*
             **/.github*
+            .next/cache/**
+            .next/trace
+            .next/trace-build
+            .next/turbopack/**
