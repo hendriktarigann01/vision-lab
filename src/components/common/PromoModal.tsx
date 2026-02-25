@@ -46,7 +46,7 @@ const PromoModal: React.FC = () => {
             <div className="p-6 md:p-8 flex flex-col justify-between">
               <button
                 onClick={handleCloseModal}
-                className="absolute top-4 right-4 lg:top-4 lg:left-4 w-10 h-10 bg-[#FF6B2C] hover:bg-[#FF5A1A] rounded-full flex items-center justify-center transition-colors z-10"
+                className="absolute top-4 right-4 lg:top-4 lg:right-4 w-10 h-10 bg-[#FF6B2C] hover:bg-[#FF5A1A] rounded-full flex items-center justify-center transition-colors z-10"
                 aria-label={t("close")}
               >
                 <X className="w-5 h-5 text-white" />

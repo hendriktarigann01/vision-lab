@@ -31,8 +31,8 @@ export default async function LocaleLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "VisionLAB by MJ Solution Indonesia",
-              url: "https://visionlab.mjsolution.co.id",
-              logo: "https://visionlab.mjsolution.co.id/vision-lab-logo.webp",
+              url: "https://visionlab.co.id",
+              logo: "https://visionlab.co.id/vision-lab-logo.webp",
               description:
                 "VisionLAB is a multimedia service center under MJ Solution Indonesia",
               contactPoint: {

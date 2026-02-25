@@ -127,6 +127,18 @@ const Header: React.FC = () => {
                 {t("services")}
               </Link>
             </li>
+            {/* <li>
+              <Link
+                href={getLocalizedHref(locale, "/gallery")}
+                className={`px-6 py-2 rounded-full transition ${getLinkClassName(
+                  isActivePath(pathname, locale, "/gallery"),
+                  "bg-brand-200 text-white",
+                  "text-gray-700 hover:text-brand-200"
+                )}`}
+              >
+                {t("gallery")}
+              </Link>
+            </li> */}
             <li>
               <Link
                 href={getLocalizedHref(locale, "/contact-us")}

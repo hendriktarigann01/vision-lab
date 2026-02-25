@@ -10,7 +10,7 @@ import SectionAboutUs from "@/components/features/home/SectionAboutUs";
 import SectionPartner from "@/components/features/home/SectionPartner";
 import SectionProcess from "@/components/features/home/SectionProcess";
 import SectionPrice from "@/components/features/home/SectionPrice";
-import SectionSocmed from "@/components/features/home/SectionSocmed";
+// import SectionSocmed from "@/components/features/home/SectionSocmed";
 import SectionCTA from "@/components/features/home/SectionCTA";
 import PromoModal from "@/components/common/PromoModal";
 

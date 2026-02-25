@@ -20,6 +20,13 @@
       "mapAddress": "Celebration AA15/25, Grand Wisata, Bekasi, Jawa Barat",
       "viewMap": "Lihat Peta"
     },
+    "gallery": {
+      "label": "Galeri",
+      "title": "Standar Layanan Terlihat",
+      "description": "Dokumentasi layanan dan pembersihan VisionLAB LED menunjukkan komitmen kami dalam menjaga kinerja tampilan yang konsisten, kejernihan visual, dan umur pakai.",
+      "before": "sebelum",
+      "after": "sesudah"
+    },
     "services": {
       "label": "Layanan",
       "title": "Layanan Perbaikan dan Perawatan LED & LCD Lengkap",

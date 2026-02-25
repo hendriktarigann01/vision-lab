@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VisionLAB by MJ Solution Indonesia",
     description: "VisionLAB is a multimedia service center...",
-    url: "https://visionlab.mjsolution.co.id",
+    url: "https://visionlab.co.id",
     siteName: "VisionLAB",
     locale: "en_US",
     type: "website",

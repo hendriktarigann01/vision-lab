@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://visionlab.mjsolution.co.id";
-  const locales = ["en", "id"]; 
+  const baseUrl = "https://visionlab.co.id";
+  const locales = ["en", "id"];
 
   const routes = ["/", "/about-us", "/services", "/contact-us"];
 

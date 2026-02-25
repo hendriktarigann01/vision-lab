@@ -21,6 +21,7 @@
     "@tailwindcss/typography": "^0.5.18",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "framer-motion": "^12.23.16",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.552.0",

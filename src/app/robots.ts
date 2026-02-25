@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://visionlab.mjsolution.co.id/sitemap.xml",
+    sitemap: "https://visionlab.co.id/sitemap.xml",
   };
 }
