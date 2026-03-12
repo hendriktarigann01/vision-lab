@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./[locale]/globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://visionlab.co.id"),
   title: "VisionLAB by MJ Solution Indonesia",
   description:
     "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens.",
-  keywords: ["LED repair", "LCD repair", "multimedia service", "VisionLAB"],
+  keywords: ["LED repair", "LCD repair", "Multimedia Service", "VisionLAB"],
   authors: [{ name: "VisionLAB" }],
   openGraph: {
     title: "VisionLAB by MJ Solution Indonesia",

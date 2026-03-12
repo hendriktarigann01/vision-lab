@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "VisionLAB by MJ Solution Indonesia",
   description:
     "Hands-on training to help your team operate, maintain, and troubleshoot LED & LCD systems with confidence.",
+  alternates: {
+    canonical: "/services/on-site-training",
+  },
 };
 
 export const dynamic = "force-static";

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "VisionLAB by MJ Solution Indonesia",
   description:
     "Regular cleaning and maintenance to keep your LED & LCD screens in top condition preventing early damage and ensuring consistent visual quality.",
+  alternates: {
+    canonical: "/services/maintenance",
+  },
 };
 
 export const dynamic = "force-static";

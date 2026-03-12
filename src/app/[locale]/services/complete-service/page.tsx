@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "VisionLAB by MJ Solution Indonesia",
   description:
     "Early detection of LED & LCD conditions before major damage occurs.",
+  alternates: {
+    canonical: "/services/complete-service",
+  },
 };
 
 export const dynamic = "force-static";

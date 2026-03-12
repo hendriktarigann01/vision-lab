@@ -8,11 +8,14 @@ import Hero from "@/components/features/about-us/Hero";
 import SectionAboutUs from "@/components/features/about-us/SectionAboutUs";
 import SectionWhyUs from "@/components/features/about-us/SectionWhyUs";
 
-export const metadata: Metadata = {
-  title: "VisionLAB by MJ Solution Indonesia",
-  description:
-    "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens.",
-};
+  export const metadata: Metadata = {
+    title: "VisionLAB by MJ Solution Indonesia",
+    description:
+      "VisionLAB is a multimedia service center under MJ Solution Indonesia that focuses on repair, maintenance, and servicing of LED & LCD screens.",
+    alternates: {
+      canonical: "/about-us",
+    },
+  };
 
 export const dynamic = "force-static";
 
