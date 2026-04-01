@@ -109,12 +109,27 @@ const SectionPrice = () => {
           className="bg-gray-50 gap-8 md:gap-6 py-8 md:py-12 border-none shadow-none"
           style={{ boxShadow: "0px 4px 50px rgba(175, 175, 175, 0.2)" }}
         >
-          <div className="text-center space-y-5">
-            <p className="rounded-lg md:rounded-md text-gray-600 p-5 w-56 bg-[#F5F5F5] mx-auto">
+          <div className="text-center space-y-4 md:space-y-5 px-4">
+            <p className="rounded-md text-gray-600 px-4 py-3 w-fit max-w-full bg-[#F5F5F5] mx-auto text-sm md:text-base">
               {getPackageName(activePackage)}
             </p>
-            <div className="text-4xl text-gray-900">{t("price")}</div>
-            <p className="text-gray-600">{t("perUnit")}</p>
+
+            {activePackage === "maintenance" || activePackage === "complete" ? (
+              <div className="text-2xl md:text-4xl text-[#616161] text-center">
+                {t("contactUsForPrice")}
+              </div>
+            ) : (
+              <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap">
+                <div className="text-2xl md:text-4xl text-[#616161]">
+                  {t("priceDiscount")}
+                </div>
+                <div className="text-sm md:text-xl text-[#616161] line-through">
+                  {t("price")}
+                </div>
+              </div>
+            )}
+
+            <p className="text-gray-600 text-sm md:text-base">{t("perUnit")}</p>
           </div>
 
           {/* Package Selection Buttons Desktop */}
@@ -197,7 +212,7 @@ const SectionPrice = () => {
           <div className="text-center">
             <Link
               href={`https://wa.me/628111122492?text=Hi VisionLAB, I would like to know more about your ${getPackageName(
-                activePackage
+                activePackage,
               )}. When can we schedule a consultation?`}
               target="_blank"
               rel="noopener noreferrer"

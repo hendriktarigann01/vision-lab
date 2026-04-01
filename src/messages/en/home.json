@@ -33,7 +33,8 @@
     "pricing": {
       "title": "Your Service Plan",
       "description": "Choose the maintenance plan that fits your needs. VisionLAB offers flexible options for one-time repairs, monthly care, or annual service all handled by certified technicians to keep your LED & LCD screens in top condition.",
-      "price": "IDR xxx.000",
+      "priceDiscount": "IDR 350.000",
+      "price": "IDR 100.000",
       "perUnit": "/ Sqm / Month",
       "packages": {
         "cleaning": "Cleaning Package",
@@ -51,7 +52,8 @@
         "processorCheckup": "Processor Check-up & Maintenance",
         "cablingCheckup": "Cabling Check-up & Maintenance"
       },
-      "getStarted": "Get Started Now"
+      "getStarted": "Get Started Now",
+      "contactUsForPrice": "Contact us for price"
     },
     "partners": {
       "title": "Our Partners",

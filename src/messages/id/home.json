@@ -33,7 +33,8 @@
     "pricing": {
       "title": "Paket Layanan Anda",
       "description": "Pilih paket perawatan yang sesuai dengan kebutuhan Anda. VisionLAB menawarkan opsi fleksibel untuk perbaikan satu kali, perawatan bulanan, atau layanan tahunan semua ditangani oleh teknisi bersertifikat untuk menjaga layar LED & LCD Anda dalam kondisi prima.",
-      "price": "IDR xxx.000",
+      "priceDiscount": "IDR 350.000",
+      "price": "IDR 100.000",
       "perUnit": "/ Sqm / Bulan",
       "packages": {
         "cleaning": "Paket Pembersihan",
@@ -51,7 +52,8 @@
         "processorCheckup": "Pemeriksaan & Perawatan Prosesor",
         "cablingCheckup": "Pemeriksaan & Perawatan Kabel"
       },
-      "getStarted": "Mulai Sekarang"
+      "getStarted": "Mulai Sekarang",
+      "contactUsForPrice": "Hubungi kami untuk harga"
     },
     "partners": {
       "title": "Mitra Kami",
