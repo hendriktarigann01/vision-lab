@@ -1,7 +1,25 @@
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Script from "next/script";
+import type { Metadata } from "next";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://visionlab.co.id"),
+  openGraph: {
+    images: [
+      {
+        url: "/vision-lab-logo.webp",
+        width: 200,
+        height: 40,
+        alt: "VisionLAB Logo",
+      },
+    ],
+  },
+  twitter: {
+    images: ["/vision-lab-logo.webp"],
+  },
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

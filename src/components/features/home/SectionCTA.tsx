@@ -44,7 +44,7 @@ const SectionCTA = () => {
         </div>
 
         {/* Character container */}
-        <div className="flex-1 flex justify-center relative overflow-visible mt-0">
+        <div className="flex-1 flex justify-center relative overflow-visible mt-0" data-nosnippet="true">
           <div className="relative md:absolute md:-top-90 w-[300px] h-[300px] md:w-[550px] md:h-[550px]">
             <Image
               loading="lazy"

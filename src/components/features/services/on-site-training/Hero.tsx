@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Content - Technician Illustration */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center" data-nosnippet="true">
             <div className="relative w-full max-w-[550px] aspect-square">
               <Image
                 src="/humans/vl-human-girl-3.webp"
