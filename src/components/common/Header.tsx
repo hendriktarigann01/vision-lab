@@ -15,6 +15,7 @@ import {
 
 const Header: React.FC = () => {
   const t = useTranslations("header");
+  const tHeroes = useTranslations("heroes");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -51,6 +52,8 @@ const Header: React.FC = () => {
     }
   });
 
+  const baseUrl = "https://visionlab.co.id";
+
   return (
     <motion.header
       className="fixed w-full z-20 top-2 md:top-5 px-0 md:px-4"
@@ -61,6 +64,57 @@ const Header: React.FC = () => {
       animate={isVisible ? "visible" : "hidden"}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
+      {/* Sitelink optimization with SiteNavigationElement schema (Forced English for SEO indexing) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "SiteNavigationElement",
+                "name": "Home",
+                "url": "https://visionlab.co.id/"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "About Us",
+                "url": "https://visionlab.co.id/about-us"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "Services",
+                "url": "https://visionlab.co.id/services"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "General Check-up",
+                "url": "https://visionlab.co.id/services/complete-service"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "Maintenance",
+                "url": "https://visionlab.co.id/services/maintenance"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "On-Site Training",
+                "url": "https://visionlab.co.id/services/on-site-training"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "Gallery",
+                "url": "https://visionlab.co.id/gallery"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "name": "Contact Us",
+                "url": "https://visionlab.co.id/contact-us"
+              }
+            ]
+          })
+        }}
+      />
       <nav
         aria-label="Main navigation"
         className={`max-w-7xl mx-auto px-6 rounded-2xl py-4 transition-all duration-300 
@@ -112,7 +166,7 @@ const Header: React.FC = () => {
                   "text-gray-700 hover:text-brand-200"
                 )}`}
               >
-                {t("aboutUs")}
+                {tHeroes("aboutUs.label")}
               </Link>
             </li>
             <li>
@@ -124,10 +178,10 @@ const Header: React.FC = () => {
                   "text-gray-700 hover:text-brand-200"
                 )}`}
               >
-                {t("services")}
+                {tHeroes("services.label")}
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 href={getLocalizedHref(locale, "/gallery")}
                 className={`px-6 py-2 rounded-full transition ${getLinkClassName(
@@ -136,9 +190,9 @@ const Header: React.FC = () => {
                   "text-gray-700 hover:text-brand-200"
                 )}`}
               >
-                {t("gallery")}
+                {tHeroes("gallery.label")}
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 href={getLocalizedHref(locale, "/contact-us")}
@@ -148,7 +202,7 @@ const Header: React.FC = () => {
                   "text-gray-700 hover:text-brand-200"
                 )}`}
               >
-                {t("contactUs")}
+                {tHeroes("contactUs.label")}
               </Link>
             </li>
             <li>
@@ -248,7 +302,7 @@ const Header: React.FC = () => {
                     "text-gray-700"
                   )}`}
                 >
-                  <span className="text-lg">{t("aboutUs")}</span>
+                  <span className="text-lg">{tHeroes("aboutUs.label")}</span>
                   <ArrowRight
                     className={`w-5 h-5 transition-colors ${getLinkClassName(
                       isActivePath(pathname, locale, "/about-us"),
@@ -275,10 +329,37 @@ const Header: React.FC = () => {
                     "text-gray-700"
                   )}`}
                 >
-                  <span className="text-lg">{t("services")}</span>
+                  <span className="text-lg">{tHeroes("services.label")}</span>
                   <ArrowRight
                     className={`w-5 h-5 transition-colors ${getLinkClassName(
                       isActivePath(pathname, locale, "/services"),
+                      "text-white",
+                      "text-gray-400 group-hover:text-brand-200"
+                    )}`}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
+
+              <li
+                className="my-2 border-b-2 border-dashed border-brand-50"
+                aria-hidden="true"
+              />
+
+              <li>
+                <Link
+                  href={getLocalizedHref(locale, "/gallery")}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-colors group ${getLinkClassName(
+                    isActivePath(pathname, locale, "/gallery"),
+                    "bg-brand-200 text-white",
+                    "text-gray-700"
+                  )}`}
+                >
+                  <span className="text-lg">{tHeroes("gallery.label")}</span>
+                  <ArrowRight
+                    className={`w-5 h-5 transition-colors ${getLinkClassName(
+                      isActivePath(pathname, locale, "/gallery"),
                       "text-white",
                       "text-gray-400 group-hover:text-brand-200"
                     )}`}
@@ -302,7 +383,7 @@ const Header: React.FC = () => {
                     "text-gray-700"
                   )}`}
                 >
-                  <span className="text-lg">{t("contactUs")}</span>
+                  <span className="text-lg">{tHeroes("contactUs.label")}</span>
                   <ArrowRight
                     className={`w-5 h-5 transition-colors ${getLinkClassName(
                       isActivePath(pathname, locale, "/contact-us"),
